@@ -1,0 +1,1834 @@
+/* ==========================================================================
+   SARAF DENTAL CARE — CINEMATIC RESPONSIVE SYSTEM
+   Mobile / Tablet / Desktop responsive rules
+   --------------------------------------------------------------------------
+   Goals:
+   • Preserve the premium desktop composition
+   • Make the cinematic hero stable on touch devices
+   • Convert pinned horizontal scenes into native swipe experiences
+   • Prevent layout shifts, clipping and accidental horizontal overflow
+   • Improve typography, spacing and touch targets at every breakpoint
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. GLOBAL RESPONSIVE FOUNDATION
+   -------------------------------------------------------------------------- */
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  max-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 1100px) {
+  .wrap {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  header.site-nav {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .nav-burger {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  footer.site-footer .foot-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   02. TABLET — 901–1100px
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .hero-cinematic {
+    padding-top: 125px;
+  }
+
+  .hero-cinematic-grid {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 12px;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(3.2rem, 7vw, 5.4rem);
+  }
+
+  .hero-character {
+    width: min(48vw, 600px);
+  }
+
+  .hero-character-wrap::after {
+    opacity: 0.6;
+  }
+
+  .character-story {
+    min-height: 150vh;
+  }
+
+  .h-panel {
+    min-width: min(42vw, 420px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03. TABLET / SMALL LAPTOP
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  /* Base spacing */
+  .section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .section-tight {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  footer.site-footer {
+    padding: 85px 0 28px;
+  }
+
+  footer.site-footer .foot-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 44px;
+  }
+
+  /* ----------------------------------------------------------------------
+     Cinematic hero
+     ---------------------------------------------------------------------- */
+
+  .hero-cinematic {
+    min-height: auto !important;
+    padding: 125px 0 55px;
+  }
+
+  .hero-cinematic-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: auto;
+    text-align: left;
+  }
+
+  .hero-cinematic-copy {
+    max-width: 720px;
+  }
+
+  .hero-cinematic-heading {
+    max-width: 760px;
+    font-size: clamp(2.7rem, 9vw, 5rem);
+    line-height: 0.94;
+  }
+
+  .hero-cinematic-copy > p {
+    max-width: 540px !important;
+    font-size: 14px !important;
+  }
+
+  .hero-cinematic-stats {
+    gap: 28px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-character-wrap {
+    min-height: 440px;
+    height: auto;
+    padding: 20px 0 0;
+  }
+
+  .hero-character {
+    width: min(70vw, 520px);
+    margin: 0 auto;
+  }
+
+  .hero-glow {
+    right: 50%;
+    top: 58%;
+    width: 75vw;
+    height: 75vw;
+    transform: translate(50%, -50%);
+  }
+
+  /* Hide decorative desktop-only orbital layers on smaller touch layouts */
+  .hero-character-wrap > [aria-hidden="true"] {
+    opacity: 0.45;
+  }
+
+  .hero-character-wrap > div[aria-hidden="true"]:last-child {
+    display: none;
+  }
+
+  .scroll-ind {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 20px 5vw 0;
+  }
+
+  /* ----------------------------------------------------------------------
+     Character story — unpin and stack
+     ---------------------------------------------------------------------- */
+
+  .character-story {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 85px 0 70px;
+    overflow: hidden;
+  }
+
+  .story-character-wrap {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    height: auto !important;
+    padding: 20px 0 35px;
+  }
+
+  .story-character {
+    position: relative !important;
+    width: min(62vw, 330px);
+    height: auto !important;
+    margin: 0 auto;
+    transform: none !important;
+  }
+
+  .story-phase {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100%;
+    padding: 25px 6vw;
+    text-align: center;
+    opacity: 1 !important;
+  }
+
+  .story-phase h3 {
+    font-size: clamp(1.7rem, 6vw, 2.6rem);
+  }
+
+  /* ----------------------------------------------------------------------
+     Horizontal workflow — native swipe
+     ---------------------------------------------------------------------- */
+
+  .pin-section[data-h-scroll] {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 90px 0 !important;
+  }
+
+  .h-track,
+  .h-track.mobile-swipe {
+    width: 100%;
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    transform: none !important;
+    gap: 16px !important;
+    padding: 0 5vw 14px !important;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .h-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .h-panel,
+  .h-track .h-panel {
+    flex: 0 0 min(78vw, 430px);
+    width: min(78vw, 430px) !important;
+    min-width: min(78vw, 430px);
+    height: 450px !important;
+    scroll-snap-align: start;
+  }
+
+  /* ----------------------------------------------------------------------
+     Generic image sections
+     ---------------------------------------------------------------------- */
+
+  .pin-zoom-wrap {
+    min-height: 78vh;
+  }
+
+  .pin-zoom-img {
+    width: 82vw !important;
+    height: 58vh !important;
+  }
+
+  [data-reveal-img] {
+    overflow: hidden;
+  }
+
+  /* ----------------------------------------------------------------------
+     Two-column inline-grid layouts
+     ---------------------------------------------------------------------- */
+
+  [style*="grid-template-columns:1.1fr 0.9fr"],
+  [style*="grid-template-columns:1fr 0.9fr"],
+  [style*="grid-template-columns:1.2fr 0.9fr"],
+  [style*="grid-template-columns:1.2fr 1fr"],
+  [style*="grid-template-columns:0.9fr 1.1fr"],
+  [style*="grid-template-columns:0.8fr 1.2fr"],
+  [style*="grid-template-columns:0.7fr 1.3fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  /* 4/5/3 column systems become 2 columns first */
+  [style*="grid-template-columns:repeat(5,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     Gallery
+     ---------------------------------------------------------------------- */
+
+  [style*="grid-auto-rows:230px"],
+  [style*="grid-auto-rows:220px"] {
+    grid-auto-rows: 210px !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     Typography
+     ---------------------------------------------------------------------- */
+
+  .foot-huge {
+    font-size: clamp(3rem, 9vw, 6rem);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   04. MOBILE — <= 760px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .wrap {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  header.site-nav {
+    min-height: 72px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  /* Header */
+  .brand {
+    max-width: 210px;
+  }
+
+  .brand > span {
+    font-size: 11px;
+  }
+
+  .nav-burger {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+  }
+
+  /* Sections */
+  .section {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
+  .section-tight {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  /* ----------------------------------------------------------------------
+     Hero
+     ---------------------------------------------------------------------- */
+
+  .hero-cinematic {
+    padding: 108px 0 40px;
+  }
+
+  .hero-cinematic-grid {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(2.45rem, 12vw, 4rem);
+    letter-spacing: -0.055em;
+    line-height: 0.91;
+  }
+
+  .hero-cinematic-heading .split-line {
+    overflow: hidden;
+  }
+
+  .hero-cinematic-copy > p {
+    max-width: 100% !important;
+    margin-top: 22px !important;
+    line-height: 1.75 !important;
+  }
+
+  .hero-cinematic-copy [data-hero-fade] > .btn {
+    margin-top: 0;
+  }
+
+  .hero-cinematic-copy > div[style*="display:flex"] {
+    gap: 10px !important;
+    margin-top: 28px !important;
+  }
+
+  .hero-cinematic-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+    margin-top: 34px;
+  }
+
+  .hero-cinematic-stats > div {
+    min-width: 0;
+  }
+
+  .hero-cinematic-stats > div span {
+    font-size: 1.15rem;
+  }
+
+  .hero-cinematic-stats > div p {
+    font-size: 8px;
+    line-height: 1.35;
+    letter-spacing: 0.09em;
+  }
+
+  .hero-character-wrap {
+    min-height: 390px;
+    margin-top: 5px;
+    padding-top: 10px;
+  }
+
+  .hero-character {
+    width: min(78vw, 440px);
+    filter: drop-shadow(0 24px 38px rgba(20, 19, 15, 0.16));
+  }
+
+  .hero-glow {
+    width: 95vw;
+    height: 95vw;
+    top: 66%;
+    opacity: 0.8;
+  }
+
+  /* Remove vertical metadata and desktop orbit details */
+  .hero-character-wrap > div[style*="writing-mode"] {
+    display: none !important;
+  }
+
+  .scroll-ind {
+    display: none !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     Clinic highlight ribbon
+     ---------------------------------------------------------------------- */
+
+  section[aria-label="Clinic highlights"] .wrap {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  section[aria-label="Clinic highlights"] .wrap > div {
+    min-height: 92px;
+    padding: 20px 16px !important;
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  section[aria-label="Clinic highlights"] strong {
+    font-size: 11px !important;
+    line-height: 1.4;
+  }
+
+  /* ----------------------------------------------------------------------
+     Character story
+     ---------------------------------------------------------------------- */
+
+  .character-story {
+    padding: 72px 0 55px;
+  }
+
+  .story-character-wrap {
+    padding-bottom: 25px;
+  }
+
+  .story-character {
+    width: min(72vw, 300px);
+  }
+
+  .story-phase {
+    padding: 22px 6vw;
+  }
+
+  .story-phase h3 {
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+    line-height: 1.08;
+  }
+
+  /* ----------------------------------------------------------------------
+     Image zoom
+     ---------------------------------------------------------------------- */
+
+  .pin-zoom-wrap {
+    min-height: 68vh;
+  }
+
+  .pin-zoom-img {
+    width: 88vw !important;
+    height: 52vh !important;
+  }
+
+  [data-zoom-overlay] {
+    padding: 28px 6vw !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     Services
+     ---------------------------------------------------------------------- */
+
+  .svc-panel {
+    grid-template-columns: 34px 1fr auto !important;
+    gap: 12px !important;
+    padding: 22px 0 !important;
+  }
+
+  .svc-panel h3 {
+    font-size: 1.05rem;
+  }
+
+  .svc-desc {
+    grid-column: 2 / -1;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin-top: 5px;
+  }
+
+  /* ----------------------------------------------------------------------
+     Workflow cards
+     ---------------------------------------------------------------------- */
+
+  .pin-section[data-h-scroll] {
+    padding: 76px 0 !important;
+  }
+
+  .h-track,
+  .h-track.mobile-swipe {
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+  }
+
+  .h-panel,
+  .h-track .h-panel {
+    flex-basis: 78vw;
+    width: 78vw !important;
+    min-width: 78vw;
+    height: 390px !important;
+    padding: 30px !important;
+  }
+
+  .h-panel h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .h-panel p {
+    font-size: 12.5px !important;
+  }
+
+  /* ============================================================
+   CONTACT — RESPONSIVE
+   ============================================================ */
+
+@media(max-width:900px){
+
+  .contact-hero-content{
+    padding:
+      125px 6vw 40px;
+  }
+
+  .contact-hero-title h1{
+    font-size:
+      clamp(3.5rem,15vw,7rem);
+  }
+
+  .contact-hero-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:25px;
+  }
+
+
+  .contact-intro{
+    min-height:auto;
+
+    padding:
+      110px 6vw;
+
+    grid-template-columns:1fr;
+
+    gap:30px;
+  }
+
+  .contact-intro h2{
+    font-size:
+      clamp(3.5rem,15vw,7rem);
+  }
+
+  .contact-intro-content > p{
+    margin-top:50px;
+  }
+
+
+  .contact-form-section{
+    padding:
+      100px 0;
+  }
+
+  .contact-form-layout{
+    grid-template-columns:1fr;
+
+    gap:60px;
+  }
+
+  .contact-form-intro{
+    position:relative;
+    top:auto;
+  }
+
+
+  .contact-information{
+    padding:
+      100px 0;
+  }
+
+  .contact-info-heading{
+    display:block;
+  }
+
+  .contact-info-heading h2{
+    margin-top:25px;
+
+    font-size:
+      clamp(4rem,16vw,8rem);
+  }
+
+  .contact-info-grid{
+    grid-template-columns:1fr;
+
+    margin-top:70px;
+  }
+
+  .contact-info-card,
+  .contact-info-card:first-child{
+    min-height:auto;
+
+    padding:
+      35px 0;
+
+    border-right:0;
+
+    border-bottom:
+      1px solid var(--line-light);
+  }
+
+
+  .contact-map-section{
+    height:65vh;
+  }
+
+
+  .contact-final{
+    min-height:80svh;
+  }
+
+  .contact-final h2{
+    font-size:
+      clamp(3.6rem,16vw,7rem);
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .contact-hero{
+    min-height:100svh;
+  }
+
+  .contact-hero-location{
+    display:none;
+  }
+
+
+  .contact-fields{
+    grid-template-columns:1fr;
+  }
+
+
+  .contact-treatment-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .contact-big-number{
+    font-size:
+      35vw;
+  }
+
+
+  .contact-map-section{
+    height:55vh;
+  }
+
+
+  .map-pin div{
+    left:70px;
+  }
+
+
+  .contact-final-actions{
+    flex-direction:column;
+  }
+
+  .contact-final-actions .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+}
+
+  /* ----------------------------------------------------------------------
+     Gallery
+     ---------------------------------------------------------------------- */
+
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="grid-column:span 2"] {
+    grid-column: span 1 !important;
+  }
+
+  [style*="grid-row:span 2"] {
+    grid-row: span 1 !important;
+  }
+
+  [style*="grid-auto-rows:230px"],
+  [style*="grid-auto-rows:220px"] {
+    grid-auto-rows: 230px !important;
+  }
+
+  /* ----------------------------------------------------------------------
+     Reviews
+     ---------------------------------------------------------------------- */
+
+  [data-track] blockquote,
+  [data-track] > blockquote {
+    min-width: 84vw !important;
+    max-width: 84vw;
+  }
+
+  [data-track] {
+    gap: 22px !important;
+    scroll-padding-left: 6vw;
+  }
+
+  /* ----------------------------------------------------------------------
+     FAQ
+     ---------------------------------------------------------------------- */
+
+  .acc-head {
+    gap: 12px;
+  }
+
+  .acc-head h3 {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .acc-body p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ----------------------------------------------------------------------
+     Footer
+     ---------------------------------------------------------------------- */
+
+  footer.site-footer {
+    padding: 70px 0 25px;
+  }
+
+  .foot-huge {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+    line-height: 0.92;
+  }
+
+  footer.site-footer .foot-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* ----------------------------------------------------------------------
+     Buttons
+     ---------------------------------------------------------------------- */
+
+  .btn {
+    min-height: 50px;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 22px;
+  }
+
+  .nav-cta,
+  .btn {
+    touch-action: manipulation;
+  }
+
+  /* Marquee */
+  .tagline-marquee .marquee-item {
+    font-size: clamp(1.7rem, 10vw, 3rem) !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   05. SMALL MOBILE — <= 600px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  /* Header / menu */
+  header.site-nav {
+    min-height: 68px;
+  }
+
+  .brand {
+    max-width: 185px;
+  }
+
+  .brand svg {
+    width: 15px;
+    height: 17px;
+  }
+
+  /* Hero */
+  .hero-cinematic {
+    padding-top: 98px;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(2.25rem, 12.8vw, 3.45rem);
+  }
+
+  .hero-character-wrap {
+    min-height: 350px;
+  }
+
+  .hero-character {
+    width: min(80vw, 400px);
+  }
+
+  .hero-cinematic-stats {
+    gap: 10px;
+  }
+
+  .hero-cinematic-stats > div span {
+    font-size: 1rem;
+  }
+
+  .hero-cinematic-stats > div p {
+    font-size: 7px;
+  }
+
+  /* Two-column content */
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:repeat(2,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Generic fixed widths */
+  [style*="width:110px"] {
+    width: 70px !important;
+  }
+
+  [style*="grid-template-columns:110px 1fr"],
+  [style*="grid-template-columns:120px 1fr"],
+  [style*="grid-template-columns:70px 1fr"] {
+    grid-template-columns: 52px 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Large text */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
+  }
+
+  /* Gallery cards */
+  [style*="grid-auto-rows:230px"],
+  [style*="grid-auto-rows:220px"] {
+    grid-auto-rows: 200px !important;
+  }
+
+  /* Location */
+  section[data-nav-theme="dark"] [style*="font-size:clamp(3rem,12vw,9rem)"] {
+    font-size: clamp(3.8rem, 22vw, 7rem) !important;
+  }
+
+  /* Floating tooth watermark */
+  .tooth-watermark {
+    display: none !important;
+  }
+
+  /* Cursor should not interfere with touch */
+  #cursor-dot {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   06. VERY SMALL DEVICES — <= 420px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+  .wrap {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  header.site-nav {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .hero-cinematic-grid {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(2rem, 12.5vw, 3rem);
+  }
+
+  .hero-cinematic-copy > p {
+    font-size: 13px !important;
+  }
+
+  .hero-character-wrap {
+    min-height: 310px;
+  }
+
+  .hero-character {
+    width: 80vw;
+  }
+
+  .hero-cinematic-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .hero-cinematic-stats > div p {
+    max-width: 70px;
+  }
+
+  .h-panel,
+  .h-track .h-panel {
+    flex-basis: 84vw;
+    width: 84vw !important;
+    min-width: 84vw;
+    height: 360px !important;
+  }
+
+  .foot-huge {
+    font-size: clamp(2.15rem, 12vw, 3.4rem);
+  }
+
+  /* Compact mobile highlight cards */
+  section[aria-label="Clinic highlights"] .wrap {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  section[aria-label="Clinic highlights"] .wrap > div {
+    min-height: 88px;
+    padding: 18px 13px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   07. TOUCH DEVICES
+   -------------------------------------------------------------------------- */
+
+@media (hover: none), (pointer: coarse) {
+
+  /* Never let custom cursor / hover transforms hurt mobile usability */
+  #cursor-dot {
+    display: none !important;
+  }
+
+  [data-tilt] {
+    transform: none !important;
+  }
+
+  .hero-character {
+    cursor: default;
+  }
+
+  .btn,
+  .nav-burger,
+  .acc-head,
+  [data-track-prev],
+  [data-track-next] {
+    cursor: pointer;
+  }
+
+  /* Better swipe behavior */
+  .h-track,
+  [data-track] {
+    touch-action: pan-x;
+  }
+
+  /* Keep image cards stable while scrolling */
+  .gal-item:hover img,
+  .doc-card:hover img,
+  [data-reveal-img]:hover img {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   08. REDUCED MOTION — accessibility
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-character,
+  .hero-character-float,
+  .hero-bg,
+  .hero-glow,
+  [data-parallax],
+  [data-reveal-img] img {
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   09. LANDSCAPE PHONES
+   -------------------------------------------------------------------------- */
+
+@media (max-height: 520px) and (orientation: landscape) {
+
+  .hero-cinematic {
+    padding-top: 90px;
+    padding-bottom: 35px;
+  }
+
+  .hero-cinematic-grid {
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(2rem, 7vw, 3.7rem);
+  }
+
+  .hero-character-wrap {
+    min-height: 300px;
+    padding: 0;
+  }
+
+  .hero-character {
+    width: min(42vw, 380px);
+  }
+
+  .hero-cinematic-stats {
+    margin-top: 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. LARGE DESKTOP — preserve cinematic breathing room
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1440px) {
+
+  .hero-cinematic-grid {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .hero-cinematic-heading {
+    font-size: clamp(5rem, 6vw, 6.8rem);
+  }
+
+  .hero-character {
+    width: min(46vw, 760px);
+  }
+
+  .section {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .wrap {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. SAFE IMAGE HEIGHTS
+   -------------------------------------------------------------------------- */
+
+.pin-zoom-img img,
+.gal-item img,
+.doc-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-reveal-img] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Prevent accidental oversized SVGs / decorative elements */
+svg {
+  max-width: 100%;
+}
+
+/* Avoid fixed inline heights causing mobile clipping */
+@media (max-width: 600px) {
+  [style*="height:90vh"] {
+    height: 70vh !important;
+  }
+
+  [style*="height:80vh"] {
+    height: 65vh !important;
+  }
+
+  [style*="height:70vh"] {
+    height: 58vh !important;
+  }
+}
+
+/* ==========================================================================
+   SARAF DENTAL CARE — DOCTOR PROFILE RESPONSIVE OVERRIDE
+   --------------------------------------------------------------------------
+   Page-specific responsive rules. Keep this AFTER the shared responsive rules
+   so the doctor profile remains isolated from the other pages.
+   ========================================================================== */
+
+/* Desktop baseline
+   NOTE: overflow-x is intentionally NOT set on .doctor-page (which is a
+   <body> class) — see the identical note in global.css's html{} rule.
+   Setting overflow on <body> turns it into a CSS scroll container and
+   silently breaks any position:sticky element inside it (this page uses
+   sticky at line ~990 of doctor-profile.css). html already carries the
+   horizontal-overflow guard site-wide, so nothing is lost by removing it
+   here. */
+
+.doctor-page .doctor-hero,
+.doctor-page .doctor-intro,
+.doctor-page .doctor-profile,
+.doctor-page .doctor-credentials,
+.doctor-page .doctor-philosophy,
+.doctor-page .doctor-expertise,
+.doctor-page .doctor-image-story,
+.doctor-page .doctor-patient,
+.doctor-page .doctor-final {
+  overflow: hidden;
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .doctor-page .doctor-hero-content {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .doctor-page .doctor-profile-grid,
+  .doctor-page .doctor-patient-grid {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .doctor-page .doctor-credential-grid {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .doctor-page .doctor-hero {
+    min-height: 700px;
+  }
+
+  .doctor-page .doctor-hero-content {
+    padding: 125px 5vw 40px;
+  }
+
+  .doctor-page .doctor-hero-title h1 {
+    font-size: clamp(4rem, 11vw, 8rem);
+  }
+
+  .doctor-page .doctor-profile-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5vw;
+  }
+
+  .doctor-page .doctor-credential-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-page .doctor-patient-grid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 5vw;
+  }
+
+  .doctor-page .doctor-image-frame {
+    width: 82vw;
+  }
+}
+
+/* Touch / tablet */
+@media (max-width: 900px) {
+  .doctor-page .doctor-hero {
+    height: auto;
+    min-height: 760px;
+  }
+
+  .doctor-page .doctor-hero-content {
+    min-height: 760px;
+    padding: 120px 6vw 38px;
+  }
+
+  .doctor-page .doctor-hero-title h1 {
+    font-size: clamp(3.8rem, 13vw, 7.5rem);
+  }
+
+  .doctor-page .doctor-hero-orbit {
+    width: 90vw;
+    height: 90vw;
+    right: -35vw;
+    top: 25%;
+  }
+
+  .doctor-page .doctor-intro {
+    min-height: auto;
+    padding: 110px 6vw 125px;
+  }
+
+  .doctor-page .doctor-intro h2 {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+  }
+
+  .doctor-page .doctor-intro-copy {
+    margin-top: 65px;
+  }
+
+  .doctor-page .doctor-profile {
+    padding: 110px 0 125px;
+  }
+
+  .doctor-page .doctor-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .doctor-page .doctor-profile-image {
+    width: min(78vw, 650px);
+    margin-left: 6vw;
+  }
+
+  .doctor-page .doctor-profile-content {
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-profile-content h2 {
+    font-size: clamp(3.4rem, 11vw, 6.5rem);
+  }
+
+  .doctor-page .doctor-credentials {
+    padding: 110px 0 125px;
+  }
+
+  .doctor-page .doctor-section-head {
+    padding: 0 6vw;
+    margin-bottom: 65px;
+  }
+
+  .doctor-page .doctor-section-head h2 {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+  }
+
+  .doctor-page .doctor-credential-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-page .doctor-credential {
+    min-height: 420px;
+  }
+
+  .doctor-page .doctor-philosophy {
+    min-height: 760px;
+    padding: 120px 6vw 140px;
+  }
+
+  .doctor-page .doctor-philosophy blockquote {
+    font-size: clamp(3.3rem, 10vw, 7rem);
+  }
+
+  .doctor-page .doctor-philosophy-orbit {
+    width: 90vw;
+    height: 90vw;
+    right: -35vw;
+  }
+
+  .doctor-page .doctor-expertise {
+    padding: 110px 0 125px;
+  }
+
+  .doctor-page .doctor-expertise-row {
+    min-height: 125px;
+  }
+
+  .doctor-page .doctor-expertise-row h3 {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .doctor-page .doctor-image-story {
+    height: 100vh;
+  }
+
+  .doctor-page .doctor-image-frame {
+    width: 88vw;
+    height: 66vh;
+  }
+
+  .doctor-page .doctor-patient {
+    padding: 110px 0 125px;
+  }
+
+  .doctor-page .doctor-patient-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .doctor-page .doctor-patient h2 {
+    padding: 0 6vw;
+    font-size: clamp(3.4rem, 11vw, 6.5rem);
+  }
+
+  .doctor-page .doctor-patient-copy {
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-final {
+    min-height: 760px;
+    padding: 120px 6vw;
+  }
+
+  .doctor-page .doctor-final h2 {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .doctor-page .doctor-hero {
+    min-height: 760px;
+  }
+
+  .doctor-page .doctor-hero-content {
+    min-height: 760px;
+    padding: 105px 6vw 28px;
+  }
+
+  .doctor-page .doctor-hero-top {
+    font-size: 8px;
+  }
+
+  .doctor-page .doctor-hero-top span:last-child {
+    display: none;
+  }
+
+  .doctor-page .doctor-hero-title h1 {
+    font-size: clamp(3.15rem, 16vw, 5.7rem);
+    line-height: 0.78;
+    letter-spacing: -0.085em;
+  }
+
+  .doctor-page .doctor-hero-title h1 i {
+    margin-left: 5vw;
+  }
+
+  .doctor-page .doctor-hero-bottom {
+    display: block;
+  }
+
+  .doctor-page .doctor-hero-bottom p {
+    max-width: 300px;
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .doctor-page .doctor-scroll {
+    margin-top: 28px;
+  }
+
+  .doctor-page .doctor-hero-orbit {
+    width: 115vw;
+    height: 115vw;
+    right: -72vw;
+    top: 24%;
+    opacity: 0.75;
+  }
+
+  .doctor-page .doctor-intro {
+    padding: 90px 6vw 105px;
+  }
+
+  .doctor-page .doctor-intro-top {
+    margin-bottom: 55px;
+  }
+
+  .doctor-page .doctor-intro h2 {
+    font-size: clamp(3rem, 15vw, 5.8rem);
+    line-height: 0.79;
+  }
+
+  .doctor-page .doctor-intro-copy {
+    margin-top: 55px;
+    justify-content: flex-start;
+  }
+
+  .doctor-page .doctor-intro-copy p {
+    font-size: 13px;
+  }
+
+  .doctor-page .doctor-profile {
+    padding: 90px 0 105px;
+  }
+
+  .doctor-page .doctor-profile-grid {
+    gap: 50px;
+  }
+
+  .doctor-page .doctor-profile-image {
+    width: 88vw;
+    margin-left: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .doctor-page .doctor-profile-content {
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-profile-content h2 {
+    margin-top: 30px;
+    font-size: clamp(3rem, 14vw, 5.8rem);
+  }
+
+  .doctor-page .doctor-profile-content p {
+    margin-top: 32px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .doctor-page .doctor-outline-button {
+    width: 100%;
+    margin-top: 38px;
+  }
+
+  .doctor-page .doctor-credentials {
+    padding: 90px 0 105px;
+  }
+
+  .doctor-page .doctor-section-head {
+    padding: 0 6vw;
+    margin-bottom: 50px;
+  }
+
+  .doctor-page .doctor-section-head h2 {
+    margin-top: 25px;
+    font-size: clamp(3rem, 14vw, 5.8rem);
+  }
+
+  .doctor-page .doctor-credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-page .doctor-credential {
+    min-height: 360px;
+    padding: 24px;
+  }
+
+  .doctor-page .doctor-credential strong {
+    margin-top: 50px;
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .doctor-page .doctor-credential h3 {
+    margin-top: 45px;
+    font-size: 22px;
+  }
+
+  .doctor-page .doctor-philosophy {
+    min-height: 680px;
+    padding: 95px 6vw 110px;
+  }
+
+  .doctor-page .doctor-quote-mark {
+    margin-top: 38px;
+    font-size: 4rem;
+  }
+
+  .doctor-page .doctor-philosophy blockquote {
+    margin-top: 30px;
+    font-size: clamp(2.9rem, 14vw, 5.6rem);
+    line-height: 0.8;
+  }
+
+  .doctor-page .doctor-quote-author {
+    margin-top: 60px;
+  }
+
+  .doctor-page .doctor-philosophy-orbit {
+    width: 120vw;
+    height: 120vw;
+    right: -75vw;
+    top: 28%;
+  }
+
+  .doctor-page .doctor-expertise {
+    padding: 90px 0 105px;
+  }
+
+  .doctor-page .doctor-expertise .doctor-section-head {
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-expertise-row {
+    min-height: 105px;
+    grid-template-columns: 34px 1fr 24px;
+    gap: 10px;
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-expertise-row h3 {
+    font-size: clamp(1.55rem, 7.5vw, 2.8rem);
+  }
+
+  .doctor-page .doctor-expertise-row:hover {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .doctor-page .doctor-image-story {
+    height: 100svh;
+  }
+
+  .doctor-page .doctor-image-sticky {
+    height: 100svh;
+  }
+
+  .doctor-page .doctor-image-frame {
+    width: 88vw;
+    height: 68vh;
+    transform: scale(1);
+  }
+
+  .doctor-page .doctor-image-overlay {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .doctor-page .doctor-image-word {
+    left: 7vw;
+    bottom: 8vh;
+    font-size: clamp(1.6rem, 8vw, 3rem);
+  }
+
+  .doctor-page .doctor-patient {
+    padding: 90px 0 110px;
+  }
+
+  .doctor-page .doctor-patient-grid {
+    gap: 50px;
+  }
+
+  .doctor-page .doctor-patient h2 {
+    padding: 0 6vw;
+    font-size: clamp(3rem, 14vw, 5.8rem);
+  }
+
+  .doctor-page .doctor-patient-copy {
+    padding: 0 6vw;
+  }
+
+  .doctor-page .doctor-patient-item {
+    padding: 24px 0;
+  }
+
+  .doctor-page .doctor-patient-item h3 {
+    font-size: 24px;
+  }
+
+  .doctor-page .doctor-final {
+    min-height: 720px;
+    padding: 95px 6vw 110px;
+  }
+
+  .doctor-page .doctor-final h2 {
+    font-size: clamp(3rem, 14vw, 5.8rem);
+  }
+
+  .doctor-page .doctor-final-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+  }
+
+  .doctor-page .doctor-final-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doctor-page .doctor-final-ring {
+    width: 120vw;
+    height: 120vw;
+    right: -75vw;
+    top: 25%;
+  }
+
+  .doctor-page .doctor-final-ring.ring-two {
+    width: 55vw;
+    height: 55vw;
+    right: -5vw;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .doctor-page .doctor-hero-content {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .doctor-page .doctor-hero-title h1 {
+    font-size: clamp(2.85rem, 15.5vw, 4.8rem);
+  }
+
+  .doctor-page .doctor-intro,
+  .doctor-page .doctor-profile-content,
+  .doctor-page .doctor-patient-copy,
+  .doctor-page .doctor-patient h2,
+  .doctor-page .doctor-final {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .doctor-page .doctor-profile-image {
+    width: 90vw;
+  }
+
+  .doctor-page .doctor-section-head,
+  .doctor-page .doctor-expertise .doctor-section-head {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .doctor-page .doctor-intro h2,
+  .doctor-page .doctor-section-head h2,
+  .doctor-page .doctor-profile-content h2,
+  .doctor-page .doctor-philosophy blockquote,
+  .doctor-page .doctor-patient h2,
+  .doctor-page .doctor-final h2 {
+    font-size: clamp(2.8rem, 14.5vw, 5rem);
+  }
+
+  .doctor-page .doctor-credential {
+    min-height: 330px;
+  }
+
+  .doctor-page .doctor-image-frame {
+    width: 90vw;
+    height: 62vh;
+  }
+
+  .doctor-page .doctor-expertise-row {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .doctor-page .doctor-expertise-row:hover {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+/* Touch devices */
+@media (hover: none), (pointer: coarse) {
+  .doctor-page .doctor-credential:hover {
+    transform: none;
+    background: inherit;
+    color: inherit;
+  }
+
+  .doctor-page .doctor-credential:hover p {
+    color: var(--doctor-grey);
+  }
+
+  .doctor-page .doctor-credential:hover::after {
+    transform: scaleX(0);
+  }
+
+  .doctor-page .doctor-outline-button:hover {
+    padding-left: 0;
+  }
+
+  .doctor-page .doctor-outline-button:hover::after {
+    width: 0;
+  }
+
+  .doctor-page .doctor-expertise-row:hover {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .doctor-page .doctor-page .btn:hover {
+    transform: none;
+  }
+
+  .doctor-page .doctor-profile-image:hover img {
+    transform: scale(1.14);
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 520px) and (orientation: landscape) {
+  .doctor-page .doctor-hero {
+    min-height: 620px;
+  }
+
+  .doctor-page .doctor-hero-content {
+    min-height: 620px;
+    padding-top: 90px;
+  }
+
+  .doctor-page .doctor-hero-title h1 {
+    font-size: clamp(2.8rem, 9vw, 5rem);
+  }
+
+  .doctor-page .doctor-hero-orbit {
+    width: 65vw;
+    height: 65vw;
+    right: -20vw;
+  }
+
+  .doctor-page .doctor-image-frame {
+    height: 82vh;     
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .doctor-page .doctor-hero-image img,
+  .doctor-page .doctor-profile-image img,
+  .doctor-page .doctor-image-frame,
+  .doctor-page .doctor-image-frame img,
+  .doctor-page .doctor-hero-orbit,
+  .doctor-page .doctor-philosophy-orbit,
+  .doctor-page .doctor-final-ring {
+    transform: none !important;
+    animation: none !important;
+  }
+}

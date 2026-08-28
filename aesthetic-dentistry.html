@@ -1,0 +1,3350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Aesthetic Dentistry | Saraf Dental Care</title>
+
+  <meta
+    name="description"
+    content="Veneers, whitening and bonding — hand-finished and shade-matched for a result that looks entirely natural."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/responsive.css"
+  >
+
+
+  <style>
+
+    /* ==========================================================
+       AESTHETIC DENTISTRY — CINEMATIC PAGE
+       ========================================================== */
+
+    .aesthetic-page {
+      overflow-x: hidden;
+      background: var(--off-white);
+    }
+
+
+    /* ==========================================================
+       HERO
+       ========================================================== */
+
+    .aesthetic-hero {
+      min-height: 100svh;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding:
+        150px 6vw 70px;
+
+      background:
+        radial-gradient(
+          circle at 76% 40%,
+          rgba(232,135,59,.16),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #f8f3ed 0%,
+          #f3ebe2 55%,
+          #eee2d6 100%
+        );
+    }
+
+
+    .aesthetic-hero-grid {
+      width: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        1.15fr .85fr;
+
+      gap: 60px;
+
+      align-items: end;
+
+      position: relative;
+
+      z-index: 4;
+    }
+
+
+    .aesthetic-hero-title {
+      margin-top: 25px;
+
+      font-size:
+        clamp(4rem, 10vw, 10rem);
+
+      font-weight: 200;
+
+      line-height: .82;
+
+      letter-spacing: -.08em;
+
+      max-width: 1050px;
+    }
+
+
+    .aesthetic-hero-title em {
+      font-style: normal;
+      color: var(--brand-orange);
+    }
+
+
+    .aesthetic-hero-copy {
+      max-width: 450px;
+
+      margin-bottom: 10px;
+
+      color: var(--grey-dark);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+    }
+
+
+    .aesthetic-hero-number {
+      position: absolute;
+
+      right: 6vw;
+      top: 145px;
+
+      font-size: 10px;
+
+      letter-spacing: .2em;
+
+      color: var(--grey-dark);
+
+      z-index: 5;
+    }
+
+
+    /* ==========================================================
+       ORBIT
+       ========================================================== */
+
+    .aesthetic-orbit {
+      position: absolute;
+
+      width:
+        min(62vw, 900px);
+
+      height:
+        min(62vw, 900px);
+
+      right:
+        -18vw;
+
+      top:
+        10%;
+
+      border:
+        1px solid rgba(232,135,59,.6);
+
+      border-radius: 50%;
+
+      transform:
+        rotate(-20deg);
+
+      z-index: 1;
+
+      pointer-events: none;
+    }
+
+
+    .aesthetic-orbit::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 12%;
+
+      border:
+        1px solid rgba(0,0,0,.08);
+
+      border-radius: 50%;
+    }
+
+
+    .aesthetic-orbit::after {
+      content: "";
+
+      position: absolute;
+
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background:
+        var(--brand-orange);
+
+      left: 12%;
+      top: 18%;
+
+      box-shadow:
+        0 0 0 12px rgba(232,135,59,.08),
+        0 0 45px rgba(232,135,59,.5);
+    }
+
+
+    /* ==========================================================
+       HERO GLOW
+       ========================================================== */
+
+    .aesthetic-glow {
+      position: absolute;
+
+      width: 45vw;
+      height: 45vw;
+
+      right: 4vw;
+      top: 25%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,255,255,.9),
+          rgba(232,135,59,.08),
+          transparent 70%
+        );
+
+      filter: blur(5px);
+
+      z-index: 0;
+
+      pointer-events: none;
+    }
+
+
+    /* ==========================================================
+       INTRO
+       ========================================================== */
+
+    .aesthetic-intro {
+      min-height: 95vh;
+
+      display: grid;
+
+      grid-template-columns:
+        .65fr 1.35fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+
+    .aesthetic-intro-number {
+      font-size: 10px;
+
+      letter-spacing: .18em;
+
+      color: var(--grey-dark);
+    }
+
+
+    .aesthetic-intro-title {
+      font-size:
+        clamp(2.7rem, 5.7vw, 6.3rem);
+
+      font-weight: 200;
+
+      line-height: .92;
+
+      letter-spacing: -.06em;
+
+      max-width: 950px;
+    }
+
+
+    .aesthetic-intro-title span {
+      color: var(--brand-orange);
+    }
+
+
+    .aesthetic-intro-copy {
+      max-width: 600px;
+
+      margin-top: 38px;
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      color: var(--grey-dark);
+    }
+
+
+    /* ==========================================================
+       STAT BAR
+       ========================================================== */
+
+    .aesthetic-stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top:
+        1px solid var(--line-light);
+
+      border-bottom:
+        1px solid var(--line-light);
+    }
+
+
+    .aesthetic-stat {
+      padding:
+        60px 40px;
+
+      border-right:
+        1px solid var(--line-light);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .aesthetic-stat:last-child {
+      border-right: 0;
+    }
+
+
+    .aesthetic-stat-number {
+      font-size:
+        clamp(3rem, 6vw, 6rem);
+
+      font-weight: 200;
+
+      letter-spacing: -.07em;
+
+      line-height: 1;
+    }
+
+
+    .aesthetic-stat-number span {
+      color: var(--brand-orange);
+    }
+
+
+    .aesthetic-stat-label {
+      margin-top: 18px;
+
+      font-size: 10px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      color: var(--grey-dark);
+    }
+
+
+    .aesthetic-stat-line {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 2px;
+
+      background:
+        var(--brand-orange);
+
+      transition:
+        width .8s cubic-bezier(.22,1,.36,1);
+    }
+
+
+    .aesthetic-stat:hover
+    .aesthetic-stat-line {
+      width: 100%;
+    }
+
+
+    /* ==========================================================
+       IMAGE + STORY
+       ========================================================== */
+
+    .aesthetic-story {
+      min-height: 100vh;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 8vw;
+
+      align-items: center;
+    }
+
+
+    .aesthetic-story-image {
+      position: relative;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      background: #ddd;
+    }
+
+
+    .aesthetic-story-image img {
+      width: 100%;
+      height: 115%;
+
+      object-fit: cover;
+
+      transform:
+        scale(1.12);
+
+      will-change:
+        transform;
+    }
+
+
+    .aesthetic-story-image::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          140deg,
+          transparent 50%,
+          rgba(232,135,59,.22)
+        );
+
+      pointer-events: none;
+    }
+
+
+    .aesthetic-story-copy h2 {
+      font-size:
+        clamp(2.7rem, 5vw, 5.3rem);
+
+      font-weight: 200;
+
+      line-height: .92;
+
+      letter-spacing: -.06em;
+    }
+
+
+    .aesthetic-story-copy p {
+      max-width: 480px;
+
+      color: var(--grey-dark);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      margin-top: 30px;
+    }
+
+
+    /* ==========================================================
+       WHY IT MATTERS
+       ========================================================== */
+
+    .aesthetic-dark {
+      min-height: 100vh;
+
+      position: relative;
+
+      overflow: hidden;
+
+      display: flex;
+
+      align-items: center;
+    }
+
+
+    .aesthetic-dark-bg {
+      position: absolute;
+
+      font-size:
+        clamp(8rem, 23vw, 27rem);
+
+      font-weight: 200;
+
+      line-height: .7;
+
+      letter-spacing: -.1em;
+
+      color:
+        rgba(255,255,255,.025);
+
+      right: -5vw;
+      bottom: -3vw;
+
+      pointer-events: none;
+    }
+
+
+    .aesthetic-dark-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+
+    .aesthetic-dark-heading {
+      font-size:
+        clamp(3.2rem, 7vw, 8rem);
+
+      font-weight: 200;
+
+      line-height: .88;
+
+      letter-spacing: -.075em;
+
+      margin-top: 30px;
+    }
+
+
+    .aesthetic-dark-heading span {
+      color:
+        var(--brand-orange);
+    }
+
+
+    .aesthetic-dark-small {
+      max-width: 550px;
+
+      margin-top: 45px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color:
+        rgba(255,255,255,.55);
+    }
+
+
+    /* ==========================================================
+       PROCESS
+       ========================================================== */
+
+    .process-section {
+      overflow: hidden;
+    }
+
+
+    .process-title {
+      font-size:
+        clamp(3rem, 7vw, 7rem);
+
+      font-weight: 200;
+
+      line-height: .85;
+
+      letter-spacing: -.075em;
+
+      margin-top: 25px;
+    }
+
+
+    .process-title span {
+      color: var(--brand-orange);
+    }
+
+
+    .process-track-wrap {
+      overflow: hidden;
+
+      margin-top: 90px;
+    }
+
+
+    .process-track {
+      display: flex;
+
+      width: max-content;
+
+      gap: 2px;
+    }
+
+
+    .process-card {
+      width:
+        min(58vw, 650px);
+
+      min-height:
+        460px;
+
+      background:
+        #f3eee8;
+
+      border:
+        1px solid var(--line-light);
+
+      padding:
+        45px;
+
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      overflow: hidden;
+    }
+
+
+    .process-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(232,135,59,.25);
+
+      right: -90px;
+      bottom: -100px;
+
+      transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+    }
+
+
+    .process-card:hover::before {
+      transform:
+        scale(1.5);
+    }
+
+
+    .process-number {
+      font-size:
+        clamp(4rem, 7vw, 7rem);
+
+      font-weight: 200;
+
+      color:
+        rgba(0,0,0,.08);
+
+      line-height: .8;
+    }
+
+
+    .process-card h3 {
+      font-size:
+        clamp(1.8rem, 3vw, 3rem);
+
+      font-weight: 300;
+
+      line-height: 1;
+
+      max-width: 430px;
+    }
+
+
+    .process-card p {
+      color: var(--grey-dark);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      max-width: 430px;
+
+      margin-top: 18px;
+    }
+
+
+    .process-progress {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 0;
+      height: 3px;
+
+      background:
+        var(--brand-orange);
+    }
+
+
+    /* ==========================================================
+       TECHNOLOGY
+       ========================================================== */
+
+    .technology-section {
+      min-height: 100vh;
+
+      display: grid;
+
+      grid-template-columns:
+        1.15fr .85fr;
+
+      gap: 8vw;
+
+      align-items: center;
+    }
+
+
+    .technology-image {
+      height: 75vh;
+
+      min-height: 520px;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    .technology-image img {
+      width: 100%;
+      height: 120%;
+
+      object-fit: cover;
+
+      will-change: transform;
+    }
+
+
+    .technology-copy h2 {
+      font-size:
+        clamp(2.8rem, 5vw, 5.4rem);
+
+      font-weight: 200;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+    }
+
+
+    .technology-copy p {
+      max-width: 450px;
+
+      margin-top: 30px;
+
+      color: var(--grey-dark);
+
+      font-size: 14.5px;
+
+      line-height: 1.9;
+    }
+
+
+    /* ==========================================================
+       BENEFITS
+       ========================================================== */
+
+    .benefits-title {
+      font-size:
+        clamp(3rem, 6vw, 6rem);
+
+      font-weight: 200;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+      margin-top: 25px;
+    }
+
+
+    .benefits-list {
+      max-width: 950px;
+
+      margin-top: 70px;
+    }
+
+
+    .benefit-row {
+      display: grid;
+
+      grid-template-columns:
+        90px 1fr auto;
+
+      align-items: center;
+
+      gap: 30px;
+
+      padding:
+        32px 0;
+
+      border-top:
+        1px solid var(--line-light);
+
+      position: relative;
+
+      transition:
+        padding-left .5s ease;
+    }
+
+
+    .benefit-row:last-child {
+      border-bottom:
+        1px solid var(--line-light);
+    }
+
+
+    .benefit-row:hover {
+      padding-left: 18px;
+    }
+
+
+    .benefit-number {
+      font-size: 11px;
+
+      color: var(--brand-orange);
+
+      letter-spacing: .12em;
+    }
+
+
+    .benefit-row p {
+      font-size:
+        clamp(1.1rem, 2vw, 1.5rem);
+
+      font-weight: 300;
+    }
+
+
+    .benefit-arrow {
+      font-size: 22px;
+
+      transition:
+        transform .4s ease;
+    }
+
+
+    .benefit-row:hover
+    .benefit-arrow {
+      transform:
+        translateX(8px);
+    }
+
+
+    /* ==========================================================
+       CASE STUDY
+       ========================================================== */
+
+    .case-section {
+      min-height: 100vh;
+
+      display: grid;
+
+      grid-template-columns:
+        .95fr 1.05fr;
+
+      gap: 8vw;
+
+      align-items: center;
+    }
+
+
+    .case-image {
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    .case-image img {
+      width: 100%;
+      height: 115%;
+
+      object-fit: cover;
+
+      transition:
+        transform 1.2s cubic-bezier(.22,1,.36,1);
+    }
+
+
+    .case-image:hover img {
+      transform:
+        scale(1.07);
+    }
+
+
+    .case-image::after {
+      content:
+        "CASE 01";
+
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      padding: 9px 13px;
+
+      background:
+        rgba(255,255,255,.9);
+
+      font-size: 9px;
+
+      letter-spacing: .14em;
+    }
+
+
+    .case-copy h2 {
+      font-size:
+        clamp(2.8rem, 5vw, 5rem);
+
+      font-weight: 200;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+      margin-top: 20px;
+    }
+
+
+    .case-copy p {
+      max-width: 480px;
+
+      margin-top: 28px;
+
+      color: var(--grey-dark);
+
+      line-height: 1.9;
+
+      font-size: 14px;
+    }
+
+
+    /* ==========================================================
+       FAQ
+       ========================================================== */
+
+    .faq-section {
+      min-height: 90vh;
+    }
+
+
+    .faq-heading {
+      font-size:
+        clamp(3rem, 6vw, 6rem);
+
+      font-weight: 200;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+      margin-top: 25px;
+    }
+
+
+    .faq-list {
+      max-width: 900px;
+
+      margin-top: 60px;
+    }
+
+
+    .faq-list .acc-row {
+      position: relative;
+
+      transition:
+        background .4s ease;
+    }
+
+
+    .faq-list .acc-row:hover {
+      background:
+        rgba(232,135,59,.035);
+    }
+
+
+    /* ==========================================================
+       FINAL CTA
+       ========================================================== */
+
+    .aesthetic-final {
+      min-height: 90vh;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .aesthetic-final-orbit {
+      position: absolute;
+
+      width: 55vw;
+      height: 55vw;
+
+      right: -20vw;
+      top: 5%;
+
+      border:
+        1px solid rgba(232,135,59,.35);
+
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+
+    .aesthetic-final-orbit::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 15%;
+
+      border:
+        1px solid rgba(255,255,255,.07);
+
+      border-radius: 50%;
+    }
+
+
+    .aesthetic-final-title {
+      color: white;
+
+      font-size:
+        clamp(4rem, 10vw, 10rem);
+
+      font-weight: 200;
+
+      line-height: .8;
+
+      letter-spacing: -.08em;
+
+      max-width: 1100px;
+    }
+
+
+    .aesthetic-final-title span {
+      color:
+        var(--brand-orange);
+    }
+
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+
+    @media (max-width: 900px) {
+
+      .aesthetic-hero {
+        padding:
+          145px 5vw 70px;
+      }
+
+
+      .aesthetic-hero-grid {
+        grid-template-columns:
+          1fr;
+
+        gap: 45px;
+      }
+
+
+      .aesthetic-hero-title {
+        font-size:
+          clamp(3.5rem, 14vw, 7rem);
+      }
+
+
+      .aesthetic-orbit {
+        width: 90vw;
+        height: 90vw;
+
+        right: -35vw;
+      }
+
+
+      .aesthetic-intro,
+      .aesthetic-story,
+      .technology-section,
+      .case-section {
+        grid-template-columns:
+          1fr;
+
+        gap: 55px;
+      }
+
+
+      .aesthetic-stats {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+
+      .aesthetic-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+
+      .aesthetic-stat:nth-child(-n+2) {
+        border-bottom:
+          1px solid var(--line-light);
+      }
+
+
+      .process-card {
+        width:
+          80vw;
+      }
+
+
+      .technology-image {
+        height:
+          65vh;
+
+        min-height:
+          430px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .aesthetic-hero {
+        padding:
+          125px 6vw 60px;
+      }
+
+
+      .aesthetic-hero-title {
+        font-size:
+          clamp(3rem, 15vw, 5.3rem);
+      }
+
+
+      .aesthetic-hero-copy {
+        font-size:
+          14px;
+      }
+
+
+      .aesthetic-stats {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .aesthetic-stat {
+        border-right: 0;
+
+        border-bottom:
+          1px solid var(--line-light);
+      }
+
+
+      .aesthetic-stat:last-child {
+        border-bottom: 0;
+      }
+
+
+      .process-card {
+        width:
+          88vw;
+
+        min-height:
+          410px;
+
+        padding:
+          30px;
+      }
+
+
+      .process-card h3 {
+        font-size:
+          1.8rem;
+      }
+
+
+      .technology-image {
+        height:
+          55vh;
+
+        min-height:
+          360px;
+      }
+
+
+      .benefit-row {
+        grid-template-columns:
+          50px 1fr auto;
+
+        gap:
+          15px;
+      }
+
+
+      .benefit-row:hover {
+        padding-left: 8px;
+      }
+
+
+      .aesthetic-final-title {
+        font-size:
+          clamp(3.6rem, 16vw, 6rem);
+      }
+
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="css/viral-responsive.css">
+  <link rel="stylesheet" href="css/award-motion.css">
+</head>
+
+
+<body class="aesthetic-page">
+
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+
+<div id="preloader">
+
+  <svg
+    class="tooth-mark"
+    width="26"
+    height="29"
+    viewBox="0 0 100 110"
+  >
+    <path
+      d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+    />
+  </svg>
+
+  <div class="pre-mark">
+    SARAF DENTAL CARE
+  </div>
+
+  <div class="pre-sub">
+    AKOLA · MAHARASHTRA
+  </div>
+
+  <div class="pre-bar">
+    <div
+      class="pre-bar-fill"
+      id="pre-bar-fill"
+    ></div>
+  </div>
+
+  <div
+    class="pre-count"
+    id="pre-count"
+  >
+    0%
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     PAGE TRANSITION
+     ============================================================ -->
+
+<div id="page-transition">
+  <span class="pt-label">
+    SARAF
+  </span>
+</div>
+
+
+<!-- ============================================================
+     CURSOR
+     ============================================================ -->
+
+<div id="cursor-dot">
+  <span class="cursor-text"></span>
+</div>
+
+<div id="grain"></div>
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+
+<header class="site-nav">
+
+  <a
+    href="index.html"
+    class="brand"
+    style="
+      flex-direction:row;
+      align-items:center;
+      gap:9px;
+    "
+  >
+
+    <svg
+      class="tooth-mark"
+      width="17"
+      height="19"
+      viewBox="0 0 100 110"
+    >
+      <path
+        d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+      />
+    </svg>
+
+    <span
+      style="
+        display:flex;
+        flex-direction:column;
+      "
+    >
+
+      SARAF
+
+      <span>
+        DENTAL CARE · AKOLA
+      </span>
+
+    </span>
+
+  </a>
+
+
+  <nav class="nav-center">
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="services.html">
+      Services
+    </a>
+
+    <a href="technology.html">
+      Technology
+    </a>
+
+    <a href="doctors.html">
+      Doctors
+    </a>
+
+    <a href="clinic.html">
+      Clinic
+    </a>
+
+    <a href="case-studies.html">
+      Cases
+    </a>
+
+    <a href="blog.html">
+      Blog
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <a
+    href="appointment.html"
+    class="nav-cta"
+  >
+    Book Appointment
+  </a>
+
+
+  <button
+    class="nav-burger"
+    aria-label="Open menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE MENU
+     ============================================================ -->
+
+<div id="mobile-menu">
+
+  <nav class="mm-links">
+
+    <a href="index.html">
+      <span>Home</span>
+    </a>
+
+    <a href="about.html">
+      <span>About</span>
+    </a>
+
+    <a href="services.html">
+      <span>Services</span>
+    </a>
+
+    <a href="technology.html">
+      <span>Technology</span>
+    </a>
+
+    <a href="doctors.html">
+      <span>Doctors</span>
+    </a>
+
+    <a href="clinic.html">
+      <span>Clinic</span>
+    </a>
+
+    <a href="case-studies.html">
+      <span>Cases</span>
+    </a>
+
+    <a href="gallery.html">
+      <span>Gallery</span>
+    </a>
+
+    <a href="blog.html">
+      <span>Blog</span>
+    </a>
+
+    <a href="contact.html">
+      <span>Contact</span>
+    </a>
+
+  </nav>
+
+  <div class="mm-meta">
+
+    <span>
+      Nishant Tower, M.G. Road, Akola 444001
+    </span>
+
+    <span>
+      +91 98230 00000
+    </span>
+
+    <span>
+      care@sarafdentalcare.in
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section
+  class="aesthetic-hero"
+  data-hero
+  data-nav-theme="light"
+>
+
+  <div class="aesthetic-glow"></div>
+
+  <div class="aesthetic-orbit"></div>
+
+
+  <div class="aesthetic-hero-number">
+    01 / AESTHETICS
+  </div>
+
+
+  <div class="aesthetic-hero-grid">
+
+    <div>
+
+      <span
+        class="label"
+        data-hero-fade
+      >
+        Aesthetic Dentistry
+      </span>
+
+
+      <h1 class="aesthetic-hero-title">
+
+        <span class="split-line">
+          <span data-hero-line>
+            A SMILE,
+          </span>
+        </span>
+
+        <span class="split-line">
+          <span data-hero-line>
+            DESIGNED
+          </span>
+        </span>
+
+        <span class="split-line">
+          <span data-hero-line>
+            <em>DELIBERATELY.</em>
+          </span>
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div
+      class="aesthetic-hero-copy"
+      data-hero-fade
+    >
+
+      <p>
+
+        Veneers, whitening and bonding —
+        hand-finished and shade-matched for
+        a result that looks entirely natural.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap aesthetic-intro">
+
+    <div
+      class="aesthetic-intro-number"
+      data-reveal
+    >
+      02 / APPROACH
+    </div>
+
+
+    <div>
+
+      <h2
+        class="aesthetic-intro-title"
+        data-reveal-text
+      >
+
+        Cosmetic improvements planned with
+        the same rigor as
+        <span>
+          clinical treatment.
+        </span>
+
+      </h2>
+
+
+      <p
+        class="aesthetic-intro-copy"
+        data-reveal
+      >
+
+        From subtle whitening to a full veneer
+        set, every aesthetic case begins with
+        digital smile design so you can see the
+        intended result before committing to
+        treatment.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+
+<section class="bg-white">
+
+  <div class="wrap">
+
+    <div
+      class="aesthetic-stats"
+      data-reveal-group
+    >
+
+      <div class="aesthetic-stat">
+
+        <div class="aesthetic-stat-number">
+          01
+        </div>
+
+        <div class="aesthetic-stat-label">
+          Digital preview
+        </div>
+
+        <div class="aesthetic-stat-line"></div>
+
+      </div>
+
+
+      <div class="aesthetic-stat">
+
+        <div class="aesthetic-stat-number">
+          05
+        </div>
+
+        <div class="aesthetic-stat-label">
+          Treatment stages
+        </div>
+
+        <div class="aesthetic-stat-line"></div>
+
+      </div>
+
+
+      <div class="aesthetic-stat">
+
+        <div class="aesthetic-stat-number">
+          100<span>%</span>
+        </div>
+
+        <div class="aesthetic-stat-label">
+          Individual planning
+        </div>
+
+        <div class="aesthetic-stat-line"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     STORY
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap aesthetic-story">
+
+    <div
+      class="aesthetic-story-image"
+      data-reveal-img
+      data-tilt
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1580489944035-8f6b7bf0b0d9?q=80&w=1200&auto=format&fit=crop"
+        alt="Aesthetic dentistry"
+      >
+
+    </div>
+
+
+    <div
+      class="aesthetic-story-copy"
+      data-reveal
+    >
+
+      <span class="label">
+        03 / THE RESULT
+      </span>
+
+
+      <h2>
+
+        Natural should
+        never mean
+        <span
+          style="color:var(--brand-orange);"
+        >
+          ordinary.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Aesthetic dentistry is not simply
+        about making teeth brighter or
+        straighter.
+
+      </p>
+
+
+      <p>
+
+        It is about understanding shade,
+        proportion, translucency, gum contour
+        and the individual character of a smile.
+
+      </p>
+
+
+      <a
+        href="appointment.html"
+        class="btn btn-dark"
+        style="margin-top:35px;"
+      >
+
+        Discuss Your Smile
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     WHY IT MATTERS
+     ============================================================ -->
+
+<section
+  class="section bg-black aesthetic-dark"
+  data-nav-theme="dark"
+>
+
+  <div class="aesthetic-dark-bg">
+    SMILE
+  </div>
+
+
+  <div class="wrap">
+
+    <div
+      class="aesthetic-dark-content"
+      data-reveal
+    >
+
+      <span class="label on-dark">
+        04 / WHY IT MATTERS
+      </span>
+
+
+      <h2
+        class="aesthetic-dark-heading"
+        data-reveal-text
+      >
+
+        A smile affects confidence
+        in ways that go beyond
+        <span>
+          appearance alone.
+        </span>
+
+      </h2>
+
+
+      <p class="aesthetic-dark-small">
+
+        Done conservatively and well,
+        aesthetic dentistry can be both
+        minimally invasive and long-lasting.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+
+<section class="section bg-off process-section">
+
+  <div class="wrap">
+
+    <span
+      class="label"
+      data-reveal
+    >
+      05 / PROCESS
+    </span>
+
+
+    <h2
+      class="process-title"
+      data-reveal-text
+    >
+
+      HOW TREATMENT
+      <span>
+        UNFOLDS.
+      </span>
+
+    </h2>
+
+  </div>
+
+
+  <div class="process-track-wrap">
+
+    <div
+      class="process-track h-track"
+      data-aesthetic-process
+    >
+
+
+      <article
+        class="process-card h-panel"
+      >
+
+        <div>
+
+          <div class="process-number">
+            01
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Digital smile design
+          </h3>
+
+          <p>
+
+            Your photographs and planned
+            proportions become the foundation
+            for the proposed smile.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-progress"></div>
+
+      </article>
+
+
+      <article
+        class="process-card h-panel"
+      >
+
+        <div>
+
+          <div class="process-number">
+            02
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Shade & material selection
+          </h3>
+
+          <p>
+
+            Shade, translucency and material
+            are selected around your individual
+            smile rather than from a generic
+            catalogue.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-progress"></div>
+
+      </article>
+
+
+      <article
+        class="process-card h-panel"
+      >
+
+        <div>
+
+          <div class="process-number">
+            03
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Preparation
+          </h3>
+
+          <p>
+
+            Preparation is performed only
+            when needed for the selected
+            treatment.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-progress"></div>
+
+      </article>
+
+
+      <article
+        class="process-card h-panel"
+      >
+
+        <div>
+
+          <div class="process-number">
+            04
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Fabrication
+          </h3>
+
+          <p>
+
+            The planned restoration moves
+            into fabrication according to
+            the selected design.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-progress"></div>
+
+      </article>
+
+
+      <article
+        class="process-card h-panel"
+      >
+
+        <div>
+
+          <div class="process-number">
+            05
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Fitting & review
+          </h3>
+
+          <p>
+
+            Final fitting allows the result
+            to be assessed before completing
+            the treatment.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-progress"></div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     TECHNOLOGY
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap technology-section">
+
+
+    <div
+      class="technology-image"
+      data-reveal-img
+      data-tilt
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1400&auto=format&fit=crop"
+        alt="Dental technology"
+      >
+
+    </div>
+
+
+    <div
+      class="technology-copy"
+      data-reveal
+    >
+
+      <span class="label">
+        06 / TECHNOLOGY
+      </span>
+
+
+      <h2>
+
+        See the
+        proposed smile
+        <span
+          style="color:var(--brand-orange);"
+        >
+          before treatment.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Digital smile design software
+        overlays a proposed result onto
+        your own photographs, so expectations
+        are set clearly before any tooth is
+        touched.
+
+      </p>
+
+
+      <a
+        href="technology.html"
+        class="btn btn-dark"
+        style="margin-top:35px;"
+      >
+
+        Explore Technology
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     BENEFITS
+     ============================================================ -->
+
+<section class="section bg-off">
+
+  <div class="wrap">
+
+    <span
+      class="label"
+      data-reveal
+    >
+      07 / BENEFITS
+    </span>
+
+
+    <h2
+      class="benefits-title"
+      data-reveal-text
+    >
+
+      WHAT PATIENTS
+      <span
+        style="color:var(--brand-orange);"
+      >
+        GAIN.
+      </span>
+
+    </h2>
+
+
+    <div
+      class="benefits-list"
+      data-reveal-group
+    >
+
+
+      <div
+        class="benefit-row"
+        data-tilt
+      >
+
+        <span class="benefit-number">
+          01
+        </span>
+
+        <p>
+          Shade-matched results that blend
+          with natural teeth.
+        </p>
+
+        <span class="benefit-arrow">
+          →
+        </span>
+
+      </div>
+
+
+      <div
+        class="benefit-row"
+        data-tilt
+      >
+
+        <span class="benefit-number">
+          02
+        </span>
+
+        <p>
+          Minimally invasive options like
+          bonding and whitening.
+        </p>
+
+        <span class="benefit-arrow">
+          →
+        </span>
+
+      </div>
+
+
+      <div
+        class="benefit-row"
+        data-tilt
+      >
+
+        <span class="benefit-number">
+          03
+        </span>
+
+        <p>
+          Durable porcelain that resists
+          staining over time.
+        </p>
+
+        <span class="benefit-arrow">
+          →
+        </span>
+
+      </div>
+
+
+      <div
+        class="benefit-row"
+        data-tilt
+      >
+
+        <span class="benefit-number">
+          04
+        </span>
+
+        <p>
+          A digital preview before you commit.
+        </p>
+
+        <span class="benefit-arrow">
+          →
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     CASE STUDY
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap case-section">
+
+
+    <div
+      class="case-image"
+      data-reveal-img
+      data-tilt
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1580489944035-8f6b7bf0b0d9?q=80&w=1200&auto=format&fit=crop"
+        alt="Porcelain veneers case"
+      >
+
+    </div>
+
+
+    <div
+      class="case-copy"
+      data-reveal
+    >
+
+      <span class="label">
+        08 / CASE STUDY
+      </span>
+
+
+      <h2>
+        Porcelain
+        <span
+          style="color:var(--brand-orange);"
+        >
+          Veneers.
+        </span>
+      </h2>
+
+
+      <p>
+
+        A ten-unit veneer case corrected
+        uneven shade and minor spacing in
+        three weeks, from consultation to
+        final fit.
+
+      </p>
+
+
+      <a
+        href="case-studies.html"
+        class="btn btn-dark"
+        style="margin-top:30px;"
+      >
+
+        More Case Studies
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+
+<section class="section bg-off faq-section">
+
+  <div class="wrap">
+
+    <span
+      class="label"
+      data-reveal
+    >
+      09 / FAQ
+    </span>
+
+
+    <h2
+      class="faq-heading"
+      data-reveal-text
+    >
+
+      QUESTIONS ABOUT
+      <span
+        style="color:var(--brand-orange);"
+      >
+        YOUR SMILE.
+      </span>
+
+    </h2>
+
+
+    <div
+      class="faq-list"
+      data-reveal-group
+    >
+
+
+      <div class="acc-row open">
+
+        <div class="acc-head">
+
+          <h3>
+
+            <span class="acc-num">
+              01
+            </span>
+
+            Are veneers reversible?
+
+          </h3>
+
+          <span class="acc-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="acc-body">
+
+          <p>
+
+            Traditional veneers require minor
+            enamel removal and are not reversible;
+            no-prep options exist for select cases.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="acc-row">
+
+        <div class="acc-head">
+
+          <h3>
+
+            <span class="acc-num">
+              02
+            </span>
+
+            How long does whitening take?
+
+          </h3>
+
+          <span class="acc-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="acc-body">
+
+          <p>
+
+            In-clinic whitening is typically
+            completed in a single 60–90 minute
+            session.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="acc-row">
+
+        <div class="acc-head">
+
+          <h3>
+
+            <span class="acc-num">
+              03
+            </span>
+
+            Will results look natural?
+
+          </h3>
+
+          <span class="acc-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="acc-body">
+
+          <p>
+
+            Shade and translucency are matched
+            by hand against your surrounding
+            teeth, not selected from a fixed
+            catalogue.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     MARQUEE
+     ============================================================ -->
+
+<section class="section-tight bg-white">
+
+  <div class="marquee-wrap">
+
+    <div
+      class="marquee-track"
+      data-marquee
+    >
+
+      <span class="marquee-item">
+
+        AESTHETICS
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+      <span class="marquee-item">
+
+        PRECISION
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+      <span class="marquee-item">
+
+        NATURAL
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+      <span class="marquee-item">
+
+        AESTHETICS
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+      <span class="marquee-item">
+
+        PRECISION
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+      <span class="marquee-item">
+
+        NATURAL
+
+        <span style="color:var(--brand-orange);">
+          ✦
+        </span>
+
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+
+<section
+  class="section bg-black aesthetic-final"
+  data-nav-theme="dark"
+>
+
+  <div class="aesthetic-final-orbit"></div>
+
+
+  <div class="wrap">
+
+    <span
+      class="label on-dark"
+      data-reveal
+    >
+      10 / GET STARTED
+    </span>
+
+
+    <h2
+      class="aesthetic-final-title"
+      data-reveal-text
+    >
+
+      YOUR NEXT
+      <br>
+
+      <span>
+        SMILE
+      </span>
+
+      STARTS HERE.
+
+    </h2>
+
+
+    <div
+      data-reveal
+      style="
+        display:flex;
+        gap:18px;
+        flex-wrap:wrap;
+        margin-top:55px;
+      "
+    >
+
+      <a
+        href="appointment.html"
+        class="btn btn-light"
+      >
+
+        Book a Consultation
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="
+          border:1px solid rgba(255,255,255,.25);
+        "
+      >
+
+        Contact Clinic
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
+<footer class="site-footer">
+
+  <div class="wrap">
+
+    <div class="foot-huge">
+
+      LET'S TALK
+      <br>
+
+      ABOUT YOUR SMILE.
+
+    </div>
+
+
+    <div
+      style="
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+        margin-bottom:80px;
+      "
+    >
+
+      <a
+        href="appointment.html"
+        class="btn btn-light"
+      >
+
+        Book a Consultation
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="border:1px solid var(--line-dark);"
+      >
+
+        Contact Clinic
+
+      </a>
+
+    </div>
+
+
+    <div class="foot-top">
+
+
+      <div>
+
+        <h4>
+          Saraf Dental Care
+        </h4>
+
+        <p
+          style="
+            max-width:280px;
+            color:rgba(255,255,255,.6);
+            font-size:13.5px;
+            line-height:1.7;
+          "
+        >
+
+          A private implantology and
+          aesthetic dentistry practice
+          in Akola, Maharashtra.
+
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="doctors.html">
+            Doctors
+          </a>
+
+          <a href="technology.html">
+            Technology
+          </a>
+
+          <a href="clinic.html">
+            Clinic
+          </a>
+
+          <a href="gallery.html">
+            Gallery
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Care
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="case-studies.html">
+            Case Studies
+          </a>
+
+          <a href="patient-journey.html">
+            Patient Journey
+          </a>
+
+          <a href="reviews.html">
+            Reviews
+          </a>
+
+          <a href="faq.html">
+            FAQ
+          </a>
+
+          <a href="blog.html">
+            Journal
+          </a>
+
+          <a href="emergency.html">
+            Emergency
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="mailto:care@sarafdentalcare.in">
+            care@sarafdentalcare.in
+          </a>
+
+          <a href="tel:+919823000000">
+            +91 98230 00000
+          </a>
+
+          <a href="location.html">
+            Nishant Tower, M.G. Road, Akola
+          </a>
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="foot-bottom">
+
+      <span>
+        © 2026 Saraf Dental Care
+      </span>
+
+      <span
+        style="
+          display:flex;
+          gap:24px;
+        "
+      >
+
+        <a href="imprint.html">
+          Business Info
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </span>
+
+      <span>
+        Unofficial concept design · Verify
+        contact details & hours with the
+        clinic directly
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ============================================================
+     GSAP
+     ============================================================ -->
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+></script>
+
+
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/page-transition.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+
+<!-- ============================================================
+     PAGE-SPECIFIC CINEMATIC ANIMATION
+     ============================================================ -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    if (
+      typeof gsap === "undefined" ||
+      typeof ScrollTrigger === "undefined"
+    ) return;
+
+
+    gsap.registerPlugin(
+      ScrollTrigger
+    );
+
+
+    const reduced =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    if (reduced) return;
+
+
+    /* ========================================================
+       HERO ORBIT
+       ======================================================== */
+
+    const orbit =
+      document.querySelector(
+        ".aesthetic-orbit"
+      );
+
+
+    if (orbit) {
+
+      gsap.to(
+        orbit,
+        {
+          rotation: 35,
+          y: 180,
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".aesthetic-hero",
+
+            start:
+              "top top",
+
+            end:
+              "bottom top",
+
+            scrub:
+              1.5
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================================
+       HERO GLOW
+       ======================================================== */
+
+    const glow =
+      document.querySelector(
+        ".aesthetic-glow"
+      );
+
+
+    if (glow) {
+
+      gsap.fromTo(
+        glow,
+
+        {
+          opacity: 0,
+          scale: .7
+        },
+
+        {
+          opacity: 1,
+          scale: 1,
+
+          duration: 1.5,
+
+          ease:
+            "power3.out"
+        }
+
+      );
+
+    }
+
+
+    /* ========================================================
+       IMAGE PARALLAX
+       ======================================================== */
+
+    document
+      .querySelectorAll(
+        ".aesthetic-story-image img, .technology-image img, .case-image img"
+      )
+      .forEach(
+        (img) => {
+
+          gsap.to(
+            img,
+            {
+              yPercent: -10,
+
+              ease:
+                "none",
+
+              scrollTrigger: {
+
+                trigger:
+                  img.closest(
+                    ".aesthetic-story-image, .technology-image, .case-image"
+                  ),
+
+                start:
+                  "top bottom",
+
+                end:
+                  "bottom top",
+
+                scrub:
+                  1.2
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ========================================================
+       STAT REVEAL
+       ======================================================== */
+
+    gsap.from(
+      ".aesthetic-stat",
+      {
+        y: 70,
+        opacity: 0,
+
+        duration: .9,
+
+        stagger: .12,
+
+        ease:
+          "power4.out",
+
+        scrollTrigger: {
+
+          trigger:
+            ".aesthetic-stats",
+
+          start:
+            "top 82%",
+
+          once:
+            true
+
+        }
+
+      }
+    );
+
+
+    /* ========================================================
+       PROCESS CARDS
+       ======================================================== */
+
+    const process =
+      document.querySelector(
+        ".process-track"
+      );
+
+
+    if (process) {
+
+      const cards =
+        process.querySelectorAll(
+          ".process-card"
+        );
+
+
+      gsap.from(
+        cards,
+        {
+          y: 80,
+          opacity: 0,
+
+          duration: .9,
+
+          stagger: .1,
+
+          ease:
+            "power4.out",
+
+          scrollTrigger: {
+
+            trigger:
+              ".process-section",
+
+            start:
+              "top 75%",
+
+            once:
+              true
+
+          }
+
+        }
+      );
+
+
+      cards.forEach(
+        (card) => {
+
+          const progress =
+            card.querySelector(
+              ".process-progress"
+            );
+
+
+          if (!progress) return;
+
+
+          gsap.to(
+            progress,
+            {
+              width:
+                "100%",
+
+              ease:
+                "none",
+
+              scrollTrigger: {
+
+                trigger:
+                  card,
+
+                start:
+                  "left 85%",
+
+                end:
+                  "left 35%",
+
+                scrub:
+                  true
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+
+    /* ========================================================
+       BENEFITS
+       ======================================================== */
+
+    gsap.from(
+      ".benefit-row",
+      {
+        x: -80,
+        opacity: 0,
+
+        duration: .8,
+
+        stagger: .12,
+
+        ease:
+          "power4.out",
+
+        scrollTrigger: {
+
+          trigger:
+            ".benefits-list",
+
+          start:
+            "top 80%",
+
+          once:
+            true
+
+        }
+
+      }
+    );
+
+
+    /* ========================================================
+       DARK SECTION TEXT DEPTH
+       ======================================================== */
+
+    const darkBg =
+      document.querySelector(
+        ".aesthetic-dark-bg"
+      );
+
+
+    if (darkBg) {
+
+      gsap.to(
+        darkBg,
+        {
+          x: -180,
+
+          ease:
+            "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".aesthetic-dark",
+
+            start:
+              "top bottom",
+
+            end:
+              "bottom top",
+
+            scrub:
+              2
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================================
+       FINAL ORBIT
+       ======================================================== */
+
+    const finalOrbit =
+      document.querySelector(
+        ".aesthetic-final-orbit"
+      );
+
+
+    if (finalOrbit) {
+
+      gsap.to(
+        finalOrbit,
+        {
+          rotation: 360,
+
+          ease:
+            "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".aesthetic-final",
+
+            start:
+              "top bottom",
+
+            end:
+              "bottom top",
+
+            scrub:
+              2
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ========================================================
+       FAQ
+       ======================================================== */
+
+    document
+      .querySelectorAll(
+        ".faq-list .acc-head"
+      )
+      .forEach(
+        (head) => {
+
+          head.addEventListener(
+            "click",
+            () => {
+
+              const row =
+                head.closest(
+                  ".acc-row"
+                );
+
+
+              document
+                .querySelectorAll(
+                  ".faq-list .acc-row"
+                )
+                .forEach(
+                  (other) => {
+
+                    if (
+                      other !== row
+                    ) {
+                      other.classList.remove(
+                        "open"
+                      );
+                    }
+
+                  }
+                );
+
+
+              row.classList.toggle(
+                "open"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    ScrollTrigger.refresh();
+
+  }
+
+);
+
+</script>
+
+
+  <script src="js/viral-motion.js"></script>
+  <script src="js/award-motion.js"></script>
+</body>
+</html>

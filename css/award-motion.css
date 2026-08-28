@@ -1,0 +1,348 @@
+/* ========================================================================
+   SARAF DENTAL CARE — AWARD MOTION SYSTEM
+   Touch-first cinematic scrolling. No scroll hijacking.
+   Uses CSS individual transforms so existing GSAP transforms stay intact.
+   ======================================================================== */
+
+:root{
+  --award-ease:cubic-bezier(.16,1,.3,1);
+  --award-orange:#e8873b;
+}
+
+html{
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior:auto;
+}
+
+body{
+  --award-progress:0;
+  --award-glow:0;
+}
+
+/* The page itself remains native-scrollable. Effects are layered on top. */
+main,
+.site-main,
+.page,
+.page-shell{
+  isolation:isolate;
+}
+
+/* ------------------------------------------------------------------------
+   Global scroll atmosphere
+   ------------------------------------------------------------------------ */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9996;
+  opacity:calc(.015 + var(--award-glow) * .025);
+  background:radial-gradient(circle at 50% 45%, rgba(232,135,59,.32), transparent 42%);
+  mix-blend-mode:multiply;
+  transition:opacity .25s ease;
+}
+
+/* ------------------------------------------------------------------------
+   Universal scroll reveal — stronger on mobile, but still elegant
+   ------------------------------------------------------------------------ */
+.award-reveal{
+  opacity:0;
+  translate:0 56px;
+  scale:.965;
+  filter:blur(7px);
+  transition:
+    opacity .95s var(--award-ease),
+    translate 1.05s var(--award-ease),
+    scale 1.05s var(--award-ease),
+    filter 1.05s var(--award-ease);
+}
+.award-reveal.award-in{
+  opacity:1;
+  translate:0 0;
+  scale:1;
+  filter:blur(0);
+}
+
+.award-word{
+  display:inline-block;
+  overflow:clip;
+  vertical-align:bottom;
+}
+.award-word > span{
+  display:inline-block;
+  translate:0 115%;
+  opacity:0;
+  transition:translate .9s var(--award-ease), opacity .7s ease;
+}
+.award-word.award-in > span{
+  translate:0 0;
+  opacity:1;
+}
+
+/* ------------------------------------------------------------------------
+   Scroll-linked depth. JS writes --award-p in the range -1..1.
+   Individual transform properties do not overwrite GSAP transform.
+   ------------------------------------------------------------------------ */
+[data-award-depth]{
+  translate:0 calc(var(--award-p,0) * -12px);
+  transition:translate .08s linear;
+  will-change:translate;
+}
+
+[data-award-media]{
+  scale:var(--award-scale,1.045);
+  translate:0 calc(var(--award-p,0) * 20px);
+  will-change:scale,translate;
+}
+
+[data-award-float]{
+  translate:0 calc(var(--award-p,0) * -18px);
+  rotate:calc(var(--award-p,0) * .8deg);
+  will-change:translate,rotate;
+}
+
+/* ------------------------------------------------------------------------
+   Section focus line + halo
+   ------------------------------------------------------------------------ */
+.award-section{
+  --award-section-p:0;
+  position:relative;
+}
+.award-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:clamp(18px,6vw,80px);
+  right:clamp(18px,6vw,80px);
+  height:1px;
+  transform-origin:left;
+  transform:scaleX(var(--award-line,0));
+  background:linear-gradient(90deg,transparent,var(--award-orange),transparent);
+  opacity:.42;
+  pointer-events:none;
+  z-index:5;
+}
+.award-section.award-focus::after{
+  content:"";
+  position:absolute;
+  inset:10% 0 auto;
+  height:50%;
+  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 40%,rgba(232,135,59,.08),transparent 65%);
+  opacity:var(--award-focus,0);
+  z-index:-1;
+}
+
+/* ------------------------------------------------------------------------
+   Hero becomes a scroll-driven composition
+   ------------------------------------------------------------------------ */
+[data-hero-cinematic] [data-award-hero-bg]{
+  scale:calc(1.04 + var(--award-hero-p,0) * .045);
+  translate:0 calc(var(--award-hero-p,0) * 28px);
+  will-change:scale,translate;
+}
+[data-hero-cinematic] [data-award-hero-copy]{
+  translate:0 calc(var(--award-hero-p,0) * -34px);
+  will-change:translate;
+}
+[data-hero-cinematic] [data-award-hero-character]{
+  translate:0 calc(var(--award-hero-p,0) * 48px);
+  rotate:calc(var(--award-hero-p,0) * -2deg);
+  scale:calc(1 + var(--award-hero-p,0) * .035);
+  will-change:translate,rotate,scale;
+}
+
+/* ------------------------------------------------------------------------
+   Cards — scroll spotlight + tactile touch feedback
+   ------------------------------------------------------------------------ */
+[data-award-card]{
+  --card-p:0;
+  position:relative;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transition:box-shadow .55s var(--award-ease),border-color .55s ease;
+}
+[data-award-card]::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  pointer-events:none;
+  background:radial-gradient(circle at calc(50% + var(--card-p) * 20%) 20%,rgba(232,135,59,.18),transparent 35%);
+  opacity:calc(.1 + var(--card-p) * .05);
+  transition:opacity .25s ease;
+}
+[data-award-card].award-card-focus{
+  box-shadow:0 22px 70px rgba(0,0,0,.13);
+}
+
+/* ------------------------------------------------------------------------
+   Image masks: cinematic zoom as the image enters the viewport
+   ------------------------------------------------------------------------ */
+[data-award-media-wrap]{
+  overflow:hidden;
+  clip-path:inset(7% 0 7% 0 round 2px);
+  transition:clip-path 1.15s var(--award-ease);
+}
+[data-award-media-wrap].award-in{clip-path:inset(0 round 2px);}
+[data-award-media-wrap] img,
+[data-award-media-wrap] video{
+  scale:1.12;
+  transition:scale 1.5s var(--award-ease);
+  will-change:scale;
+}
+[data-award-media-wrap].award-in img,
+[data-award-media-wrap].award-in video{scale:1.02;}
+
+/* ------------------------------------------------------------------------
+   Horizontal sections: vertical scroll drives a visual card drift while
+   touch users can still swipe naturally.
+   ------------------------------------------------------------------------ */
+[data-h-scroll] .h-track{
+  --award-track-x:0px;
+  translate:var(--award-track-x) 0;
+  will-change:translate;
+}
+[data-h-scroll] .h-panel,
+[data-h-scroll] .history-card,
+[data-h-scroll] .clinic-room{
+  transition:scale .65s var(--award-ease),opacity .65s ease,filter .65s ease;
+  scale:var(--award-card-scale,1);
+}
+
+/* ------------------------------------------------------------------------
+   Marquees react to page movement
+   ------------------------------------------------------------------------ */
+.marquee-track,
+.ticker-track{
+  will-change:transform;
+}
+
+/* ------------------------------------------------------------------------
+   Progress rail
+   ------------------------------------------------------------------------ */
+#award-scroll-rail{
+  position:fixed;
+  right:9px;
+  top:50%;
+  width:2px;
+  height:92px;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.1);
+  z-index:9998;
+  pointer-events:none;
+  border-radius:99px;
+}
+#award-scroll-rail span{
+  display:block;
+  width:100%;
+  height:100%;
+  transform-origin:top;
+  transform:scaleY(var(--award-rail,0));
+  background:var(--award-orange);
+  border-radius:99px;
+}
+
+/* ------------------------------------------------------------------------
+   Mobile: visible, rich, but never scroll-janky
+   ------------------------------------------------------------------------ */
+@media (max-width:900px){
+  body{
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  #award-scroll-rail{
+    right:5px;
+    width:2px;
+    height:72px;
+    opacity:.72;
+  }
+
+  .award-reveal{
+    translate:0 46px;
+    scale:.97;
+    filter:blur(5px);
+    transition-duration:.72s;
+  }
+
+  [data-award-depth]{
+    translate:0 calc(var(--award-p,0) * -9px);
+  }
+
+  [data-award-media]{
+    scale:var(--award-scale,1.055);
+    translate:0 calc(var(--award-p,0) * 14px);
+  }
+
+  [data-award-float]{
+    translate:0 calc(var(--award-p,0) * -14px);
+  }
+
+  [data-hero-cinematic] [data-award-hero-bg]{
+    scale:calc(1.03 + var(--award-hero-p,0) * .035);
+    translate:0 calc(var(--award-hero-p,0) * 20px);
+  }
+  [data-hero-cinematic] [data-award-hero-copy]{
+    translate:0 calc(var(--award-hero-p,0) * -22px);
+  }
+  [data-hero-cinematic] [data-award-hero-character]{
+    translate:0 calc(var(--award-hero-p,0) * 30px);
+  }
+
+  /* Do not force a horizontal layout wider than the viewport. */
+  [data-h-scroll]{
+    overscroll-behavior-x:contain;
+  }
+  [data-h-scroll] .h-track{
+    will-change:translate,scroll-position;
+  }
+  [data-h-scroll] .h-panel{
+    min-width:min(82vw,430px);
+  }
+
+  /* Mobile-only kinetic title treatment */
+  .award-section h1,
+  .award-section h2,
+  .award-section h3{
+    text-wrap:balance;
+  }
+
+  .award-section.award-focus::after{
+    opacity:.7;
+  }
+}
+
+@media (max-width:560px){
+  .award-section::before{
+    left:14px;
+    right:14px;
+  }
+
+  [data-h-scroll] .h-track{
+    gap:14px !important;
+  }
+
+  [data-h-scroll] .h-panel{
+    min-width:84vw;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  body::after,
+  #award-scroll-rail{display:none;}
+  .award-reveal{
+    opacity:1 !important;
+    translate:none !important;
+    scale:1 !important;
+    filter:none !important;
+  }
+  [data-award-depth],
+  [data-award-media],
+  [data-award-float],
+  [data-hero-cinematic] [data-award-hero-bg],
+  [data-hero-cinematic] [data-award-hero-copy],
+  [data-hero-cinematic] [data-award-hero-character]{
+    translate:none !important;
+    rotate:none !important;
+    scale:1 !important;
+  }
+}

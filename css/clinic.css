@@ -1,0 +1,212 @@
+/* ================================================================
+   SARAF DENTAL CARE
+   CLINIC — CINEMATIC PAGE
+   Page-specific styling
+   ================================================================ */
+
+.clinic-cinematic{
+  --clinic-black:#0a0a09;
+  --clinic-white:#f7f7f4;
+  --clinic-off:#efeee9;
+  --clinic-grey:#77766f;
+  --clinic-orange:#e8873b;
+  --clinic-line:rgba(10,10,9,.14);
+  --clinic-line-dark:rgba(255,255,255,.16);
+}
+
+.clinic-cinematic section{ position:relative; }
+.clinic-cinematic img{ display:block; width:100%; height:100%; object-fit:cover; }
+.clinic-cinematic h1, .clinic-cinematic h2, .clinic-cinematic h3, .clinic-cinematic p{ margin:0; }
+.clinic-cinematic a{ text-decoration:none; }
+
+/* ================================================================
+   01 — HERO
+   ================================================================ */
+
+.clinic-hero{
+  height:100svh; min-height:700px; position:relative; overflow:hidden;
+  background:#111; color:#fff;
+}
+.clinic-hero-media{ position:absolute; inset:0; overflow:hidden; z-index:0; }
+.clinic-hero-media img{ transform:scale(1.18); will-change:transform; }
+.clinic-hero-overlay{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.2) 100%),
+             linear-gradient(0deg, rgba(0,0,0,.6) 0%, transparent 45%);
+  pointer-events:none;
+}
+.clinic-hero-content{
+  position:relative; z-index:2; height:100%; padding:150px 6vw 55px;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.clinic-hero-top{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.65);
+}
+.clinic-scroll-indicator{ display:flex; align-items:center; gap:14px; }
+.clinic-scroll-indicator span{
+  display:block; width:60px; height:1px; background:rgba(255,255,255,.5); position:relative; overflow:hidden;
+}
+.clinic-scroll-indicator span::after{
+  content:""; position:absolute; top:0; left:-24px; width:24px; height:1px; background:#fff;
+  animation:clinicScroll 2s ease-in-out infinite;
+}
+@keyframes clinicScroll{ 0%{ left:-24px; } 100%{ left:100%; } }
+.clinic-hero-title h1{
+  font-size:clamp(3.2rem,8.5vw,8rem); font-weight:200; letter-spacing:-.05em; line-height:.92; text-transform:uppercase;
+  max-width:1100px;
+}
+.clinic-hero-title h1 span{ font-style:italic; font-weight:300; color:var(--clinic-orange); }
+.clinic-hero-bottom{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }
+.clinic-hero-bottom p{ max-width:380px; font-size:14px; line-height:1.8; color:rgba(255,255,255,.72); }
+.clinic-hero-bottom > span{ font-size:10px; letter-spacing:.16em; color:rgba(255,255,255,.5); }
+
+/* ================================================================
+   02 — INTRO STATEMENT
+   ================================================================ */
+
+.clinic-intro{
+  min-height:90vh; padding:150px 6vw; display:grid; grid-template-columns:120px 1fr; gap:40px;
+  align-items:center; background:var(--clinic-off); color:var(--clinic-black);
+}
+.clinic-intro-number{ font-size:12px; color:var(--clinic-grey); letter-spacing:.1em; }
+.clinic-intro-content h2{
+  font-size:clamp(2.4rem,6vw,5.5rem); font-weight:200; letter-spacing:-.04em; line-height:1.02; max-width:900px;
+}
+.clinic-intro-content h2 span{ font-style:italic; font-weight:300; color:var(--clinic-orange); }
+.clinic-intro-copy{ display:flex; flex-direction:column; gap:20px; max-width:460px; margin-top:60px; }
+.clinic-intro-copy p{ font-size:14.5px; line-height:1.85; color:var(--clinic-grey); }
+
+/* ================================================================
+   03 — FULLSCREEN IMAGE ZOOM
+   ================================================================ */
+
+.clinic-zoom-section{ height:100vh; background:#111; }
+.clinic-zoom-pin{ height:100%; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+.clinic-zoom-image{
+  overflow:hidden; position:relative; background:#151515;
+}
+.clinic-zoom-image::after{
+  content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.6)); z-index:1;
+}
+.clinic-zoom-image img{ transform:scale(1.1); }
+.clinic-zoom-caption{
+  position:absolute; z-index:2; left:6vw; bottom:44px; display:flex; align-items:baseline; gap:22px; color:#fff;
+}
+.clinic-zoom-caption span{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+.clinic-zoom-caption strong{ font-size:clamp(1.6rem,3.4vw,2.6rem); font-weight:200; letter-spacing:-.03em; }
+
+/* ================================================================
+   04 — HORIZONTAL CLINIC TOUR
+   ================================================================ */
+
+.clinic-tour{ background:var(--clinic-black); color:#fff; overflow:hidden; padding:120px 0; }
+.clinic-tour-header{ padding:0 6vw; margin-bottom:60px; }
+.clinic-tour-header h2{
+  margin-top:18px; font-size:clamp(2rem,5vw,3.8rem); font-weight:200; letter-spacing:-.03em;
+}
+.clinic-tour-header h2 span{ font-style:italic; color:var(--clinic-orange); }
+.clinic-horizontal{ padding:0 6vw; }
+.clinic-horizontal-track{ display:flex; gap:24px; width:max-content; will-change:transform; }
+.clinic-room{
+  width:min(70vw,460px); flex-shrink:0; border:1px solid var(--clinic-line-dark); background:#141311;
+  overflow:hidden; transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.clinic-room:hover{ transform:translateY(-10px); }
+.clinic-room-image{ aspect-ratio:4/3; overflow:hidden; }
+.clinic-room-image img{ transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+.clinic-room:hover .clinic-room-image img{ transform:scale(1.06); }
+.clinic-room-meta{ display:grid; grid-template-columns:40px 1fr; gap:20px; padding:28px; }
+.clinic-room-meta > span{ font-size:11px; color:var(--clinic-grey); }
+.clinic-room-meta small{ font-size:10px; letter-spacing:.16em; color:var(--clinic-orange); }
+.clinic-room-meta h3{ margin-top:12px; font-size:1.5rem; font-weight:300; letter-spacing:-.02em; }
+.clinic-room-meta p{ margin-top:12px; font-size:13px; line-height:1.7; color:rgba(255,255,255,.55); max-width:280px; }
+
+/* ================================================================
+   05 — LARGE TYPOGRAPHY
+   ================================================================ */
+
+.clinic-philosophy{
+  min-height:70vh; display:flex; align-items:center; padding:150px 6vw; position:relative; overflow:hidden;
+  background:#080808; color:#fff;
+}
+.clinic-philosophy-bg{
+  position:absolute; inset:0; background:radial-gradient(circle at 75% 30%, rgba(232,135,59,.12), transparent 45%);
+}
+.clinic-philosophy-content{ position:relative; z-index:1; }
+.clinic-philosophy-content h2{
+  margin-top:20px; font-size:clamp(2.6rem,7vw,6.5rem); font-weight:200; letter-spacing:-.04em; line-height:.98;
+}
+.clinic-philosophy-content h2 span{ font-style:italic; font-weight:300; color:var(--clinic-orange); }
+
+/* ================================================================
+   06 — CLINIC FEATURES
+   ================================================================ */
+
+.clinic-features{ padding:150px 6vw; background:var(--clinic-off); }
+.clinic-features-header{ margin-bottom:70px; max-width:800px; }
+.clinic-features-header h2{
+  margin-top:18px; font-size:clamp(2rem,5vw,3.6rem); font-weight:200; letter-spacing:-.03em; line-height:1.05;
+}
+.clinic-features-header h2 span{ font-style:italic; color:var(--clinic-orange); }
+.clinic-feature-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--clinic-line); border-top:1px solid var(--clinic-line); }
+.clinic-feature{ background:var(--clinic-off); padding:40px; display:grid; grid-template-columns:50px 1fr; gap:20px; transition:background .35s ease; }
+.clinic-feature:hover{ background:#fff; }
+.clinic-feature > span{ font-size:11px; color:var(--clinic-grey); }
+.clinic-feature h3{ font-size:1.2rem; font-weight:500; letter-spacing:-.01em; }
+.clinic-feature p{ margin-top:12px; font-size:13.5px; line-height:1.7; color:var(--clinic-grey); }
+
+/* ================================================================
+   07 — STATISTICS
+   ================================================================ */
+
+.clinic-stats{ padding:140px 6vw; background:var(--clinic-black); color:#fff; }
+.clinic-stats-intro{ max-width:520px; margin-bottom:70px; }
+.clinic-stats-intro p{ margin-top:18px; font-size:15px; line-height:1.8; color:rgba(255,255,255,.6); }
+.clinic-stat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.clinic-stat{ border-top:1px solid var(--clinic-line-dark); padding-top:24px; }
+.clinic-stat strong{ display:block; font-size:clamp(2.8rem,6vw,4.5rem); font-weight:200; letter-spacing:-.03em; color:var(--clinic-orange); font-variant-numeric:tabular-nums; }
+.clinic-stat span{ display:block; margin-top:12px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+
+/* ================================================================
+   08 — FINAL CINEMATIC CTA
+   ================================================================ */
+
+.clinic-final{ height:90vh; min-height:600px; position:relative; overflow:hidden; }
+.clinic-final-image{ position:absolute; inset:0; }
+.clinic-final-image img{ transform:scale(1.06); }
+.clinic-final-overlay{ position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,8,8,.85), rgba(8,8,8,.35) 60%); }
+.clinic-final-content{
+  position:relative; z-index:1; height:100%; display:flex; flex-direction:column; justify-content:center;
+  padding:0 6vw; color:#fff;
+}
+.clinic-final-content h2{
+  margin-top:20px; font-size:clamp(2.4rem,6.5vw,5.5rem); font-weight:200; letter-spacing:-.04em; line-height:1;
+}
+.clinic-final-content h2 span{ font-style:italic; color:var(--clinic-orange); }
+.clinic-final-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-top:44px; }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+@media (max-width:900px){
+  .clinic-intro{ grid-template-columns:1fr; gap:20px; padding:110px 6vw; min-height:auto; }
+  .clinic-hero-bottom{ flex-direction:column; align-items:flex-start; gap:24px; }
+  .clinic-feature-list{ grid-template-columns:1fr; }
+  .clinic-stat-grid{ grid-template-columns:1fr; gap:32px; }
+  .clinic-room{ width:82vw; }
+  .clinic-tour{ padding:90px 0; }
+}
+@media (max-width:600px){
+  .clinic-hero{ min-height:640px; }
+  .clinic-hero-content{ padding:120px 6vw 40px; }
+  .clinic-final{ height:auto; min-height:560px; padding:70px 0; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .clinic-cinematic *, .clinic-cinematic *::before, .clinic-cinematic *::after{
+    animation-duration:.001ms !important; transition-duration:.001ms !important;
+  }
+  .clinic-hero-media img, .clinic-zoom-image img, .clinic-final-image img{ transform:none !important; }
+}

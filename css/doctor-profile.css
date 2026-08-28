@@ -1,0 +1,1847 @@
+/* ================================================================
+   SARAF DENTAL CARE
+   DOCTOR PROFILE — CINEMATIC EDITORIAL SYSTEM
+   Page-specific CSS
+   ================================================================ */
+
+
+/* ================================================================
+   PAGE BASE
+   ================================================================ */
+
+.doctor-page{
+  --dp-black:#090909;
+  --dp-white:#f8f8f5;
+  --dp-off:#efeee9;
+  --dp-grey:#77766f;
+  --dp-grey-light:#aaa9a2;
+  --dp-orange:#e8873b;
+  --dp-line:rgba(10,10,9,.13);
+  --dp-line-dark:rgba(255,255,255,.15);
+
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  background:var(--dp-off);
+  color:var(--dp-black);
+}
+
+.doctor-page section{
+  position:relative;
+  overflow:hidden;
+}
+
+.doctor-page img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.doctor-page h1,
+.doctor-page h2,
+.doctor-page h3,
+.doctor-page p{
+  margin:0;
+}
+
+.doctor-page a{
+  text-decoration:none;
+}
+
+.doctor-page .wrap{
+  position:relative;
+  z-index:2;
+}
+
+
+/* ================================================================
+   LABELS
+   ================================================================ */
+
+.doctor-page .label{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:9px;
+  line-height:1;
+
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.doctor-page .label::before{
+  content:"";
+
+  width:30px;
+  height:1px;
+
+  background:currentColor;
+}
+
+.doctor-page .on-dark{
+  color:rgba(255,255,255,.68);
+}
+
+
+/* ================================================================
+   01 — HERO
+   ================================================================ */
+
+.doctor-hero{
+  height:100svh;
+  min-height:700px;
+
+  position:relative;
+
+  background:#111;
+  color:#fff;
+
+  isolation:isolate;
+}
+
+
+/* image */
+
+.doctor-hero-image{
+  position:absolute;
+  inset:0;
+
+  overflow:hidden;
+
+  z-index:0;
+}
+
+.doctor-hero-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transform:scale(1.18);
+
+  will-change:transform;
+}
+
+
+/* cinematic overlay */
+
+.doctor-hero-shade{
+  position:absolute;
+  inset:0;
+
+  z-index:1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.38) 48%,
+      rgba(0,0,0,.18) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.72) 0%,
+      transparent 45%
+    );
+
+  pointer-events:none;
+}
+
+
+/* content */
+
+.doctor-hero-content{
+  position:relative;
+
+  z-index:3;
+
+  width:100%;
+  height:100%;
+
+  padding:
+    145px
+    6vw
+    50px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+
+/* top */
+
+.doctor-hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:9px;
+
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.55);
+}
+
+
+/* title */
+
+.doctor-hero-title{
+  position:relative;
+}
+
+.doctor-hero-small{
+  display:block;
+
+  margin-bottom:28px;
+
+  font-size:10px;
+
+  letter-spacing:.2em;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.62);
+}
+
+.doctor-hero-title h1{
+  font-size:
+    clamp(
+      4.5rem,
+      11vw,
+      12rem
+    );
+
+  line-height:.72;
+
+  letter-spacing:-.085em;
+
+  font-weight:200;
+
+  text-transform:uppercase;
+
+  max-width:1100px;
+}
+
+.doctor-hero-title h1 i{
+  display:inline-block;
+
+  margin-left:10vw;
+
+  font-style:italic;
+
+  font-weight:300;
+
+  color:#fff;
+}
+
+
+/* bottom */
+
+.doctor-hero-bottom{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:flex-end;
+
+  gap:50px;
+}
+
+.doctor-hero-bottom p{
+  max-width:390px;
+
+  font-size:13px;
+
+  line-height:1.85;
+
+  color:rgba(255,255,255,.68);
+}
+
+.doctor-scroll{
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  font-size:9px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.72);
+}
+
+.doctor-scroll i{
+  display:block;
+
+  width:75px;
+  height:1px;
+
+  background:rgba(255,255,255,.5);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.doctor-scroll i::after{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-35px;
+
+  width:35px;
+  height:1px;
+
+  background:#fff;
+
+  animation:
+    doctorScrollLine
+    2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes doctorScrollLine{
+
+  0%{
+    left:-35px;
+  }
+
+  100%{
+    left:100%;
+  }
+
+}
+
+
+/* ================================================================
+   02 — INTRO
+   ================================================================ */
+
+.doctor-intro{
+  min-height:100vh;
+
+  padding:
+    160px
+    6vw;
+
+  display:flex;
+  align-items:center;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255,255,255,.9),
+      transparent 35%
+    ),
+    var(--dp-off);
+}
+
+.doctor-intro .wrap{
+  width:100%;
+}
+
+.doctor-intro-top{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:100px;
+}
+
+.doctor-intro-top > span:last-child{
+  font-size:10px;
+
+  color:var(--dp-grey);
+
+  letter-spacing:.15em;
+}
+
+.doctor-intro h2{
+  font-size:
+    clamp(
+      4.2rem,
+      10vw,
+      11rem
+    );
+
+  line-height:.77;
+
+  letter-spacing:-.085em;
+
+  font-weight:200;
+
+  max-width:1250px;
+}
+
+.doctor-intro h2 span{
+  font-style:italic;
+
+  font-weight:300;
+
+  margin-left:8vw;
+}
+
+.doctor-intro-copy{
+  display:flex;
+
+  justify-content:flex-end;
+
+  margin-top:100px;
+}
+
+.doctor-intro-copy p{
+  max-width:430px;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  color:var(--dp-grey);
+}
+
+
+/* ================================================================
+   03 — PROFILE
+   ================================================================ */
+
+.doctor-profile{
+  padding:
+    150px
+    0;
+
+  background:#fff;
+}
+
+.doctor-profile-grid{
+  display:grid;
+
+  grid-template-columns:
+    .92fr
+    1.08fr;
+
+  gap:8vw;
+
+  align-items:center;
+}
+
+.doctor-profile-image{
+  aspect-ratio:4 / 5;
+
+  overflow:hidden;
+
+  position:relative;
+
+  background:#ddd;
+}
+
+.doctor-profile-image::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 65%,
+      rgba(0,0,0,.25)
+    );
+
+  pointer-events:none;
+}
+
+.doctor-profile-image img{
+  transform:scale(1.15);
+
+  will-change:transform;
+
+  transition:
+    transform 1.2s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.doctor-profile-image:hover img{
+  transform:scale(1.04);
+}
+
+.doctor-profile-content{
+  padding-right:3vw;
+}
+
+.doctor-profile-content h2{
+  margin-top:45px;
+
+  font-size:
+    clamp(
+      3.5rem,
+      6.5vw,
+      7rem
+    );
+
+  line-height:.79;
+
+  letter-spacing:-.075em;
+
+  font-weight:200;
+}
+
+.doctor-profile-content h2 span{
+  font-style:italic;
+
+  font-weight:300;
+
+  margin-left:4vw;
+}
+
+.doctor-profile-content p{
+  max-width:500px;
+
+  margin-top:50px;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  color:var(--dp-grey);
+}
+
+.doctor-profile-content p + p{
+  margin-top:20px;
+}
+
+
+/* outline button */
+
+.doctor-outline-button{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:50px;
+
+  margin-top:50px;
+
+  padding:17px 0;
+
+  min-width:280px;
+
+  border-bottom:1px solid var(--dp-black);
+
+  color:var(--dp-black);
+
+  font-size:9px;
+
+  letter-spacing:.16em;
+
+  text-transform:uppercase;
+
+  transition:
+    gap .5s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.doctor-outline-button span{
+  font-size:20px;
+
+  font-weight:200;
+
+  transition:
+    transform .5s ease;
+}
+
+.doctor-outline-button:hover{
+  gap:75px;
+}
+
+.doctor-outline-button:hover span{
+  transform:translateX(5px);
+}
+
+
+/* ================================================================
+   04 — CREDENTIALS
+   ================================================================ */
+
+.doctor-credentials{
+  padding:
+    160px
+    0
+    180px;
+
+  background:#f5f4ef;
+}
+
+.doctor-section-head{
+  margin-bottom:100px;
+}
+
+.doctor-section-head h2{
+  margin-top:35px;
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      9rem
+    );
+
+  line-height:.77;
+
+  letter-spacing:-.08em;
+
+  font-weight:200;
+}
+
+.doctor-section-head h2 span{
+  display:block;
+
+  margin-left:9vw;
+
+  font-style:italic;
+
+  font-weight:300;
+}
+
+
+/* grid */
+
+.doctor-credential-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  border-top:1px solid var(--dp-line);
+  border-left:1px solid var(--dp-line);
+}
+
+.doctor-credential{
+  min-height:500px;
+
+  padding:30px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-right:1px solid var(--dp-line);
+  border-bottom:1px solid var(--dp-line);
+
+  transform-style:preserve-3d;
+
+  transition:
+    background .55s ease,
+    color .55s ease,
+    transform .55s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.doctor-credential::before{
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+  height:280px;
+
+  right:-140px;
+  bottom:-140px;
+
+  border:1px solid var(--dp-line);
+
+  border-radius:50%;
+
+  transition:
+    transform .8s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.doctor-credential:hover{
+  background:var(--dp-black);
+
+  color:#fff;
+
+  transform:translateY(-12px);
+}
+
+.doctor-credential:hover::before{
+  transform:scale(2);
+}
+
+.doctor-credential > span{
+  font-size:9px;
+
+  letter-spacing:.16em;
+
+  color:var(--dp-grey);
+}
+
+.doctor-credential strong{
+  display:block;
+
+  margin-top:75px;
+
+  font-size:60px;
+
+  line-height:.8;
+
+  font-weight:200;
+
+  letter-spacing:-.07em;
+}
+
+.doctor-credential h3{
+  margin-top:65px;
+
+  font-size:25px;
+
+  line-height:1;
+
+  font-weight:300;
+
+  letter-spacing:-.04em;
+}
+
+.doctor-credential p{
+  max-width:240px;
+
+  margin-top:22px;
+
+  font-size:12px;
+
+  line-height:1.8;
+
+  color:var(--dp-grey);
+}
+
+.doctor-credential:hover p{
+  color:rgba(255,255,255,.58);
+}
+
+.doctor-credential b{
+  position:absolute;
+
+  right:30px;
+  bottom:30px;
+
+  font-size:22px;
+
+  font-weight:200;
+
+  transition:
+    transform .5s ease;
+}
+
+.doctor-credential:hover b{
+  transform:
+    translate(5px,-5px);
+}
+
+
+/* ================================================================
+   05 — PHILOSOPHY
+   ================================================================ */
+
+.doctor-philosophy{
+  min-height:100vh;
+
+  padding:
+    170px
+    6vw;
+
+  display:flex;
+
+  align-items:center;
+
+  background:#080808;
+
+  color:#fff;
+}
+
+.doctor-philosophy .wrap{
+  width:100%;
+}
+
+.doctor-quote-mark{
+  margin-top:60px;
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      9rem
+    );
+
+  line-height:.5;
+
+  font-weight:200;
+
+  color:rgba(255,255,255,.25);
+}
+
+.doctor-philosophy blockquote{
+  margin:45px 0 0;
+
+  max-width:1250px;
+
+  font-size:
+    clamp(
+      3.5rem,
+      8.7vw,
+      9.5rem
+    );
+
+  line-height:.78;
+
+  letter-spacing:-.08em;
+
+  font-weight:200;
+}
+
+.doctor-philosophy blockquote span{
+  font-style:italic;
+
+  font-weight:300;
+
+  margin-left:7vw;
+}
+
+.doctor-quote-author{
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-top:90px;
+
+  font-size:9px;
+
+  letter-spacing:.18em;
+
+  color:rgba(255,255,255,.55);
+}
+
+.doctor-quote-author span{
+  width:35px;
+  height:1px;
+
+  background:rgba(255,255,255,.4);
+}
+
+
+/* orbit */
+
+.doctor-philosophy-orbit{
+  position:absolute;
+
+  width:55vw;
+  height:55vw;
+
+  max-width:800px;
+  max-height:800px;
+
+  right:-22vw;
+  top:10%;
+
+  border:1px solid rgba(255,255,255,.09);
+
+  border-radius:50%;
+
+  pointer-events:none;
+}
+
+.doctor-philosophy-orbit::before{
+  content:"";
+
+  position:absolute;
+
+  inset:15%;
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:50%;
+}
+
+.doctor-philosophy-orbit::after{
+  content:"";
+
+  position:absolute;
+
+  inset:32%;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  border-radius:50%;
+}
+
+
+/* ================================================================
+   06 — EXPERTISE
+   ================================================================ */
+
+.doctor-expertise{
+  padding:
+    160px
+    0
+    180px;
+
+  background:#fff;
+}
+
+.doctor-expertise-list{
+  border-top:1px solid var(--dp-line);
+}
+
+.doctor-expertise-row{
+  min-height:145px;
+
+  display:grid;
+
+  grid-template-columns:
+    70px
+    1fr
+    50px;
+
+  align-items:center;
+
+  gap:30px;
+
+  padding:
+    0 10px;
+
+  border-bottom:1px solid var(--dp-line);
+
+  color:var(--dp-black);
+
+  transition:
+    padding .55s
+    cubic-bezier(.2,.7,.2,1),
+    background .4s ease;
+}
+
+.doctor-expertise-row > span{
+  font-size:9px;
+
+  color:var(--dp-grey);
+
+  letter-spacing:.15em;
+}
+
+.doctor-expertise-row h3{
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      4.5rem
+    );
+
+  font-weight:200;
+
+  letter-spacing:-.055em;
+
+  line-height:.9;
+}
+
+.doctor-expertise-row b{
+  font-size:24px;
+
+  font-weight:200;
+
+  transition:
+    transform .45s ease;
+}
+
+.doctor-expertise-row:hover{
+  padding-left:35px;
+  padding-right:35px;
+
+  background:#f1f0eb;
+}
+
+.doctor-expertise-row:hover b{
+  transform:
+    translateX(8px);
+}
+
+
+/* ================================================================
+   07 — IMAGE STORY
+   ================================================================ */
+
+.doctor-image-story{
+  height:125vh;
+
+  background:#080808;
+}
+
+.doctor-image-sticky{
+  position:sticky;
+
+  top:0;
+
+  height:100vh;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+
+.doctor-image-frame{
+  position:relative;
+
+  width:76vw;
+  height:72vh;
+
+  max-width:1350px;
+
+  overflow:hidden;
+
+  background:#111;
+}
+
+.doctor-image-frame::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.65),
+      transparent 60%
+    );
+
+  pointer-events:none;
+}
+
+.doctor-image-frame img{
+  transform:scale(1.12);
+
+  will-change:transform;
+}
+
+.doctor-image-overlay{
+  position:absolute;
+
+  z-index:2;
+
+  left:30px;
+  right:30px;
+  bottom:25px;
+
+  display:flex;
+
+  justify-content:space-between;
+  align-items:flex-end;
+
+  color:#fff;
+
+  font-size:9px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+}
+
+.doctor-image-overlay strong{
+  font-size:10px;
+
+  font-weight:400;
+}
+
+
+/* floating typography */
+
+.doctor-image-word{
+  position:absolute;
+
+  z-index:3;
+
+  left:5vw;
+  bottom:12vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  color:#fff;
+
+  mix-blend-mode:difference;
+
+  pointer-events:none;
+
+  font-size:
+    clamp(
+      2rem,
+      4.5vw,
+      5rem
+    );
+
+  line-height:.8;
+
+  letter-spacing:-.05em;
+
+  font-weight:200;
+}
+
+.doctor-image-word span:nth-child(2){
+  margin-left:7vw;
+
+  font-style:italic;
+
+  font-weight:300;
+}
+
+
+/* ================================================================
+   08 — PATIENT EXPERIENCE
+   ================================================================ */
+
+.doctor-patient{
+  padding:
+    170px
+    0;
+
+  background:#e8e7e2;
+}
+
+.doctor-patient-grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    .8fr;
+
+  gap:9vw;
+}
+
+.doctor-patient h2{
+  margin-top:40px;
+
+  font-size:
+    clamp(
+      4rem,
+      7.5vw,
+      8rem
+    );
+
+  line-height:.78;
+
+  letter-spacing:-.08em;
+
+  font-weight:200;
+}
+
+.doctor-patient h2 span{
+  display:block;
+
+  margin-left:7vw;
+
+  font-style:italic;
+
+  font-weight:300;
+}
+
+.doctor-patient-copy{
+  padding-top:90px;
+}
+
+.doctor-patient-item{
+  padding:
+    30px
+    0;
+
+  border-top:1px solid var(--dp-line);
+}
+
+.doctor-patient-item:last-child{
+  border-bottom:1px solid var(--dp-line);
+}
+
+.doctor-patient-item > span{
+  font-size:9px;
+
+  color:var(--dp-grey);
+
+  letter-spacing:.16em;
+}
+
+.doctor-patient-item h3{
+  margin-top:22px;
+
+  font-size:30px;
+
+  font-weight:300;
+
+  letter-spacing:-.04em;
+}
+
+.doctor-patient-item p{
+  max-width:350px;
+
+  margin-top:15px;
+
+  font-size:13px;
+
+  line-height:1.8;
+
+  color:var(--dp-grey);
+}
+
+
+/* ================================================================
+   09 — FINAL CTA
+   ================================================================ */
+
+.doctor-final{
+  min-height:100vh;
+
+  padding:
+    160px
+    6vw;
+
+  display:flex;
+
+  align-items:center;
+
+  overflow:hidden;
+
+  background:#080808;
+
+  color:#fff;
+}
+
+.doctor-final .wrap{
+  width:100%;
+}
+
+.doctor-final h2{
+  margin-top:40px;
+
+  max-width:1250px;
+
+  font-size:
+    clamp(
+      4.2rem,
+      10vw,
+      11rem
+    );
+
+  line-height:.76;
+
+  letter-spacing:-.085em;
+
+  font-weight:200;
+}
+
+.doctor-final h2 span{
+  margin-left:8vw;
+
+  font-style:italic;
+
+  font-weight:300;
+}
+
+.doctor-final-actions{
+  display:flex;
+
+  gap:15px;
+
+  flex-wrap:wrap;
+
+  margin-top:70px;
+}
+
+
+/* CTA rings */
+
+.doctor-final-ring{
+  position:absolute;
+
+  width:60vw;
+  height:60vw;
+
+  max-width:850px;
+  max-height:850px;
+
+  right:-18vw;
+  top:10%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius:50%;
+
+  pointer-events:none;
+}
+
+.doctor-final-ring::before{
+  content:"";
+
+  position:absolute;
+
+  inset:18%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.06);
+
+  border-radius:50%;
+}
+
+.doctor-final-ring::after{
+  content:"";
+
+  position:absolute;
+
+  inset:37%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.05);
+
+  border-radius:50%;
+}
+
+.doctor-final-ring.ring-two{
+  width:30vw;
+  height:30vw;
+
+  right:15vw;
+  top:42%;
+}
+
+
+/* ================================================================
+   BUTTON MOTION
+   ================================================================ */
+
+.doctor-page .btn{
+  position:relative;
+
+  overflow:hidden;
+
+  isolation:isolate;
+
+  transition:
+    transform .4s ease;
+}
+
+.doctor-page .btn::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:-1;
+
+  width:0;
+  height:0;
+
+  left:50%;
+  top:50%;
+
+  border-radius:50%;
+
+  background:var(--dp-orange);
+
+  transform:translate(-50%,-50%);
+
+  transition:
+    width .7s
+    cubic-bezier(.2,.7,.2,1),
+    height .7s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+.doctor-page .btn:hover::before{
+  width:500px;
+  height:500px;
+}
+
+.doctor-page .btn:hover{
+  transform:translateY(-3px);
+}
+
+
+/* ================================================================
+   TABLET
+   ================================================================ */
+
+@media (max-width:1100px){
+
+  .doctor-hero-content{
+    padding:
+      130px
+      5vw
+      40px;
+  }
+
+  .doctor-hero-title h1{
+    font-size:
+      clamp(
+        4rem,
+        12vw,
+        9rem
+      );
+  }
+
+  .doctor-profile-grid{
+    gap:5vw;
+  }
+
+  .doctor-credential-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .doctor-credential{
+    min-height:450px;
+  }
+
+  .doctor-patient-grid{
+    gap:5vw;
+  }
+
+}
+
+
+/* ================================================================
+   MOBILE
+   ================================================================ */
+
+@media (max-width:700px){
+
+  /* HERO */
+
+  .doctor-hero{
+    min-height:720px;
+  }
+
+  .doctor-hero-content{
+    padding:
+      120px
+      6vw
+      30px;
+  }
+
+  .doctor-hero-top > span:last-child{
+    display:none;
+  }
+
+  .doctor-hero-title h1{
+    font-size:
+      clamp(
+        3.7rem,
+        17vw,
+        6.5rem
+      );
+
+    line-height:.78;
+  }
+
+  .doctor-hero-title h1 i{
+    margin-left:7vw;
+  }
+
+  .doctor-hero-bottom{
+    display:block;
+  }
+
+  .doctor-hero-bottom p{
+    max-width:300px;
+  }
+
+  .doctor-scroll{
+    margin-top:35px;
+  }
+
+
+  /* INTRO */
+
+  .doctor-intro{
+    min-height:auto;
+
+    padding:
+      110px
+      6vw
+      130px;
+  }
+
+  .doctor-intro-top{
+    margin-bottom:70px;
+  }
+
+  .doctor-intro h2{
+    font-size:
+      clamp(
+        3.5rem,
+        16vw,
+        6rem
+      );
+  }
+
+  .doctor-intro-copy{
+    margin-top:65px;
+  }
+
+
+  /* PROFILE */
+
+  .doctor-profile{
+    padding:
+      100px
+      0
+      120px;
+  }
+
+  .doctor-profile-grid{
+    grid-template-columns:1fr;
+
+    gap:65px;
+  }
+
+  .doctor-profile-image{
+    width:88vw;
+
+    aspect-ratio:
+      4 / 5;
+  }
+
+  .doctor-profile-content{
+    padding:
+      0
+      6vw;
+  }
+
+  .doctor-profile-content h2{
+    margin-top:35px;
+
+    font-size:
+      clamp(
+        3.4rem,
+        15vw,
+        6rem
+      );
+  }
+
+  .doctor-profile-content p{
+    margin-top:40px;
+  }
+
+  .doctor-outline-button{
+    width:100%;
+
+    min-width:0;
+  }
+
+
+  /* CREDENTIALS */
+
+  .doctor-credentials{
+    padding:
+      110px
+      0
+      120px;
+  }
+
+  .doctor-section-head{
+    padding:
+      0
+      6vw;
+
+    margin-bottom:60px;
+  }
+
+  .doctor-section-head h2{
+    font-size:
+      clamp(
+        3.5rem,
+        15vw,
+        6rem
+      );
+  }
+
+  .doctor-credential-grid{
+    grid-template-columns:1fr;
+  }
+
+  .doctor-credential{
+    min-height:400px;
+
+    padding:28px;
+  }
+
+  .doctor-credential strong{
+    margin-top:65px;
+
+    font-size:54px;
+  }
+
+
+  /* PHILOSOPHY */
+
+  .doctor-philosophy{
+    min-height:auto;
+
+    padding:
+      130px
+      6vw;
+  }
+
+  .doctor-quote-mark{
+    margin-top:50px;
+  }
+
+  .doctor-philosophy blockquote{
+    font-size:
+      clamp(
+        3.3rem,
+        15vw,
+        6rem
+      );
+  }
+
+  .doctor-philosophy blockquote span{
+    margin-left:6vw;
+  }
+
+  .doctor-quote-author{
+    margin-top:65px;
+  }
+
+  .doctor-philosophy-orbit{
+    width:100vw;
+    height:100vw;
+
+    right:-55vw;
+
+    top:30%;
+  }
+
+
+  /* EXPERTISE */
+
+  .doctor-expertise{
+    padding:
+      110px
+      0
+      120px;
+  }
+
+  .doctor-expertise .doctor-section-head{
+    padding:0 6vw;
+  }
+
+  .doctor-expertise-row{
+    min-height:110px;
+
+    grid-template-columns:
+      40px
+      1fr
+      30px;
+
+    gap:15px;
+
+    padding:
+      0 6vw;
+  }
+
+  .doctor-expertise-row:hover{
+    padding-left:8vw;
+    padding-right:8vw;
+  }
+
+  .doctor-expertise-row h3{
+    font-size:
+      clamp(
+        1.7rem,
+        8vw,
+        3rem
+      );
+  }
+
+
+  /* IMAGE STORY */
+
+  .doctor-image-story{
+    height:100vh;
+  }
+
+  .doctor-image-sticky{
+    height:100svh;
+  }
+
+  .doctor-image-frame{
+    width:88vw;
+    height:70vh;
+  }
+
+  .doctor-image-word{
+    left:7vw;
+    bottom:10vh;
+
+    font-size:
+      clamp(
+        1.8rem,
+        8vw,
+        3rem
+      );
+  }
+
+
+  /* PATIENT */
+
+  .doctor-patient{
+    padding:
+      110px
+      0
+      130px;
+  }
+
+  .doctor-patient-grid{
+    grid-template-columns:1fr;
+
+    gap:60px;
+  }
+
+  .doctor-patient h2{
+    padding:
+      0
+      6vw;
+
+    font-size:
+      clamp(
+        3.5rem,
+        15vw,
+        6rem
+      );
+  }
+
+  .doctor-patient-copy{
+    padding:
+      0
+      6vw;
+  }
+
+
+  /* FINAL */
+
+  .doctor-final{
+    min-height:800px;
+
+    padding:
+      110px
+      6vw;
+  }
+
+  .doctor-final h2{
+    font-size:
+      clamp(
+        3.7rem,
+        15vw,
+        6rem
+      );
+  }
+
+  .doctor-final-actions{
+    margin-top:55px;
+  }
+
+  .doctor-final-actions .btn{
+    width:100%;
+
+    justify-content:center;
+  }
+
+  .doctor-final-ring{
+    width:100vw;
+    height:100vw;
+
+    right:-55vw;
+
+    top:30%;
+  }
+
+  .doctor-final-ring.ring-two{
+    width:55vw;
+    height:55vw;
+
+    right:-5vw;
+  }
+
+}
+
+
+/* ================================================================
+   SMALL PHONES
+   ================================================================ */
+
+@media (max-width:420px){
+
+  .doctor-hero-title h1{
+    font-size:3.35rem;
+  }
+
+  .doctor-intro h2,
+  .doctor-section-head h2,
+  .doctor-philosophy blockquote,
+  .doctor-patient h2,
+  .doctor-final h2{
+    font-size:3.3rem;
+  }
+
+  .doctor-credential{
+    min-height:370px;
+  }
+
+  .doctor-credential h3{
+    font-size:23px;
+  }
+
+}
+
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion:reduce){
+
+  .doctor-page *,
+  .doctor-page *::before,
+  .doctor-page *::after{
+
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+
+    transition-duration:.001ms !important;
+
+    scroll-behavior:auto !important;
+  }
+
+  .doctor-hero-image img,
+  .doctor-profile-image img,
+  .doctor-image-frame img{
+
+    transform:none !important;
+  }
+
+}

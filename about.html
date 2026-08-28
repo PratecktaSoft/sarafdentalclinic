@@ -1,0 +1,3006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>About | Saraf Dental Care</title>
+
+  <meta
+    name="description"
+    content="Discover the philosophy, history and clinical approach behind Saraf Dental Care."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/animations.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/responsive.css"
+  >
+
+  <style>
+
+    /* ============================================================
+       ABOUT PAGE — CINEMATIC OVERRIDES
+       ============================================================ */
+
+    .about-page {
+      background: var(--off-white);
+      overflow: hidden;
+    }
+
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+
+    .about-hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 150px 6vw 70px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 80% 25%,
+          rgba(232,135,59,.13),
+          transparent 30%
+        ),
+        var(--off-white);
+    }
+
+    .about-hero-grid {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .about-hero-title {
+      font-size:
+        clamp(4rem, 10vw, 10.5rem);
+
+      font-weight: 200;
+      line-height: .82;
+      letter-spacing: -.075em;
+
+      margin: 25px 0 0;
+
+      max-width: 1000px;
+    }
+
+    .about-hero-title em {
+      color: var(--brand-orange);
+      font-style: normal;
+    }
+
+    .about-hero-description {
+      max-width: 430px;
+
+      font-size: 15px;
+      line-height: 1.9;
+
+      color: var(--grey-dark);
+
+      margin-bottom: 12px;
+    }
+
+    .about-hero-index {
+      position: absolute;
+
+      top: 145px;
+      right: 6vw;
+
+      font-size: 10px;
+      letter-spacing: .2em;
+
+      color: var(--grey-dark);
+    }
+
+
+    /* ============================================================
+       HERO ORBIT
+       ============================================================ */
+
+    .about-orbit {
+      position: absolute;
+
+      width: min(52vw, 760px);
+      height: min(52vw, 760px);
+
+      right: -13vw;
+      top: 16%;
+
+      border: 1px solid rgba(232,135,59,.5);
+
+      border-radius: 50%;
+
+      z-index: 1;
+
+      transform:
+        rotate(-18deg);
+
+      pointer-events: none;
+    }
+
+    .about-orbit::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 14%;
+
+      border: 1px solid rgba(0,0,0,.07);
+
+      border-radius: 50%;
+    }
+
+    .about-orbit::after {
+      content: "";
+
+      position: absolute;
+
+      width: 9px;
+      height: 9px;
+
+      background: var(--brand-orange);
+
+      border-radius: 50%;
+
+      left: 10%;
+      top: 18%;
+
+      box-shadow:
+        0 0 0 10px rgba(232,135,59,.08),
+        0 0 40px rgba(232,135,59,.35);
+    }
+
+
+    /* ============================================================
+       WATERMARK
+       ============================================================ */
+
+    .about-watermark {
+      position: absolute;
+
+      width: 420px;
+      height: 470px;
+
+      right: 5%;
+      bottom: -120px;
+
+      opacity: .035;
+
+      fill: #000;
+
+      z-index: 0;
+
+      pointer-events: none;
+    }
+
+
+    /* ============================================================
+       INTRO
+       ============================================================ */
+
+    .about-intro {
+      min-height: 90vh;
+
+      display: grid;
+
+      grid-template-columns:
+        .7fr 1.3fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .about-intro-number {
+      font-size: 10px;
+
+      letter-spacing: .2em;
+
+      color: var(--grey-dark);
+    }
+
+    .about-intro-heading {
+      font-size:
+        clamp(2.6rem, 5.5vw, 6rem);
+
+      line-height: .94;
+
+      font-weight: 200;
+
+      letter-spacing: -.055em;
+
+      max-width: 900px;
+    }
+
+    .about-intro-heading span {
+      color: var(--brand-orange);
+    }
+
+    .about-intro-copy {
+      margin-top: 38px;
+
+      max-width: 600px;
+
+      color: var(--grey-dark);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+    }
+
+
+    /* ============================================================
+       STATS
+       ============================================================ */
+
+    .about-stats {
+      border-top:
+        1px solid var(--line-light);
+
+      border-bottom:
+        1px solid var(--line-light);
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+    }
+
+    .about-stat {
+      padding:
+        55px 35px;
+
+      border-right:
+        1px solid var(--line-light);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .about-stat:last-child {
+      border-right: 0;
+    }
+
+    .about-stat-number {
+      font-size:
+        clamp(2.7rem, 5vw, 5.5rem);
+
+      font-weight: 200;
+
+      letter-spacing: -.07em;
+
+      line-height: 1;
+    }
+
+    .about-stat-number span {
+      color: var(--brand-orange);
+    }
+
+    .about-stat-label {
+      margin-top: 18px;
+
+      font-size: 10px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      color: var(--grey-dark);
+    }
+
+    .about-stat-line {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--brand-orange);
+
+      transition:
+        width .8s cubic-bezier(.22,1,.36,1);
+    }
+
+    .about-stat:hover
+    .about-stat-line {
+      width: 100%;
+    }
+
+
+    /* ============================================================
+       STORY IMAGE
+       ============================================================ */
+
+    .about-story {
+      min-height: 100vh;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      gap: 8vw;
+
+      align-items: center;
+    }
+
+    .about-story-image {
+      position: relative;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      background: #ddd;
+    }
+
+    .about-story-image img {
+      width: 100%;
+      height: 115%;
+
+      object-fit: cover;
+
+      transform:
+        scale(1.12);
+
+      will-change:
+        transform;
+    }
+
+    .about-story-image::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          transparent 55%,
+          rgba(232,135,59,.18)
+        );
+
+      pointer-events:
+        none;
+    }
+
+    .about-story-copy h2 {
+      font-size:
+        clamp(2.5rem, 5vw, 5rem);
+
+      font-weight: 200;
+
+      line-height: .95;
+
+      letter-spacing: -.055em;
+
+      max-width: 650px;
+    }
+
+    .about-story-copy p {
+      max-width: 500px;
+
+      color: var(--grey-dark);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      margin-top: 30px;
+    }
+
+
+    /* ============================================================
+       TIMELINE
+       ============================================================ */
+
+    .history-section {
+      background: #11110f;
+
+      color: white;
+
+      padding:
+        150px 0;
+
+      overflow: hidden;
+    }
+
+    .history-heading {
+      font-size:
+        clamp(3rem, 8vw, 9rem);
+
+      font-weight: 200;
+
+      line-height: .82;
+
+      letter-spacing: -.075em;
+
+      margin-top: 25px;
+    }
+
+    .history-heading em {
+      color: var(--brand-orange);
+
+      font-style: normal;
+    }
+
+    .history-track-wrap {
+      overflow: hidden;
+
+      margin-top: 100px;
+    }
+
+    .history-track {
+      display: flex;
+
+      width: max-content;
+
+      gap: 2px;
+    }
+
+    .history-card {
+      width:
+        min(68vw, 760px);
+
+      min-height:
+        470px;
+
+      padding:
+        50px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      background:
+        #191917;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      position: relative;
+    }
+
+    .history-card-number {
+      font-size:
+        clamp(4rem, 7vw, 7rem);
+
+      font-weight: 200;
+
+      line-height: .8;
+
+      color:
+        rgba(255,255,255,.12);
+    }
+
+    .history-card-year {
+      font-size:
+        10px;
+
+      letter-spacing:
+        .18em;
+
+      text-transform:
+        uppercase;
+
+      color:
+        rgba(255,255,255,.5);
+    }
+
+    .history-card h3 {
+      font-size:
+        clamp(1.8rem, 3vw, 3.5rem);
+
+      font-weight:
+        300;
+
+      line-height:
+        1;
+
+      max-width:
+        520px;
+    }
+
+    .history-card p {
+      max-width:
+        500px;
+
+      font-size:
+        14px;
+
+      line-height:
+        1.8;
+
+      color:
+        rgba(255,255,255,.55);
+    }
+
+    .history-orange-line {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 4px;
+      height: 0;
+
+      background:
+        var(--brand-orange);
+    }
+
+
+    /* ============================================================
+       PHILOSOPHY
+       ============================================================ */
+
+    .philosophy {
+      min-height:
+        100vh;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+    }
+
+    .philosophy-bg-text {
+      position:
+        absolute;
+
+      font-size:
+        clamp(8rem, 22vw, 25rem);
+
+      font-weight:
+        200;
+
+      letter-spacing:
+        -.1em;
+
+      color:
+        rgba(255,255,255,.025);
+
+      white-space:
+        nowrap;
+
+      left:
+        -4vw;
+
+      bottom:
+        -3vw;
+
+      pointer-events:
+        none;
+    }
+
+    .philosophy-content {
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      max-width:
+        1100px;
+    }
+
+    .philosophy-quote {
+      font-size:
+        clamp(3rem, 7vw, 8rem);
+
+      font-weight:
+        200;
+
+      line-height:
+        .9;
+
+      letter-spacing:
+        -.07em;
+    }
+
+    .philosophy-quote span {
+      color:
+        var(--brand-orange);
+    }
+
+    .philosophy-author {
+      margin-top:
+        50px;
+
+      color:
+        var(--grey);
+
+      font-size:
+        12px;
+
+      letter-spacing:
+        .12em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    /* ============================================================
+       PILLARS
+       ============================================================ */
+
+    .pillars-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        1px;
+
+      background:
+        var(--line-light);
+    }
+
+    .pillar {
+      min-height:
+        420px;
+
+      padding:
+        42px 35px;
+
+      background:
+        var(--off-white);
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      transition:
+        color .5s ease;
+    }
+
+    .pillar::before {
+      content:
+        "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        #11110f;
+
+      transform:
+        translateY(101%);
+
+      transition:
+        transform .7s cubic-bezier(.22,1,.36,1);
+
+      z-index:
+        0;
+    }
+
+    .pillar:hover::before {
+      transform:
+        translateY(0);
+    }
+
+    .pillar > * {
+      position:
+        relative;
+
+      z-index:
+        1;
+    }
+
+    .pillar:hover {
+      color:
+        white;
+    }
+
+    .pillar-index {
+      font-size:
+        11px;
+
+      letter-spacing:
+        .16em;
+
+      color:
+        var(--brand-orange);
+    }
+
+    .pillar h3 {
+      font-size:
+        clamp(1.8rem, 3vw, 3rem);
+
+      font-weight:
+        300;
+
+      line-height:
+        .95;
+
+      margin-top:
+        100px;
+
+      max-width:
+        330px;
+    }
+
+    .pillar p {
+      font-size:
+        13.5px;
+
+      line-height:
+        1.75;
+
+      color:
+        var(--grey-dark);
+
+      margin-top:
+        25px;
+
+      max-width:
+        330px;
+
+      transition:
+        color .5s ease;
+    }
+
+    .pillar:hover p {
+      color:
+        rgba(255,255,255,.6);
+    }
+
+
+    /* ============================================================
+       ENVIRONMENT
+       ============================================================ */
+
+    .environment {
+      min-height:
+        100vh;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.2fr .8fr;
+
+      align-items:
+        center;
+
+      gap:
+        8vw;
+    }
+
+    .environment-image {
+      height:
+        75vh;
+
+      min-height:
+        520px;
+
+      overflow:
+        hidden;
+    }
+
+    .environment-image img {
+      width:
+        100%;
+
+      height:
+        120%;
+
+      object-fit:
+        cover;
+
+      will-change:
+        transform;
+    }
+
+    .environment-copy h2 {
+      font-size:
+        clamp(2.8rem, 5vw, 5.5rem);
+
+      font-weight:
+        200;
+
+      line-height:
+        .9;
+
+      letter-spacing:
+        -.06em;
+    }
+
+    .environment-copy p {
+      color:
+        var(--grey-dark);
+
+      line-height:
+        1.9;
+
+      font-size:
+        14.5px;
+
+      max-width:
+        430px;
+
+      margin-top:
+        30px;
+    }
+
+
+    /* ============================================================
+       MARQUEE
+       ============================================================ */
+
+    .about-marquee {
+      border-top:
+        1px solid var(--line-light);
+
+      border-bottom:
+        1px solid var(--line-light);
+
+      overflow:
+        hidden;
+    }
+
+    .about-marquee-track {
+      display:
+        flex;
+
+      width:
+        max-content;
+
+      animation:
+        aboutMarquee 28s linear infinite;
+    }
+
+    .about-marquee-item {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        40px;
+
+      padding:
+        35px 50px;
+
+      white-space:
+        nowrap;
+
+      font-size:
+        clamp(2rem, 5vw, 5rem);
+
+      font-weight:
+        200;
+
+      letter-spacing:
+        -.05em;
+    }
+
+    .about-marquee-item span {
+      color:
+        var(--brand-orange);
+    }
+
+    @keyframes aboutMarquee {
+
+      from {
+        transform:
+          translateX(0);
+      }
+
+      to {
+        transform:
+          translateX(-50%);
+      }
+
+    }
+
+
+    /* ============================================================
+       CTA
+       ============================================================ */
+
+    .about-final {
+      min-height:
+        90vh;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+    }
+
+    .about-final h2 {
+      font-size:
+        clamp(4rem, 10vw, 11rem);
+
+      font-weight:
+        200;
+
+      line-height:
+        .8;
+
+      letter-spacing:
+        -.08em;
+
+      max-width:
+        1100px;
+    }
+
+    .about-final h2 span {
+      color:
+        var(--brand-orange);
+    }
+
+    .about-final-orbit {
+      position:
+        absolute;
+
+      width:
+        45vw;
+
+      height:
+        45vw;
+
+      right:
+        -15vw;
+
+      top:
+        10%;
+
+      border:
+        1px solid rgba(232,135,59,.35);
+
+      border-radius:
+        50%;
+
+      pointer-events:
+        none;
+    }
+
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+
+    @media (max-width: 900px) {
+
+      .about-hero {
+        min-height:
+          auto;
+
+        padding:
+          150px 5vw 80px;
+      }
+
+      .about-hero-grid {
+        grid-template-columns:
+          1fr;
+
+        gap:
+          50px;
+      }
+
+      .about-hero-title {
+        font-size:
+          clamp(3.5rem, 14vw, 7rem);
+      }
+
+      .about-orbit {
+        width:
+          80vw;
+
+        height:
+          80vw;
+
+        right:
+          -30vw;
+
+        top:
+          15%;
+      }
+
+      .about-intro,
+      .about-story,
+      .environment {
+        grid-template-columns:
+          1fr;
+
+        gap:
+          50px;
+      }
+
+      .about-stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .about-stat:nth-child(2) {
+        border-right:
+          0;
+      }
+
+      .about-stat:nth-child(-n+2) {
+        border-bottom:
+          1px solid var(--line-light);
+      }
+
+      .history-card {
+        width:
+          82vw;
+      }
+
+      .pillars-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+      .pillar {
+        min-height:
+          350px;
+      }
+
+      .environment-image {
+        height:
+          65vh;
+
+        min-height:
+          420px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .about-hero {
+        padding:
+          125px 6vw 60px;
+      }
+
+      .about-hero-title {
+        font-size:
+          clamp(3rem, 15vw, 5rem);
+
+        line-height:
+          .88;
+      }
+
+      .about-hero-description {
+        font-size:
+          14px;
+      }
+
+      .about-watermark {
+        width:
+          220px;
+      }
+
+      .about-intro-heading {
+        font-size:
+          clamp(2.5rem, 12vw, 4rem);
+      }
+
+      .about-stats {
+        grid-template-columns:
+          1fr;
+      }
+
+      .about-stat {
+        border-right:
+          0;
+
+        border-bottom:
+          1px solid var(--line-light);
+      }
+
+      .about-stat:last-child {
+        border-bottom:
+          0;
+      }
+
+      .history-card {
+        width:
+          88vw;
+
+        min-height:
+          430px;
+
+        padding:
+          30px;
+      }
+
+      .history-card h3 {
+        font-size:
+          1.8rem;
+      }
+
+      .philosophy-quote {
+        font-size:
+          clamp(2.8rem, 13vw, 5rem);
+      }
+
+      .environment-image {
+        height:
+          55vh;
+
+        min-height:
+          360px;
+      }
+
+      .about-final h2 {
+        font-size:
+          clamp(3.5rem, 16vw, 6rem);
+      }
+
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="css/viral-responsive.css">
+  <link rel="stylesheet" href="css/award-motion.css">
+</head>
+
+
+<body class="about-page">
+
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+
+<div id="preloader">
+
+  <svg
+    class="tooth-mark"
+    width="26"
+    height="29"
+    viewBox="0 0 100 110"
+  >
+    <path
+      d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+    />
+  </svg>
+
+  <div class="pre-mark">
+    SARAF DENTAL CARE
+  </div>
+
+  <div class="pre-sub">
+    AKOLA · MAHARASHTRA
+  </div>
+
+  <div class="pre-bar">
+    <div
+      class="pre-bar-fill"
+      id="pre-bar-fill"
+    ></div>
+  </div>
+
+  <div
+    class="pre-count"
+    id="pre-count"
+  >
+    0%
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     PAGE TRANSITION
+     ============================================================ -->
+
+<div id="page-transition">
+
+  <div class="pt-layer-2"></div>
+
+  <div class="pt-layer">
+
+    <div class="pt-content">
+
+      <div class="pt-logo">
+        SARAF
+      </div>
+
+      <div class="pt-label">
+        ABOUT · SARAF DENTAL CARE
+      </div>
+
+    </div>
+
+    <div class="pt-progress"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     CUSTOM CURSOR
+     ============================================================ -->
+
+<div id="cursor-dot">
+  <span class="cursor-text"></span>
+</div>
+
+
+<div id="grain"></div>
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+
+<header
+  class="site-nav"
+  data-nav-theme="light"
+>
+
+  <a
+    href="index.html"
+    class="brand"
+    style="
+      flex-direction:row;
+      align-items:center;
+      gap:9px;
+    "
+  >
+
+    <svg
+      class="tooth-mark"
+      width="17"
+      height="19"
+      viewBox="0 0 100 110"
+    >
+      <path
+        d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+      />
+    </svg>
+
+    <span
+      style="
+        display:flex;
+        flex-direction:column;
+      "
+    >
+      SARAF
+
+      <span>
+        DENTAL CARE · AKOLA
+      </span>
+
+    </span>
+
+  </a>
+
+
+  <nav class="nav-center">
+
+    <a
+      href="about.html"
+      class="active"
+    >
+      About
+    </a>
+
+    <a href="services.html">
+      Services
+    </a>
+
+    <a href="technology.html">
+      Technology
+    </a>
+
+    <a href="doctors.html">
+      Doctors
+    </a>
+
+    <a href="clinic.html">
+      Clinic
+    </a>
+
+    <a href="case-studies.html">
+      Cases
+    </a>
+
+    <a href="blog.html">
+      Blog
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <a
+    href="appointment.html"
+    class="nav-cta"
+  >
+    Book Appointment
+  </a>
+
+
+  <button
+    class="nav-burger"
+    aria-label="Open menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE MENU
+     ============================================================ -->
+
+<div id="mobile-menu">
+
+  <nav class="mm-links">
+
+    <a href="index.html">
+      <span>Home</span>
+    </a>
+
+    <a href="about.html">
+      <span>About</span>
+    </a>
+
+    <a href="services.html">
+      <span>Services</span>
+    </a>
+
+    <a href="technology.html">
+      <span>Technology</span>
+    </a>
+
+    <a href="doctors.html">
+      <span>Doctors</span>
+    </a>
+
+    <a href="clinic.html">
+      <span>Clinic</span>
+    </a>
+
+    <a href="case-studies.html">
+      <span>Cases</span>
+    </a>
+
+    <a href="gallery.html">
+      <span>Gallery</span>
+    </a>
+
+    <a href="blog.html">
+      <span>Blog</span>
+    </a>
+
+    <a href="contact.html">
+      <span>Contact</span>
+    </a>
+
+  </nav>
+
+
+  <div class="mm-meta">
+
+    <span>
+      Nishant Tower, M.G. Road, Akola 444001
+    </span>
+
+    <span>
+      +91 98230 00000
+    </span>
+
+    <span>
+      care@sarafdentalcare.in
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section
+  class="about-hero"
+  data-hero
+  data-nav-theme="light"
+>
+
+  <div class="about-orbit"></div>
+
+
+  <svg
+    class="about-watermark"
+    viewBox="0 0 100 110"
+  >
+    <path
+      d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+    />
+  </svg>
+
+
+  <div class="about-hero-index">
+    01 / ABOUT
+  </div>
+
+
+  <div class="about-hero-grid">
+
+    <div>
+
+      <span
+        class="label"
+        data-hero-fade
+      >
+        Saraf Dental Care
+      </span>
+
+
+      <h1 class="about-hero-title">
+
+        <span
+          class="split-line"
+        >
+          <span data-hero-line>
+            BUILT
+          </span>
+        </span>
+
+        <span
+          class="split-line"
+        >
+          <span data-hero-line>
+            AROUND
+          </span>
+        </span>
+
+        <span
+          class="split-line"
+        >
+          <span data-hero-line>
+            <em>PRECISION.</em>
+          </span>
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div
+      class="about-hero-description"
+      data-hero-fade
+    >
+
+      <p>
+
+        Founded by Dr. Shakun Saraf (BDS, MDS),
+        Saraf Dental Care has grown into one of
+        Akola's trusted multi-specialty dental
+        practices.
+
+      </p>
+
+      <p style="margin-top:20px;">
+
+        Our approach combines clinical precision
+        with a calm, comfortable experience for
+        every patient.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap about-intro">
+
+    <div
+      class="about-intro-number"
+      data-reveal
+    >
+      02 / OUR APPROACH
+    </div>
+
+
+    <div>
+
+      <h2
+        class="about-intro-heading"
+        data-reveal-text
+      >
+
+        A decade of
+        <span>
+          narrowing our focus
+        </span>
+        — not widening it.
+
+      </h2>
+
+
+      <p
+        class="about-intro-copy"
+        data-reveal
+      >
+
+        Rather than becoming a general practice,
+        Saraf Dental Care has spent ten years going
+        deeper into implantology, prosthodontics
+        and digital planning — the disciplines where
+        precision compounds into better long-term
+        outcomes.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+
+<section class="bg-white">
+
+  <div class="wrap">
+
+    <div
+      class="about-stats"
+      data-reveal-group
+    >
+
+      <div class="about-stat">
+
+        <div class="about-stat-number">
+          10<span>+</span>
+        </div>
+
+        <div class="about-stat-label">
+          Years of focused care
+        </div>
+
+        <div class="about-stat-line"></div>
+
+      </div>
+
+
+      <div class="about-stat">
+
+        <div class="about-stat-number">
+          4.8<span>/5</span>
+        </div>
+
+        <div class="about-stat-label">
+          Patient rating
+        </div>
+
+        <div class="about-stat-line"></div>
+
+      </div>
+
+
+      <div class="about-stat">
+
+        <div class="about-stat-number">
+          140<span>+</span>
+        </div>
+
+        <div class="about-stat-label">
+          Patient reviews
+        </div>
+
+        <div class="about-stat-line"></div>
+
+      </div>
+
+
+      <div class="about-stat">
+
+        <div class="about-stat-number">
+          01
+        </div>
+
+        <div class="about-stat-label">
+          Focus — precision
+        </div>
+
+        <div class="about-stat-line"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     STORY
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap about-story">
+
+    <div
+      class="about-story-image"
+      data-reveal-img
+      data-tilt
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop"
+        alt="Dental clinic interior"
+      >
+
+    </div>
+
+
+    <div
+      class="about-story-copy"
+      data-reveal
+    >
+
+      <span class="label">
+        03 / STORY
+      </span>
+
+
+      <h2>
+        Precision becomes
+        <span
+          style="color:var(--brand-orange);"
+        >
+          meaningful
+        </span>
+        when it improves a life.
+      </h2>
+
+
+      <p>
+
+        Every treatment starts with understanding
+        the individual patient — their anatomy,
+        expectations, comfort and long-term needs.
+
+      </p>
+
+
+      <p>
+
+        From implantology and prosthodontics to
+        restorative and aesthetic dentistry, the
+        clinic's philosophy is simple: diagnose
+        carefully, plan precisely and treat
+        thoughtfully.
+
+      </p>
+
+
+      <a
+        href="services.html"
+        class="btn btn-dark"
+        style="margin-top:35px;"
+      >
+        Explore Services
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     HISTORY
+     ============================================================ -->
+
+<section
+  class="history-section"
+  data-nav-theme="dark"
+>
+
+  <div class="wrap">
+
+    <span
+      class="label on-dark"
+      data-reveal
+    >
+      04 / HISTORY
+    </span>
+
+
+    <h2
+      class="history-heading"
+      data-reveal-text
+    >
+
+      FIVE
+      <em>
+        MILESTONES.
+      </em>
+
+    </h2>
+
+  </div>
+
+
+  <div
+    class="history-track-wrap"
+    data-horizontal-section
+    data-h-scroll
+  >
+
+    <div
+      class="history-track h-track"
+      data-horizontal-track
+    >
+
+
+      <article
+        class="history-card h-panel"
+      >
+
+        <div>
+
+          <div class="history-card-year">
+            ESTABLISHED
+          </div>
+
+          <div class="history-card-number">
+            01
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Founded on M.G. Road, Akola
+          </h3>
+
+          <p style="margin-top:20px;">
+
+            Dr. Shakun Saraf opens a small
+            dental practice in the heart of
+            the city, focused on comprehensive,
+            patient-first care.
+
+          </p>
+
+        </div>
+
+
+        <div class="history-orange-line"></div>
+
+      </article>
+
+
+      <article
+        class="history-card h-panel"
+      >
+
+        <div>
+
+          <div class="history-card-year">
+            GROWTH
+          </div>
+
+          <div class="history-card-number">
+            02
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Multi-specialty expansion
+          </h3>
+
+          <p style="margin-top:20px;">
+
+            The practice grows to cover
+            implants, root canal therapy,
+            orthodontics and smile designing
+            under one roof.
+
+          </p>
+
+        </div>
+
+
+        <div class="history-orange-line"></div>
+
+      </article>
+
+
+      <article
+        class="history-card h-panel"
+      >
+
+        <div>
+
+          <div class="history-card-year">
+            TEAM
+          </div>
+
+          <div class="history-card-number">
+            03
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Dr. Urviti Khatri joins
+          </h3>
+
+          <p style="margin-top:20px;">
+
+            A second dentist joins the
+            practice, expanding capacity
+            for general and restorative care.
+
+          </p>
+
+        </div>
+
+
+        <div class="history-orange-line"></div>
+
+      </article>
+
+
+      <article
+        class="history-card h-panel"
+      >
+
+        <div>
+
+          <div class="history-card-year">
+            TECHNOLOGY
+          </div>
+
+          <div class="history-card-number">
+            04
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Modern equipment upgrade
+          </h3>
+
+          <p style="margin-top:20px;">
+
+            Laser gum treatment and updated
+            diagnostic technology are added
+            to the clinic's capabilities.
+
+          </p>
+
+        </div>
+
+
+        <div class="history-orange-line"></div>
+
+      </article>
+
+
+      <article
+        class="history-card h-panel"
+      >
+
+        <div>
+
+          <div class="history-card-year">
+            TODAY
+          </div>
+
+          <div class="history-card-number">
+            05
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            A trusted name in the city
+          </h3>
+
+          <p style="margin-top:20px;">
+
+            The practice now holds a 4.8/5
+            rating across 140+ patient reviews
+            and continues to treat families
+            across Akola and Vidarbha.
+
+          </p>
+
+        </div>
+
+
+        <div class="history-orange-line"></div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     PHILOSOPHY
+     ============================================================ -->
+
+<section
+  class="section bg-black philosophy"
+  data-nav-theme="dark"
+>
+
+  <div class="philosophy-bg-text">
+    CALM
+  </div>
+
+
+  <div class="wrap">
+
+    <div
+      class="philosophy-content"
+      data-reveal
+    >
+
+      <span class="label on-dark">
+        05 / PHILOSOPHY
+      </span>
+
+
+      <h2
+        class="philosophy-quote"
+        data-reveal-text
+      >
+
+        A restoration only succeeds if
+        the patient
+        <span>
+          forgets it is there.
+        </span>
+
+      </h2>
+
+
+      <div class="philosophy-author">
+
+        — Dr. Shakun Saraf · Founder
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     BRAND PILLARS
+     ============================================================ -->
+
+<section class="section bg-off">
+
+  <div class="wrap">
+
+    <span
+      class="label"
+      data-reveal
+    >
+      06 / BRAND PILLARS
+    </span>
+
+
+    <h2
+      data-reveal-text
+      style="
+        font-size:clamp(3rem,6vw,6rem);
+        font-weight:200;
+        line-height:.9;
+        letter-spacing:-.06em;
+        margin-top:25px;
+        margin-bottom:70px;
+      "
+    >
+
+      WHAT WE
+      <span
+        style="color:var(--brand-orange);"
+      >
+        HOLD TO.
+      </span>
+
+    </h2>
+
+
+    <div
+      class="pillars-grid"
+      data-reveal-group
+    >
+
+
+      <article class="pillar">
+
+        <div class="pillar-index">
+          01 / PRECISION
+        </div>
+
+
+        <h3>
+          Diagnose
+          before deciding.
+        </h3>
+
+
+        <p>
+
+          Every plan begins with imaging
+          and data, never a recommendation
+          made on sight.
+
+        </p>
+
+      </article>
+
+
+      <article class="pillar">
+
+        <div class="pillar-index">
+          02 / MATCH
+        </div>
+
+
+        <h3>
+          Fit the mouth,
+          not the average.
+        </h3>
+
+
+        <p>
+
+          Shade, occlusion and gum contour
+          are individually matched, never
+          selected from a catalogue.
+
+        </p>
+
+      </article>
+
+
+      <article class="pillar">
+
+        <div class="pillar-index">
+          03 / CONTINUITY
+        </div>
+
+
+        <h3>
+          Stay after
+          the case closes.
+        </h3>
+
+
+        <p>
+
+          Structured recall continues for
+          the life of every restoration
+          we place.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     ENVIRONMENT
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap environment">
+
+
+    <div
+      class="environment-image"
+      data-reveal-img
+      data-tilt
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1600&auto=format&fit=crop"
+        alt="Modern clinic environment"
+      >
+
+    </div>
+
+
+    <div
+      class="environment-copy"
+      data-reveal
+    >
+
+      <span class="label">
+        07 / ENVIRONMENT
+      </span>
+
+
+      <h2>
+        Architecture
+        built for
+        <span
+          style="color:var(--brand-orange);"
+        >
+          calm.
+        </span>
+      </h2>
+
+
+      <p>
+
+        Natural light, quiet material palettes
+        and private treatment suites are chosen
+        as deliberately as any clinical protocol.
+
+      </p>
+
+
+      <a
+        href="clinic.html"
+        class="btn btn-dark"
+        style="margin-top:35px;"
+      >
+
+        Tour the Clinic
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     MARQUEE
+     ============================================================ -->
+
+<section class="about-marquee bg-off">
+
+  <div class="about-marquee-track">
+
+
+    <div class="about-marquee-item">
+
+      PRECISION
+
+      <span>✦</span>
+
+      MATCH
+
+      <span>✦</span>
+
+      CONTINUITY
+
+      <span>✦</span>
+
+    </div>
+
+
+    <div class="about-marquee-item">
+
+      PRECISION
+
+      <span>✦</span>
+
+      MATCH
+
+      <span>✦</span>
+
+      CONTINUITY
+
+      <span>✦</span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+
+<section
+  class="section bg-black about-final"
+  data-nav-theme="dark"
+>
+
+  <div class="about-final-orbit"></div>
+
+
+  <div class="wrap">
+
+    <span
+      class="label on-dark"
+      data-reveal
+    >
+      08 / GET STARTED
+    </span>
+
+
+    <h2
+      data-reveal-text
+      style="color:white;margin-top:25px;"
+    >
+
+      YOUR NEXT
+      <br>
+
+      <span>
+        SMILE
+      </span>
+
+      STARTS HERE.
+
+    </h2>
+
+
+    <div
+      data-reveal
+      style="
+        display:flex;
+        gap:16px;
+        flex-wrap:wrap;
+        margin-top:55px;
+      "
+    >
+
+      <a
+        href="appointment.html"
+        class="btn btn-light"
+      >
+
+        Book a Consultation
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="
+          border:1px solid rgba(255,255,255,.25);
+        "
+      >
+
+        Contact Clinic
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
+<footer class="site-footer">
+
+  <div class="wrap">
+
+
+    <div class="foot-huge">
+
+      LET'S TALK
+      <br>
+      ABOUT YOUR SMILE.
+
+    </div>
+
+
+    <div
+      style="
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+        margin-bottom:80px;
+      "
+    >
+
+      <a
+        href="appointment.html"
+        class="btn btn-light"
+      >
+
+        Book a Consultation
+
+        <span class="arrow">
+          →
+        </span>
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="
+          border:1px solid var(--line-dark);
+        "
+      >
+
+        Contact Clinic
+
+      </a>
+
+    </div>
+
+
+    <div class="foot-top">
+
+
+      <div>
+
+        <h4>
+          Saraf Dental Care
+        </h4>
+
+        <p
+          style="
+            max-width:280px;
+            color:rgba(255,255,255,.6);
+            font-size:13.5px;
+            line-height:1.7;
+          "
+        >
+
+          A private implantology and
+          aesthetic dentistry practice
+          in Akola, Maharashtra.
+
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="doctors.html">
+            Doctors
+          </a>
+
+          <a href="technology.html">
+            Technology
+          </a>
+
+          <a href="clinic.html">
+            Clinic
+          </a>
+
+          <a href="gallery.html">
+            Gallery
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Care
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="case-studies.html">
+            Case Studies
+          </a>
+
+          <a href="patient-journey.html">
+            Patient Journey
+          </a>
+
+          <a href="reviews.html">
+            Reviews
+          </a>
+
+          <a href="faq.html">
+            FAQ
+          </a>
+
+          <a href="blog.html">
+            Journal
+          </a>
+
+          <a href="emergency.html">
+            Emergency
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="mailto:care@sarafdentalcare.in">
+            care@sarafdentalcare.in
+          </a>
+
+          <a href="tel:+919823000000">
+            +91 98230 00000
+          </a>
+
+          <a href="location.html">
+            Nishant Tower, M.G. Road, Akola
+          </a>
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="foot-bottom">
+
+      <span>
+        © 2026 Saraf Dental Care
+      </span>
+
+      <span
+        style="
+          display:flex;
+          gap:24px;
+        "
+      >
+
+        <a href="imprint.html">
+          Business Info
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </span>
+
+      <span>
+        Unofficial concept design · Verify
+        contact details & hours with the
+        clinic directly
+      </span>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+></script>
+
+<script src="js/cursor.js"></script>
+
+<script src="js/navigation.js"></script>
+
+<script src="js/page-transition.js"></script>
+
+<script src="js/animations.js"></script>
+
+<script src="js/main.js"></script>
+
+
+<!-- ============================================================
+     ABOUT-SPECIFIC MOTION
+     ============================================================ -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    if (
+      typeof gsap === "undefined"
+    ) return;
+
+
+    gsap.registerPlugin(
+      ScrollTrigger
+    );
+
+
+    const reduced =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    if (reduced) return;
+
+
+    /* ==========================================================
+       HERO PARALLAX
+       ========================================================== */
+
+    const orbit =
+      document.querySelector(
+        ".about-orbit"
+      );
+
+
+    if (orbit) {
+
+      gsap.to(
+        orbit,
+        {
+          rotation: 35,
+          y: 180,
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".about-hero",
+
+            start:
+              "top top",
+
+            end:
+              "bottom top",
+
+            scrub:
+              1.5
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ==========================================================
+       WATERMARK PARALLAX
+       ========================================================== */
+
+    const watermark =
+      document.querySelector(
+        ".about-watermark"
+      );
+
+
+    if (watermark) {
+
+      gsap.to(
+        watermark,
+        {
+          y: -180,
+          rotation: 12,
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".about-hero",
+
+            start:
+              "top top",
+
+            end:
+              "bottom top",
+
+            scrub:
+              2
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ==========================================================
+       STORY IMAGE DEPTH
+       ========================================================== */
+
+    document
+      .querySelectorAll(
+        ".about-story-image img, .environment-image img"
+      )
+      .forEach(
+        (img) => {
+
+          gsap.to(
+            img,
+            {
+              yPercent: -10,
+
+              ease: "none",
+
+              scrollTrigger: {
+
+                trigger:
+                  img.closest(
+                    ".about-story-image, .environment-image"
+                  ),
+
+                start:
+                  "top bottom",
+
+                end:
+                  "bottom top",
+
+                scrub:
+                  1.2
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ==========================================================
+       STAT COUNTER REVEAL
+       ========================================================== */
+
+    gsap.from(
+      ".about-stat-number",
+      {
+        y: 50,
+        opacity: 0,
+
+        duration: .8,
+
+        stagger: .12,
+
+        ease:
+          "power4.out",
+
+        scrollTrigger: {
+
+          trigger:
+            ".about-stats",
+
+          start:
+            "top 80%",
+
+          once:
+            true
+
+        }
+
+      }
+    );
+
+
+    /* ==========================================================
+       HISTORY CARD LINE
+       ========================================================== */
+
+    gsap.utils.toArray(
+      ".history-card"
+    ).forEach(
+      (card) => {
+
+        const line =
+          card.querySelector(
+            ".history-orange-line"
+          );
+
+
+        if (!line) return;
+
+
+        gsap.to(
+          line,
+          {
+            height: "100%",
+
+            ease:
+              "none",
+
+            scrollTrigger: {
+
+              trigger:
+                card,
+
+              start:
+                "left 80%",
+
+              end:
+                "left 35%",
+
+              scrub:
+                true
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+    /* ==========================================================
+       PILLAR REVEAL
+       ========================================================== */
+
+    gsap.from(
+      ".pillar",
+      {
+        y: 80,
+        opacity: 0,
+
+        duration: .9,
+
+        stagger: .12,
+
+        ease:
+          "power4.out",
+
+        scrollTrigger: {
+
+          trigger:
+            ".pillars-grid",
+
+          start:
+            "top 80%",
+
+          once:
+            true
+
+        }
+
+      }
+    );
+
+
+    /* ==========================================================
+       FINAL ORBIT
+       ========================================================== */
+
+    const finalOrbit =
+      document.querySelector(
+        ".about-final-orbit"
+      );
+
+
+    if (finalOrbit) {
+
+      gsap.to(
+        finalOrbit,
+        {
+          rotation: 360,
+
+          ease:
+            "none",
+
+          scrollTrigger: {
+
+            trigger:
+              ".about-final",
+
+            start:
+              "top bottom",
+
+            end:
+              "bottom top",
+
+            scrub:
+              2
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ==========================================================
+       REFRESH
+       ========================================================== */
+
+    ScrollTrigger.refresh();
+
+  }
+);
+
+</script>
+
+
+  <script src="js/viral-motion.js"></script>
+  <script src="js/award-motion.js"></script>
+</body>
+</html>

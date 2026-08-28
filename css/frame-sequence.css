@@ -1,0 +1,184 @@
+/* ================================================================
+   SARAF DENTAL CARE — FRAMER STYLE 50-FRAME SCROLL
+   One viewport scene stays pinned until frame 50 is complete.
+   Native page scrolling is preserved on touch + desktop.
+   ================================================================ */
+.frame-sequence{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  height:1000vh !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#f3efe8 !important;
+  isolation:isolate;
+  overflow:visible !important;
+  --fs-p:0;
+}
+
+.frame-sequence-sticky{
+  position:sticky !important;
+  top:0 !important;
+  width:100% !important;
+  height:100svh !important;
+  min-height:100svh !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  z-index:20 !important;
+  background:#f3efe8;
+}
+
+.frame-sequence-stage{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:hidden !important;
+  display:grid;
+  place-items:center;
+  background:#f3efe8;
+}
+
+.frame-sequence-bg{
+  position:absolute;
+  inset:-12%;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(232,121,29,.13),transparent 35%),
+    linear-gradient(135deg,#faf7f1 0%,#eee7dc 50%,#faf7f1 100%);
+  transform:scale(calc(1 + var(--fs-p) * .045));
+  will-change:transform;
+}
+
+.frame-sequence-media{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  display:grid;
+  place-items:center;
+  z-index:2;
+  pointer-events:none;
+  transform:translate3d(0,0,0);
+  will-change:transform;
+}
+
+.frame-sequence-image{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  opacity:0;
+  transform:scale(calc(1.015 + var(--fs-camera,0) * .045)) translate3d(0,0,0);
+  transform-origin:center center;
+  /* Short crossfade so frame swaps blend into each other like video instead
+     of hard-cutting — this was completely missing before, which is why
+     scrolling looked like a slideshow jumping between stills rather than
+     continuous motion. Kept short (110ms) so it never lags behind fast
+     scrolling or looks smeary. */
+  transition:opacity .11s linear;
+  will-change:opacity,transform,filter;
+  backface-visibility:hidden;
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+}
+
+.frame-sequence-image-a{opacity:1;}
+.frame-sequence-image-b{opacity:0;}
+
+.frame-sequence-shine{
+  position:absolute;
+  inset:-30% -70%;
+  z-index:4;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);
+  transform:translate3d(calc(var(--fs-p) * 100%),0,0);
+  mix-blend-mode:screen;
+  opacity:.24;
+  will-change:transform;
+}
+
+.frame-sequence-glow{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:3;
+  filter:blur(55px);
+  opacity:calc(.16 + var(--fs-p) * .22);
+  will-change:transform,opacity;
+}
+.frame-sequence-glow-a{width:45vw;height:45vw;left:4%;top:5%;background:rgba(232,121,29,.19);}
+.frame-sequence-glow-b{width:38vw;height:38vw;right:4%;bottom:3%;background:rgba(255,255,255,.5);}
+
+.frame-sequence-vignette{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(243,239,232,.08),transparent 22%,transparent 78%,rgba(243,239,232,.22)),radial-gradient(circle at center,transparent 42%,rgba(20,18,15,.08) 100%);
+}
+.frame-sequence-grain{position:absolute;inset:-50%;z-index:6;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");animation:fs-grain .22s steps(2) infinite;}
+@keyframes fs-grain{0%{transform:translate(0,0)}25%{transform:translate(2%,-1%)}50%{transform:translate(-1%,2%)}75%{transform:translate(1%,1%)}100%{transform:translate(0,0)}}
+
+.frame-sequence-copy{position:absolute;left:clamp(28px,7vw,110px);bottom:clamp(95px,13vh,145px);z-index:10;width:min(520px,42vw);pointer-events:none;will-change:transform,opacity;}
+.frame-sequence-kicker{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#716c64;}
+.frame-sequence-kicker::before{content:"";width:34px;height:1px;background:#e8791d;}
+.frame-sequence-title{margin:16px 0 0;max-width:620px;font-size:clamp(3rem,6.2vw,6.6rem);line-height:.9;letter-spacing:-.065em;font-weight:300;}
+.frame-sequence-title em{color:#e8791d;font-style:normal;}
+.frame-sequence-desc{margin:22px 0 0;max-width:410px;color:#68635c;font-size:13px;line-height:1.75;}
+.frame-sequence-step{position:absolute;right:clamp(28px,7vw,110px);bottom:clamp(95px,13vh,145px);z-index:10;display:flex;align-items:flex-end;gap:9px;pointer-events:none;}
+.frame-sequence-step strong{font-size:clamp(4rem,8vw,7.8rem);line-height:.72;font-weight:200;letter-spacing:-.075em;}
+.frame-sequence-step span{padding-bottom:6px;color:#888178;font-size:9px;letter-spacing:.16em;text-transform:uppercase;}
+.frame-sequence-progress{position:absolute;left:clamp(28px,7vw,110px);right:clamp(28px,7vw,110px);bottom:42px;height:2px;background:rgba(20,20,18,.12);z-index:12;}
+.frame-sequence-progress i{display:block;width:100%;height:100%;background:#e8791d;transform:scaleX(var(--fs-p));transform-origin:left;}
+.frame-sequence-progress b{position:absolute;top:50%;left:calc(var(--fs-p) * 100%);width:8px;height:8px;border-radius:50%;background:#e8791d;transform:translate(-50%,-50%);box-shadow:0 0 0 5px rgba(232,121,29,.10);}
+.frame-sequence-scroll{position:absolute;right:clamp(28px,7vw,110px);top:12vh;writing-mode:vertical-rl;z-index:12;text-transform:uppercase;letter-spacing:.2em;font-size:8px;color:#89837b;}
+.frame-sequence-mobile-note{display:none;}
+.frame-sequence-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:13;display:flex;align-items:center;gap:8px;opacity:calc(1 - var(--fs-p) * 5);pointer-events:none;}
+.frame-sequence-hint span{width:18px;height:28px;border:1px solid rgba(20,20,18,.35);border-radius:20px;position:relative;}
+.frame-sequence-hint span::after{content:"";position:absolute;width:3px;height:6px;border-radius:4px;background:#e8791d;top:5px;left:50%;transform:translateX(-50%);animation:fs-wheel 1.5s ease-in-out infinite;}
+.frame-sequence-hint small{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#7e786f;}
+@keyframes fs-wheel{0%,100%{transform:translate(-50%,0);opacity:.3}45%{transform:translate(-50%,8px);opacity:1}}
+
+/* Nothing outside the pinned scene can visually intrude before frame 50. */
+.frame-sequence + .character-story,
+.frame-sequence + section{position:relative;z-index:1;}
+
+@media(max-width:900px){
+  .frame-sequence{height:1200vh !important;}
+  .frame-sequence-sticky{height:100svh !important;min-height:0 !important;}
+  .frame-sequence-image{object-fit:cover !important;}
+  .frame-sequence-copy{left:6vw;right:6vw;bottom:calc(15vh + env(safe-area-inset-bottom));width:auto;max-width:680px;}
+  .frame-sequence-title{font-size:clamp(2.2rem,11vw,4.5rem);line-height:.92;}
+  .frame-sequence-desc{max-width:330px;margin-top:13px;font-size:11px;line-height:1.6;}
+  .frame-sequence-step{right:6vw;bottom:calc(8vh + env(safe-area-inset-bottom));}
+  .frame-sequence-step strong{font-size:3rem;}
+  .frame-sequence-step span{display:none;}
+  .frame-sequence-progress{left:6vw;right:6vw;bottom:calc(3vh + env(safe-area-inset-bottom));}
+  .frame-sequence-scroll{display:none;}
+  .frame-sequence-mobile-note{display:block;position:absolute;left:6vw;top:9vh;z-index:12;text-transform:uppercase;letter-spacing:.2em;font-size:8px;color:#89837b;}
+  .frame-sequence-hint{display:none;}
+  .frame-sequence-glow-a{width:80vw;height:80vw;filter:blur(42px);}
+  .frame-sequence-glow-b{width:65vw;height:65vw;filter:blur(42px);}
+}
+
+@media(max-width:560px){
+  .frame-sequence{height:1500vh !important;}
+  .frame-sequence-copy{bottom:calc(16vh + env(safe-area-inset-bottom));}
+  .frame-sequence-title{font-size:clamp(2rem,11.7vw,3.7rem);}
+  .frame-sequence-step{bottom:calc(7vh + env(safe-area-inset-bottom));}
+  .frame-sequence-step strong{font-size:2.7rem;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .frame-sequence-grain,.frame-sequence-hint span::after{animation:none!important;}
+}

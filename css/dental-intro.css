@@ -1,0 +1,219 @@
+/* ============================================================
+   SARAF DENTAL CARE — WHITE INTRO SECTION
+   Sits between the hero and the 50-frame cinematic sequence.
+   Warm off-white, line-art dental decoration, entrance choreography
+   that hands off smoothly into the frame sequence below it.
+   ============================================================ */
+
+.dental-intro{
+  position:relative;
+  background:#F7F5F0;
+  min-height:88vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:130px 6vw 110px;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* ---------- decorative line-art (clean SVG, not stock icons) ---------- */
+.dental-intro-decor{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.dental-intro-tooth{
+  position:absolute;
+  right:6vw;
+  top:50%;
+  transform:translateY(-50%);
+  width:min(30vw,360px);
+  height:auto;
+  opacity:.5;
+}
+.dental-intro-tooth path{
+  fill:none;
+  stroke:var(--black);
+  stroke-width:1.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:600;
+  stroke-dashoffset:600;
+}
+.dental-intro.is-drawn .dental-intro-tooth path{
+  transition:stroke-dashoffset 1.8s cubic-bezier(.22,1,.36,1) .3s;
+  stroke-dashoffset:0;
+}
+
+.dental-intro-circle{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(10,10,9,.12);
+  transform:scale(.9);
+  opacity:0;
+  transition:transform 1.4s cubic-bezier(.22,1,.36,1), opacity 1.4s ease;
+}
+.dental-intro.is-drawn .dental-intro-circle{
+  transform:scale(1);
+  opacity:1;
+}
+.dental-intro-circle-a{ width:220px; height:220px; right:12vw; top:14%; }
+.dental-intro-circle-b{ width:120px; height:120px; right:22vw; bottom:12%; border-color:var(--brand-orange); opacity:0; }
+.dental-intro.is-drawn .dental-intro-circle-b{ opacity:.35; transition-delay:.15s; }
+
+.dental-intro-crosshair{
+  position:absolute;
+  left:8vw;
+  bottom:14%;
+  width:34px;
+  height:34px;
+  opacity:0;
+  transition:opacity 1s ease .4s, transform 1s cubic-bezier(.22,1,.36,1) .4s;
+  transform:rotate(-15deg);
+}
+.dental-intro.is-drawn .dental-intro-crosshair{ opacity:.4; transform:rotate(0deg); }
+.dental-intro-crosshair line{ stroke:var(--black); stroke-width:1; }
+.dental-intro-crosshair circle{ fill:none; stroke:var(--black); stroke-width:1; }
+
+/* subtle continuous drift once revealed, echoes "decorative circles move slightly" */
+@media (prefers-reduced-motion: no-preference){
+  .dental-intro.is-drawn .dental-intro-circle-a{ animation:dentalDriftA 9s ease-in-out infinite; }
+  .dental-intro.is-drawn .dental-intro-circle-b{ animation:dentalDriftB 11s ease-in-out infinite; }
+}
+@keyframes dentalDriftA{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(-10px,12px) scale(1); } }
+@keyframes dentalDriftB{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(8px,-10px) scale(1); } }
+
+/* ---------- copy ---------- */
+.dental-intro-inner{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+}
+.dental-intro-heading{
+  margin-top:26px;
+  font-size:clamp(2.6rem,6vw,5.2rem);
+  font-weight:200;
+  letter-spacing:-.03em;
+  line-height:1.04;
+  color:var(--black);
+}
+.dental-intro-sub{
+  margin-top:22px;
+  max-width:440px;
+  font-size:15px;
+  line-height:1.8;
+  color:var(--grey-dark);
+}
+.dental-intro-cta{
+  margin-top:36px;
+}
+
+.dental-intro-scroll{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:70px;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--grey-dark);
+}
+.dental-intro-scroll .line{
+  width:1px;
+  height:34px;
+  background:currentColor;
+  position:relative;
+  overflow:hidden;
+}
+.dental-intro-scroll .line::after{
+  content:"";
+  position:absolute;
+  top:-100%;
+  left:0;
+  width:100%;
+  height:100%;
+  background:var(--brand-orange);
+  animation:dentalScrollLine 2.1s infinite cubic-bezier(.22,1,.36,1);
+}
+@keyframes dentalScrollLine{ 0%{ top:-100%; } 60%{ top:100%; } 100%{ top:100%; } }
+
+@media (max-width:900px){
+  .dental-intro{ min-height:72vh; padding:110px 6vw 80px; }
+  .dental-intro-tooth{ width:44vw; right:4vw; opacity:.35; }
+  .dental-intro-circle-a{ width:150px; height:150px; right:6vw; }
+  .dental-intro-circle-b{ display:none; }
+  .dental-intro-crosshair{ left:6vw; bottom:8%; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .dental-intro-tooth path{ transition:none; stroke-dashoffset:0; }
+  .dental-intro-circle, .dental-intro-crosshair{ transition:none; opacity:1; transform:none; }
+  .dental-intro.is-drawn .dental-intro-circle-a,
+  .dental-intro.is-drawn .dental-intro-circle-b{ animation:none; }
+}
+
+/* ============================================================
+   HERO CHARACTER — FINAL SIZE OVERRIDE
+   ------------------------------------------------------------
+   The character's size was previously spread across 13 separate
+   rules in global.css/responsive.css/viral-responsive.css, several
+   flagged !important, making the cascade genuinely hard to reason
+   about (one viral-responsive.css rule silently won over several
+   edits to the "obvious" rules in an earlier pass). Rather than
+   keep chasing individual rules, this block is the single,
+   unambiguous final word: it's the last CSS file loaded on the
+   page, every rule here carries !important, and there is nothing
+   after it. Whatever the 13 older rules say no longer matters.
+   ============================================================ */
+.hero-character-wrap,
+.hero-character{
+  width: clamp(420px, 56vw, 920px) !important;
+  height: auto !important;
+  max-width: none !important;
+}
+@media (max-width:1100px){
+  .hero-character-wrap,
+  .hero-character{ width: min(58vw, 720px) !important; }
+}
+@media (max-width:900px){
+  .hero-character-wrap,
+  .hero-character{ width: min(68vw, 580px) !important; }
+  .hero-character-wrap{
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 24px auto 8px !important;
+  }
+}
+@media (max-width:600px){
+  .hero-character-wrap,
+  .hero-character{ width: min(80vw, 480px) !important; }
+  /* On mobile the wrapper was forced to position:absolute, anchored from
+     the bottom of the hero — fine at its old, smaller size, but once
+     enlarged its top edge reached up into the buttons/stats above it
+     (visible as the character overlapping "Explore Services"). Taking it
+     out of absolute positioning lets it sit in normal flow instead, where
+     it's already last in DOM order after the copy/buttons/stats, so it
+     naturally stacks below them with no overlap possible regardless of
+     how big it is. */
+  .hero-character-wrap{
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 28px auto 12px !important;
+    padding-bottom: 0 !important;
+  }
+}
+@media (max-width:420px){
+  .hero-character-wrap,
+  .hero-character{ width: 86vw !important; }
+}
+@media (max-width:900px) and (orientation:landscape){
+  .hero-character-wrap,
+  .hero-character{ width: min(44vw, 400px) !important; }
+}

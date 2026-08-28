@@ -1,0 +1,2826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="theme-color" content="#0A0A09">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book an Appointment | Saraf Dental Care</title>
+
+<meta
+  name="description"
+  content="Request a consultation appointment at Saraf Dental Care."
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<style>
+
+/* ============================================================
+   APPOINTMENT — CINEMATIC SYSTEM
+   ============================================================ */
+
+.appointment-page{
+  overflow-x:hidden;
+  background:var(--off-white);
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.appointment-hero{
+
+  min-height:100svh;
+
+  position:relative;
+
+  display:flex;
+  align-items:flex-end;
+
+  overflow:hidden;
+
+  padding:
+    150px 6vw 75px;
+
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(232,135,59,.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f7f2ec,
+      #eee5db
+    );
+
+}
+
+
+.appointment-hero-grid{
+
+  position:relative;
+
+  z-index:3;
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:
+    1.15fr .85fr;
+
+  gap:70px;
+
+  align-items:end;
+
+}
+
+
+.appointment-kicker{
+
+  font-size:10px;
+
+  letter-spacing:.2em;
+
+  text-transform:uppercase;
+
+  color:var(--grey-dark);
+
+}
+
+
+.appointment-title{
+
+  margin-top:25px;
+
+  font-size:
+    clamp(4rem,10vw,10rem);
+
+  font-weight:200;
+
+  line-height:.8;
+
+  letter-spacing:-.08em;
+
+}
+
+
+.appointment-title span{
+
+  display:block;
+
+}
+
+
+.appointment-title .orange{
+
+  color:var(--brand-orange);
+
+}
+
+
+.appointment-description{
+
+  max-width:440px;
+
+  color:var(--grey-dark);
+
+  font-size:15px;
+
+  line-height:1.9;
+
+}
+
+
+.appointment-index{
+
+  position:absolute;
+
+  right:6vw;
+  top:145px;
+
+  font-size:10px;
+
+  letter-spacing:.18em;
+
+  color:var(--grey-dark);
+
+}
+
+
+/* ============================================================
+   ORBIT
+   ============================================================ */
+
+.appointment-orbit{
+
+  position:absolute;
+
+  width:min(65vw,900px);
+  height:min(65vw,900px);
+
+  right:-22vw;
+  top:7%;
+
+  border:
+    1px solid rgba(232,135,59,.55);
+
+  border-radius:50%;
+
+  z-index:1;
+
+  pointer-events:none;
+
+}
+
+
+.appointment-orbit::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:14%;
+
+  border:
+    1px solid rgba(0,0,0,.08);
+
+  border-radius:50%;
+
+}
+
+
+.appointment-orbit::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:11px;
+  height:11px;
+
+  border-radius:50%;
+
+  background:var(--brand-orange);
+
+  left:12%;
+  top:19%;
+
+  box-shadow:
+    0 0 0 12px rgba(232,135,59,.08),
+    0 0 40px rgba(232,135,59,.5);
+
+}
+
+
+/* ============================================================
+   HERO BOTTOM META
+   ============================================================ */
+
+.appointment-meta{
+
+  position:absolute;
+
+  bottom:35px;
+  left:6vw;
+  right:6vw;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  font-size:9px;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+
+  color:var(--grey-dark);
+
+  z-index:5;
+
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.appointment-intro{
+
+  min-height:75vh;
+
+  display:grid;
+
+  grid-template-columns:.65fr 1.35fr;
+
+  gap:80px;
+
+  align-items:center;
+
+}
+
+
+.appointment-intro-title{
+
+  font-size:
+    clamp(2.8rem,6vw,6.5rem);
+
+  font-weight:200;
+
+  line-height:.88;
+
+  letter-spacing:-.07em;
+
+}
+
+
+.appointment-intro-title span{
+
+  color:var(--brand-orange);
+
+}
+
+
+.appointment-intro-copy{
+
+  max-width:620px;
+
+  color:var(--grey-dark);
+
+  font-size:15px;
+
+  line-height:1.9;
+
+}
+
+
+/* ============================================================
+   BOOKING EXPERIENCE
+   ============================================================ */
+
+.booking-section{
+
+  background:#fff;
+
+  position:relative;
+
+}
+
+
+.booking-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    .55fr 1.45fr;
+
+  gap:90px;
+
+  align-items:start;
+
+}
+
+
+/* ============================================================
+   LEFT SIDE
+   ============================================================ */
+
+.booking-side{
+
+  position:sticky;
+
+  top:130px;
+
+}
+
+
+.booking-side-number{
+
+  font-size:
+    clamp(5rem,10vw,10rem);
+
+  font-weight:200;
+
+  line-height:.75;
+
+  color:rgba(0,0,0,.06);
+
+}
+
+
+.booking-side h2{
+
+  font-size:
+    clamp(2.5rem,5vw,5rem);
+
+  font-weight:200;
+
+  line-height:.9;
+
+  letter-spacing:-.06em;
+
+  margin-top:35px;
+
+}
+
+
+.booking-side h2 span{
+
+  color:var(--brand-orange);
+
+}
+
+
+.booking-side p{
+
+  margin-top:30px;
+
+  max-width:330px;
+
+  color:var(--grey-dark);
+
+  font-size:14px;
+
+  line-height:1.85;
+
+}
+
+
+/* ============================================================
+   FORM
+   ============================================================ */
+
+.booking-form{
+
+  border-top:
+    1px solid var(--line-light);
+
+}
+
+
+.booking-step{
+
+  padding:
+    45px 0;
+
+  border-bottom:
+    1px solid var(--line-light);
+
+}
+
+
+.booking-step-heading{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:35px;
+
+}
+
+
+.booking-step-number{
+
+  color:var(--brand-orange);
+
+  font-size:10px;
+
+  letter-spacing:.16em;
+
+}
+
+
+.booking-step-title{
+
+  font-size:
+    clamp(1.4rem,2.5vw,2.2rem);
+
+  font-weight:300;
+
+  letter-spacing:-.03em;
+
+}
+
+
+/* ============================================================
+   FORM GRID
+   ============================================================ */
+
+.booking-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    0 30px;
+
+}
+
+
+.booking-form .field{
+
+  margin-bottom:30px;
+
+}
+
+
+.booking-form label{
+
+  display:block;
+
+  margin-bottom:11px;
+
+  font-size:10px;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+
+  color:var(--grey-dark);
+
+}
+
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+
+  width:100%;
+
+  border:0;
+
+  border-bottom:
+    1px solid rgba(0,0,0,.18);
+
+  border-radius:0;
+
+  background:transparent;
+
+  padding:
+    14px 0;
+
+  outline:none;
+
+  font-family:inherit;
+
+  font-size:15px;
+
+  transition:
+    border-color .35s ease,
+    padding .35s ease;
+
+}
+
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+
+  border-color:
+    var(--brand-orange);
+
+  padding-left:10px;
+
+}
+
+
+.booking-form textarea{
+
+  min-height:130px;
+
+  resize:vertical;
+
+}
+
+
+/* ============================================================
+   TREATMENT CHOICES
+   ============================================================ */
+
+.treatment-options{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:10px;
+
+}
+
+
+.treatment-option{
+
+  position:relative;
+
+}
+
+
+.treatment-option input{
+
+  position:absolute;
+
+  opacity:0;
+
+  pointer-events:none;
+
+}
+
+
+.treatment-option label{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:20px;
+
+  border:
+    1px solid var(--line-light);
+
+  cursor:pointer;
+
+  transition:
+    all .35s ease;
+
+  margin:0;
+
+}
+
+
+.treatment-option label::after{
+
+  content:"→";
+
+  opacity:.3;
+
+  transform:translateX(-5px);
+
+  transition:
+    all .35s ease;
+
+}
+
+
+.treatment-option input:checked + label{
+
+  background:
+    #111;
+
+  color:#fff;
+
+  border-color:#111;
+
+}
+
+
+.treatment-option input:checked + label::after{
+
+  opacity:1;
+
+  transform:translateX(0);
+
+  color:
+    var(--brand-orange);
+
+}
+
+
+.treatment-option label:hover{
+
+  border-color:
+    var(--brand-orange);
+
+}
+
+
+/* ============================================================
+   SUBMIT
+   ============================================================ */
+
+.booking-submit{
+
+  padding-top:45px;
+
+}
+
+
+.booking-submit button{
+
+  min-height:65px;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.booking-submit button::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    var(--brand-orange);
+
+  transform:
+    translateY(100%);
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.booking-submit button:hover::before{
+
+  transform:
+    translateY(0);
+
+}
+
+
+.booking-submit button span{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+.form-success{
+
+  margin-top:25px;
+
+  opacity:0;
+
+  transform:translateY(10px);
+
+}
+
+
+.form-success.show{
+
+  opacity:1;
+
+  transform:none;
+
+}
+
+
+/* ============================================================
+   WHAT HAPPENS NEXT
+   ============================================================ */
+
+.next-section{
+
+  min-height:100vh;
+
+  background:#0a0a09;
+
+  color:#fff;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.next-background{
+
+  position:absolute;
+
+  right:-5vw;
+  bottom:-8vw;
+
+  font-size:
+    clamp(8rem,25vw,28rem);
+
+  font-weight:200;
+
+  line-height:.7;
+
+  letter-spacing:-.1em;
+
+  color:
+    rgba(255,255,255,.025);
+
+}
+
+
+.next-title{
+
+  font-size:
+    clamp(3rem,7vw,7rem);
+
+  font-weight:200;
+
+  line-height:.85;
+
+  letter-spacing:-.07em;
+
+  margin-top:25px;
+
+}
+
+
+.next-title span{
+
+  color:var(--brand-orange);
+
+}
+
+
+.next-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:1px;
+
+  margin-top:90px;
+
+  background:
+    rgba(255,255,255,.12);
+
+}
+
+
+.next-card{
+
+  min-height:330px;
+
+  padding:35px;
+
+  background:#0a0a09;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  transition:
+    background .5s ease;
+
+}
+
+
+.next-card:hover{
+
+  background:#151513;
+
+}
+
+
+.next-number{
+
+  font-size:11px;
+
+  color:
+    var(--brand-orange);
+
+}
+
+
+.next-card h3{
+
+  font-size:1.7rem;
+
+  font-weight:300;
+
+}
+
+
+.next-card p{
+
+  font-size:13px;
+
+  line-height:1.8;
+
+  color:
+    rgba(255,255,255,.5);
+
+  margin-top:15px;
+
+}
+
+
+/* ============================================================
+   PREPARATION
+   ============================================================ */
+
+.preparation{
+
+  min-height:90vh;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:8vw;
+
+  align-items:center;
+
+}
+
+
+.preparation-title{
+
+  font-size:
+    clamp(3rem,6vw,6rem);
+
+  font-weight:200;
+
+  line-height:.85;
+
+  letter-spacing:-.07em;
+
+}
+
+
+.preparation-title span{
+
+  color:var(--brand-orange);
+
+}
+
+
+.preparation-list{
+
+  border-top:
+    1px solid var(--line-light);
+
+}
+
+
+.preparation-item{
+
+  display:grid;
+
+  grid-template-columns:
+    60px 1fr;
+
+  gap:25px;
+
+  padding:28px 0;
+
+  border-bottom:
+    1px solid var(--line-light);
+
+}
+
+
+.preparation-item-number{
+
+  font-size:10px;
+
+  color:var(--brand-orange);
+
+}
+
+
+.preparation-item h3{
+
+  font-size:1.15rem;
+
+  font-weight:400;
+
+}
+
+
+.preparation-item p{
+
+  margin-top:8px;
+
+  color:var(--grey-dark);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+}
+
+
+/* ============================================================
+   CONTACT REASSURANCE
+   ============================================================ */
+
+.contact-strip{
+
+  border-top:
+    1px solid var(--line-light);
+
+  border-bottom:
+    1px solid var(--line-light);
+
+  padding:
+    50px 0;
+
+}
+
+
+.contact-strip-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:40px;
+
+}
+
+
+.contact-strip-item span{
+
+  display:block;
+
+  font-size:9px;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+
+  color:var(--grey-dark);
+
+  margin-bottom:12px;
+
+}
+
+
+.contact-strip-item strong{
+
+  font-size:16px;
+
+  font-weight:400;
+
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.appointment-final{
+
+  min-height:90vh;
+
+  display:flex;
+
+  align-items:center;
+
+  background:
+    #111;
+
+  color:#fff;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.final-orbit{
+
+  position:absolute;
+
+  width:65vw;
+  height:65vw;
+
+  right:-25vw;
+
+  top:-10vw;
+
+  border:
+    1px solid rgba(232,135,59,.3);
+
+  border-radius:50%;
+
+}
+
+
+.final-title{
+
+  font-size:
+    clamp(4rem,10vw,10rem);
+
+  font-weight:200;
+
+  line-height:.8;
+
+  letter-spacing:-.08em;
+
+}
+
+
+.final-title span{
+
+  color:var(--brand-orange);
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:900px){
+
+  .appointment-hero-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .appointment-title{
+
+    font-size:
+      clamp(3.7rem,14vw,7rem);
+
+  }
+
+
+  .appointment-orbit{
+
+    width:90vw;
+    height:90vw;
+
+    right:-35vw;
+
+  }
+
+
+  .appointment-intro,
+  .booking-layout,
+  .preparation{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+
+  .booking-side{
+
+    position:relative;
+
+    top:auto;
+
+  }
+
+
+  .next-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .contact-strip-grid{
+
+    grid-template-columns:1fr 1fr;
+
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .appointment-hero{
+
+    padding:
+      130px 6vw 80px;
+
+  }
+
+
+  .appointment-title{
+
+    font-size:
+      clamp(3.1rem,15vw,5.5rem);
+
+  }
+
+
+  .appointment-meta{
+
+    display:none;
+
+  }
+
+
+  .booking-grid,
+  .treatment-options{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .booking-step{
+
+    padding:
+      35px 0;
+
+  }
+
+
+  .next-card{
+
+    min-height:270px;
+
+  }
+
+
+  .contact-strip-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .final-title{
+
+    font-size:
+      clamp(3.8rem,16vw,6rem);
+
+  }
+
+}
+
+</style>
+
+  <link rel="stylesheet" href="css/viral-responsive.css">
+  <link rel="stylesheet" href="css/award-motion.css">
+</head>
+
+
+<body class="appointment-page">
+
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+
+<div id="preloader">
+
+  <svg
+    class="tooth-mark"
+    width="26"
+    height="29"
+    viewBox="0 0 100 110"
+  >
+    <path
+      d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+    />
+  </svg>
+
+  <div class="pre-mark">
+    SARAF DENTAL CARE
+  </div>
+
+  <div class="pre-sub">
+    AKOLA · MAHARASHTRA
+  </div>
+
+  <div class="pre-bar">
+    <div
+      class="pre-bar-fill"
+      id="pre-bar-fill"
+    ></div>
+  </div>
+
+  <div
+    class="pre-count"
+    id="pre-count"
+  >
+    0%
+  </div>
+
+</div>
+
+
+<div id="page-transition">
+  <span class="pt-label">SARAF</span>
+</div>
+
+
+<div id="cursor-dot">
+  <span class="cursor-text"></span>
+</div>
+
+
+<div id="grain"></div>
+
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+
+<header class="site-nav">
+
+  <a
+    href="index.html"
+    class="brand"
+    style="flex-direction:row;align-items:center;gap:9px;"
+  >
+
+    <svg
+      class="tooth-mark"
+      width="17"
+      height="19"
+      viewBox="0 0 100 110"
+    >
+
+      <path
+        d="M50 6C32 6 18 20 18 39c0 14 5 24 10 33 4 7 6 16 8 28 1 6 6 8 8 2 2-9 4-18 6-21 2-3 6-3 8 0 2 3 4 12 6 21 2 6 7 4 8-2 2-12 4-21 8-28 5-9 10-19 10-33C82 20 68 6 50 6Z"
+      />
+
+    </svg>
+
+    <span style="display:flex;flex-direction:column;">
+
+      SARAF
+
+      <span>
+        DENTAL CARE · AKOLA
+      </span>
+
+    </span>
+
+  </a>
+
+
+  <nav class="nav-center">
+
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="technology.html">Technology</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="clinic.html">Clinic</a>
+    <a href="case-studies.html">Cases</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+
+  </nav>
+
+
+  <a
+    href="appointment.html"
+    class="nav-cta"
+  >
+    Book Appointment
+  </a>
+
+
+  <button
+    class="nav-burger"
+    aria-label="Open menu"
+  >
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE MENU
+     ============================================================ -->
+
+<div id="mobile-menu">
+
+  <nav class="mm-links">
+
+    <a href="index.html"><span>Home</span></a>
+    <a href="about.html"><span>About</span></a>
+    <a href="services.html"><span>Services</span></a>
+    <a href="technology.html"><span>Technology</span></a>
+    <a href="doctors.html"><span>Doctors</span></a>
+    <a href="clinic.html"><span>Clinic</span></a>
+    <a href="case-studies.html"><span>Cases</span></a>
+    <a href="gallery.html"><span>Gallery</span></a>
+    <a href="blog.html"><span>Blog</span></a>
+    <a href="contact.html"><span>Contact</span></a>
+
+  </nav>
+
+
+  <div class="mm-meta">
+
+    <span>
+      Nishant Tower, M.G. Road, Akola 444001
+    </span>
+
+    <span>
+      +91 98230 00000
+    </span>
+
+    <span>
+      care@sarafdentalcare.in
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section
+  class="appointment-hero"
+  data-hero
+  data-nav-theme="light"
+>
+
+  <div class="appointment-orbit"></div>
+
+
+  <div class="appointment-index">
+    01 / APPOINTMENT
+  </div>
+
+
+  <div class="appointment-hero-grid">
+
+    <div>
+
+      <span
+        class="appointment-kicker"
+        data-hero-fade
+      >
+        Book an Appointment
+      </span>
+
+
+      <h1
+        class="appointment-title"
+        data-hero-text
+      >
+
+        <span data-hero-line>
+          RESERVE
+        </span>
+
+        <span data-hero-line>
+          YOUR
+        </span>
+
+        <span
+          class="orange"
+          data-hero-line
+        >
+          CONSULTATION.
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div
+      class="appointment-description"
+      data-hero-fade
+    >
+
+      <p>
+
+        Tell us a little about what you
+        need and a preferred time.
+        We'll confirm your request by
+        email within one business day.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="appointment-meta">
+
+    <span>
+      SCROLL TO BEGIN
+    </span>
+
+    <span>
+      AKOLA · MAHARASHTRA
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap appointment-intro">
+
+    <span
+      class="label"
+      data-reveal
+    >
+      02 / YOUR VISIT
+    </span>
+
+
+    <div>
+
+      <h2
+        class="appointment-intro-title"
+        data-reveal-text
+      >
+
+        A consultation is
+        the beginning of
+        <span>
+          understanding.
+        </span>
+
+      </h2>
+
+
+      <p
+        class="appointment-intro-copy"
+        data-reveal
+      >
+
+        Every treatment begins with
+        conversation, assessment and a
+        clear understanding of your goals.
+        Your first appointment is designed
+        to give you the information you
+        need before deciding what comes next.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     BOOKING
+     ============================================================ -->
+
+<section
+  class="section booking-section"
+>
+
+  <div class="wrap booking-layout">
+
+
+    <!-- LEFT -->
+
+    <aside
+      class="booking-side"
+      data-reveal
+    >
+
+      <div class="booking-side-number">
+        03
+      </div>
+
+
+      <h2>
+
+        LET'S PLAN
+        <span>
+          YOUR VISIT.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Complete the details and tell
+        us what kind of appointment
+        you're looking for.
+
+      </p>
+
+    </aside>
+
+
+    <!-- FORM -->
+
+    <form
+      class="booking-form"
+      data-form
+      novalidate
+    >
+
+
+      <!-- STEP 01 -->
+
+      <div
+        class="booking-step"
+        data-reveal
+      >
+
+        <div class="booking-step-heading">
+
+          <span class="booking-step-number">
+            STEP 01
+          </span>
+
+          <h3 class="booking-step-title">
+            About you
+          </h3>
+
+        </div>
+
+
+        <div class="booking-grid">
+
+          <div class="field">
+
+            <label for="a_name">
+              Full name
+            </label>
+
+            <input
+              id="a_name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="a_email">
+              Email
+            </label>
+
+            <input
+              id="a_email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="a_phone">
+              Phone
+            </label>
+
+            <input
+              id="a_phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 02 -->
+
+      <div
+        class="booking-step"
+        data-reveal
+      >
+
+        <div class="booking-step-heading">
+
+          <span class="booking-step-number">
+            STEP 02
+          </span>
+
+          <h3 class="booking-step-title">
+            Treatment
+          </h3>
+
+        </div>
+
+
+        <div class="treatment-options">
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="implant"
+              name="treatment"
+              value="Dental Implants"
+            >
+
+            <label for="implant">
+              Dental Implants
+            </label>
+
+          </div>
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="cosmetic"
+              name="treatment"
+              value="Smile Designing / Cosmetic"
+            >
+
+            <label for="cosmetic">
+              Smile Designing / Cosmetic
+            </label>
+
+          </div>
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="root"
+              name="treatment"
+              value="Root Canal Treatment"
+            >
+
+            <label for="root">
+              Root Canal Treatment
+            </label>
+
+          </div>
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="braces"
+              name="treatment"
+              value="Braces / Orthodontics"
+            >
+
+            <label for="braces">
+              Braces / Orthodontics
+            </label>
+
+          </div>
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="preventive"
+              name="treatment"
+              value="Preventive Care"
+            >
+
+            <label for="preventive">
+              Preventive Care
+            </label>
+
+          </div>
+
+
+          <div class="treatment-option">
+
+            <input
+              type="radio"
+              id="unsure"
+              name="treatment"
+              value="Not sure yet"
+              checked
+            >
+
+            <label for="unsure">
+              Not sure yet
+            </label>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 03 -->
+
+      <div
+        class="booking-step"
+        data-reveal
+      >
+
+        <div class="booking-step-heading">
+
+          <span class="booking-step-number">
+            STEP 03
+          </span>
+
+          <h3 class="booking-step-title">
+            Preferred time
+          </h3>
+
+        </div>
+
+
+        <div class="booking-grid">
+
+
+          <div class="field">
+
+            <label for="a_date">
+              Preferred date
+            </label>
+
+            <input
+              id="a_date"
+              name="date"
+              type="date"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="a_time">
+              Preferred time
+            </label>
+
+            <input
+              id="a_time"
+              name="time"
+              type="time"
+              required
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 04 -->
+
+      <div
+        class="booking-step"
+        data-reveal
+      >
+
+        <div class="booking-step-heading">
+
+          <span class="booking-step-number">
+            STEP 04
+          </span>
+
+          <h3 class="booking-step-title">
+            Anything else?
+          </h3>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="a_message">
+            Message
+          </label>
+
+          <textarea
+            id="a_message"
+            name="message"
+            placeholder="Anything we should know beforehand?"
+          ></textarea>
+
+        </div>
+
+
+        <div class="booking-submit">
+
+          <button
+            type="submit"
+            class="btn btn-dark"
+            style="width:100%;justify-content:center;"
+          >
+
+            <span>
+              Send Appointment Request
+              →
+            </span>
+
+          </button>
+
+
+          <p class="form-success">
+
+            ✓ Request received — this is a
+            template form with no backend.
+            Connect it to your booking system
+            to go live.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     WHAT HAPPENS NEXT
+     ============================================================ -->
+
+<section
+  class="section next-section"
+  data-nav-theme="dark"
+>
+
+  <div class="next-background">
+    VISIT
+  </div>
+
+
+  <div class="wrap">
+
+    <span
+      class="label on-dark"
+      data-reveal
+    >
+      04 / WHAT HAPPENS NEXT
+    </span>
+
+
+    <h2
+      class="next-title"
+      data-reveal-text
+    >
+
+      SIMPLE FROM
+      <span>
+        START
+      </span>
+      TO FINISH.
+
+    </h2>
+
+
+    <div
+      class="next-grid"
+      data-reveal-group
+    >
+
+
+      <article class="next-card">
+
+        <span class="next-number">
+          01
+        </span>
+
+        <div>
+
+          <h3>
+            Request
+          </h3>
+
+          <p>
+            Send your preferred date,
+            time and treatment interest.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="next-card">
+
+        <span class="next-number">
+          02
+        </span>
+
+        <div>
+
+          <h3>
+            Confirmation
+          </h3>
+
+          <p>
+            The clinic can confirm the
+            appointment details with you.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="next-card">
+
+        <span class="next-number">
+          03
+        </span>
+
+        <div>
+
+          <h3>
+            Consultation
+          </h3>
+
+          <p>
+            Arrive, discuss your goals
+            and understand your options.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     PREPARATION
+     ============================================================ -->
+
+<section class="section bg-white">
+
+  <div class="wrap preparation">
+
+
+    <div data-reveal>
+
+      <span class="label">
+        05 / BEFORE YOU ARRIVE
+      </span>
+
+
+      <h2 class="preparation-title">
+
+        COME WITH
+        <span>
+          QUESTIONS.
+        </span>
+
+      </h2>
+
+    </div>
+
+
+    <div
+      class="preparation-list"
+      data-reveal-group
+    >
+
+
+      <div class="preparation-item">
+
+        <span class="preparation-item-number">
+          01
+        </span>
+
+        <div>
+
+          <h3>
+            Bring your questions
+          </h3>
+
+          <p>
+            Think about what you would
+            like to understand before
+            choosing a treatment.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="preparation-item">
+
+        <span class="preparation-item-number">
+          02
+        </span>
+
+        <div>
+
+          <h3>
+            Share your goals
+          </h3>
+
+          <p>
+            Tell the clinical team what
+            you would like to improve
+            or change.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="preparation-item">
+
+        <span class="preparation-item-number">
+          03
+        </span>
+
+        <div>
+
+          <h3>
+            Take your time
+          </h3>
+
+          <p>
+            A consultation is a chance
+            to understand your options
+            before making decisions.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     CONTACT STRIP
+     ============================================================ -->
+
+<section class="bg-off">
+
+  <div class="wrap">
+
+    <div
+      class="contact-strip"
+      data-reveal-group
+    >
+
+      <div class="contact-strip-grid">
+
+
+        <div class="contact-strip-item">
+
+          <span>
+            Phone
+          </span>
+
+          <strong>
+            +91 98230 00000
+          </strong>
+
+        </div>
+
+
+        <div class="contact-strip-item">
+
+          <span>
+            Email
+          </span>
+
+          <strong>
+            care@sarafdentalcare.in
+          </strong>
+
+        </div>
+
+
+        <div class="contact-strip-item">
+
+          <span>
+            Location
+          </span>
+
+          <strong>
+            Nishant Tower, M.G. Road
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+
+<section
+  class="section appointment-final"
+  data-nav-theme="dark"
+>
+
+  <div class="final-orbit"></div>
+
+
+  <div class="wrap">
+
+    <span
+      class="label on-dark"
+      data-reveal
+    >
+      06 / READY?
+    </span>
+
+
+    <h2
+      class="final-title"
+      data-reveal-text
+    >
+
+      YOUR VISIT
+      <br>
+
+      STARTS
+      <span>
+        HERE.
+      </span>
+
+    </h2>
+
+
+    <div
+      data-reveal
+      style="
+        margin-top:50px;
+        display:flex;
+        gap:18px;
+        flex-wrap:wrap;
+      "
+    >
+
+      <a
+        href="#"
+        class="btn btn-light"
+        onclick="window.scrollTo({top:document.querySelector('.booking-section').offsetTop,behavior:'smooth'});return false;"
+      >
+
+        Book Your Consultation
+        →
+
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="border:1px solid rgba(255,255,255,.25);"
+      >
+
+        Contact Clinic
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
+<footer class="site-footer">
+
+  <div class="wrap">
+
+    <div class="foot-huge">
+      LET'S TALK
+      <br>
+      ABOUT YOUR SMILE.
+    </div>
+
+
+    <div
+      style="
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+        margin-bottom:80px;
+      "
+    >
+
+      <a
+        href="appointment.html"
+        class="btn btn-light"
+      >
+        Book a Consultation
+        <span class="arrow">→</span>
+      </a>
+
+      <a
+        href="contact.html"
+        class="btn btn-ghost"
+        style="border:1px solid var(--line-dark);"
+      >
+        Contact Clinic
+      </a>
+
+    </div>
+
+
+    <div class="foot-top">
+
+
+      <div>
+
+        <h4>
+          Saraf Dental Care
+        </h4>
+
+        <p
+          style="
+            max-width:280px;
+            color:rgba(255,255,255,.6);
+            font-size:13.5px;
+            line-height:1.7;
+          "
+        >
+          A private implantology and
+          aesthetic dentistry practice
+          in Akola, Maharashtra.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="doctors.html">Doctors</a>
+          <a href="technology.html">Technology</a>
+          <a href="clinic.html">Clinic</a>
+          <a href="gallery.html">Gallery</a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Care
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="case-studies.html">Case Studies</a>
+          <a href="patient-journey.html">Patient Journey</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Journal</a>
+          <a href="emergency.html">Emergency</a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <div class="foot-links">
+
+          <a href="mailto:care@sarafdentalcare.in">
+            care@sarafdentalcare.in
+          </a>
+
+          <a href="tel:+919823000000">
+            +91 98230 00000
+          </a>
+
+          <a href="location.html">
+            Nishant Tower, M.G. Road, Akola
+          </a>
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="foot-bottom">
+
+      <span>
+        © 2026 Saraf Dental Care
+      </span>
+
+      <span style="display:flex;gap:24px;">
+
+        <a href="imprint.html">
+          Business Info
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </span>
+
+      <span>
+        Unofficial concept design · Verify
+        contact details & hours with the clinic directly
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ============================================================
+     GSAP
+     ============================================================ -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="js/cursor.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/page-transition.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+
+<!-- ============================================================
+     APPOINTMENT PAGE MOTION
+     ============================================================ -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+  if(
+    typeof gsap === "undefined" ||
+    typeof ScrollTrigger === "undefined"
+  ) return;
+
+
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  const reduced =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if(reduced) return;
+
+
+  /* ==========================================================
+     HERO ORBIT
+     ========================================================== */
+
+  const orbit =
+    document.querySelector(
+      ".appointment-orbit"
+    );
+
+
+  if(orbit){
+
+    gsap.to(
+      orbit,
+      {
+        rotation:360,
+        y:180,
+
+        ease:"none",
+
+        scrollTrigger:{
+          trigger:".appointment-hero",
+          start:"top top",
+          end:"bottom top",
+          scrub:1.5
+        }
+
+      }
+    );
+
+  }
+
+
+  /* ==========================================================
+     HERO TEXT
+     ========================================================== */
+
+  gsap.from(
+    ".appointment-title [data-hero-line]",
+    {
+      y:"120%",
+      opacity:0,
+
+      duration:1.1,
+
+      stagger:.12,
+
+      ease:"power4.out",
+
+      delay:.15
+    }
+  );
+
+
+  gsap.from(
+    ".appointment-description",
+    {
+      y:35,
+      opacity:0,
+
+      duration:1,
+
+      ease:"power3.out",
+
+      delay:.5
+    }
+  );
+
+
+  /* ==========================================================
+     INTRO
+     ========================================================== */
+
+  gsap.from(
+    ".appointment-intro-title",
+    {
+      y:80,
+      opacity:0,
+
+      duration:1,
+
+      ease:"power4.out",
+
+      scrollTrigger:{
+        trigger:".appointment-intro",
+        start:"top 75%",
+        once:true
+      }
+    }
+  );
+
+
+  /* ==========================================================
+     BOOKING STEPS
+     ========================================================== */
+
+  gsap.from(
+    ".booking-step",
+    {
+      y:70,
+      opacity:0,
+
+      duration:.8,
+
+      stagger:.1,
+
+      ease:"power4.out",
+
+      scrollTrigger:{
+        trigger:".booking-form",
+        start:"top 75%",
+        once:true
+      }
+    }
+  );
+
+
+  /* ==========================================================
+     FORM INPUT FOCUS
+     ========================================================== */
+
+  document
+    .querySelectorAll(
+      ".booking-form input, .booking-form textarea, .booking-form select"
+    )
+    .forEach(
+      input => {
+
+        input.addEventListener(
+          "focus",
+          () => {
+
+            gsap.to(
+              input,
+              {
+                x:6,
+                duration:.35,
+                ease:"power2.out"
+              }
+            );
+
+          }
+        );
+
+
+        input.addEventListener(
+          "blur",
+          () => {
+
+            gsap.to(
+              input,
+              {
+                x:0,
+                duration:.35,
+                ease:"power2.out"
+              }
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* ==========================================================
+     TREATMENT CARDS
+     ========================================================== */
+
+  gsap.from(
+    ".treatment-option",
+    {
+      y:35,
+      opacity:0,
+
+      duration:.65,
+
+      stagger:.06,
+
+      ease:"power3.out",
+
+      scrollTrigger:{
+        trigger:".treatment-options",
+        start:"top 80%",
+        once:true
+      }
+    }
+  );
+
+
+  /* ==========================================================
+     DARK SECTION
+     ========================================================== */
+
+  gsap.from(
+    ".next-card",
+    {
+      y:90,
+      opacity:0,
+
+      duration:.9,
+
+      stagger:.12,
+
+      ease:"power4.out",
+
+      scrollTrigger:{
+        trigger:".next-grid",
+        start:"top 80%",
+        once:true
+      }
+    }
+  );
+
+
+  /* ==========================================================
+     PREPARATION
+     ========================================================== */
+
+  gsap.from(
+    ".preparation-item",
+    {
+      x:80,
+      opacity:0,
+
+      duration:.8,
+
+      stagger:.1,
+
+      ease:"power4.out",
+
+      scrollTrigger:{
+        trigger:".preparation-list",
+        start:"top 80%",
+        once:true
+      }
+    }
+  );
+
+
+  /* ==========================================================
+     FINAL ORBIT
+     ========================================================== */
+
+  const finalOrbit =
+    document.querySelector(
+      ".final-orbit"
+    );
+
+
+  if(finalOrbit){
+
+    gsap.to(
+      finalOrbit,
+      {
+        rotation:360,
+
+        ease:"none",
+
+        scrollTrigger:{
+          trigger:".appointment-final",
+          start:"top bottom",
+          end:"bottom top",
+          scrub:2
+        }
+      }
+    );
+
+  }
+
+
+  /* ==========================================================
+     DATE — PREVENT PAST DATES
+     ========================================================== */
+
+  const dateInput =
+    document.getElementById(
+      "a_date"
+    );
+
+
+  if(dateInput){
+
+    const today =
+      new Date()
+      .toISOString()
+      .split("T")[0];
+
+    dateInput.min = today;
+
+  }
+
+
+  ScrollTrigger.refresh();
+
+});
+
+</script>
+
+
+  <script src="js/viral-motion.js"></script>
+  <script src="js/award-motion.js"></script>
+</body>
+</html>
